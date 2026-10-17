@@ -1,0 +1,1194 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Богдан, LUMA: сайты, Telegram-боты и продвижение для малого бизнеса и самозанятых. Работы, цены и контакты.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LUMA — сайты, боты и продвижение">
+<meta property="og:description" content="Сайты от 7 900 ₽, Telegram-боты от 7 000 ₽, продвижение в Telegram. Работы, цены и контакты.">
+<meta name="theme-color" content="#3A49F0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%233A49F0'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='700' font-size='34' text-anchor='middle' fill='white'%3EL%3C/text%3E%3C/svg%3E">
+<style>
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+<title>LUMA — Богдан</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Lora:ital,wght@0,500;1,500&family=Oswald:wght@500;600&family=Cormorant+Garamond:ital,wght@1,500&family=Fira+Sans:wght@400;500;600&family=Caveat:wght@600&display=swap">
+<style>
+/* Layout: narrow editorial column; hero = thesis + live-coded client sites over a light-reactive dot field, then twin tickers → cases → concepts → prices → process → contact → wordmark */
+:root {
+  --bg: #F3F4F7;
+  --surface: #FFFFFF;
+  --ink: #14161C;
+  --muted: #646A78;
+  --line: #E1E3EA;
+  --accent: #3A49F0;
+  --accent-ink: #FFFFFF;
+  --soft: #E8EAFE;
+
+  --f-display: "Unbounded", "Manrope", system-ui, sans-serif;
+  --f-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+
+  --wrap: 1120px;
+  --radius: 18px;
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D0E12; --surface: #16181E; --ink: #ECEEF3; --muted: #959BA8;
+    --line: #262934; --accent: #7F8CFF; --accent-ink: #0D0E12; --soft: #1B1E2E;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0D0E12; --surface: #16181E; --ink: #ECEEF3; --muted: #959BA8;
+  --line: #262934; --accent: #7F8CFF; --accent-ink: #0D0E12; --soft: #1B1E2E;
+  color-scheme: dark;
+}
+@property --ang { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font: 400 16px/1.6 var(--f-body);
+  padding-inline: 20px;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.wrap { max-width: var(--wrap); margin-inline: auto; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+.label {
+  font: 500 12px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+}
+
+/* custom cursor ring (inverts whatever is under it) */
+.cursor { position: fixed; left: 0; top: 0; width: 36px; height: 36px; margin: -18px 0 0 -18px; border-radius: 50%; border: 1.5px solid #FFFFFF; mix-blend-mode: difference; pointer-events: none; z-index: 60; opacity: 0; transition: width .3s var(--ease), height .3s var(--ease), margin .3s var(--ease), background-color .3s, opacity .3s; }
+.cursor.on { opacity: 1; }
+.cursor.hover { width: 64px; height: 64px; margin: -32px 0 0 -32px; background-color: #FFFFFF; }
+.cursor.down { width: 26px; height: 26px; margin: -13px 0 0 -13px; }
+
+/* scroll progress */
+.progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 20; background: var(--accent); transform-origin: 0 50%; transform: scaleX(var(--p, 0)); }
+
+/* header */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  margin-inline: -20px; padding: 14px 20px;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s, padding .3s;
+}
+.top.scrolled { border-bottom-color: var(--line); padding-block: 10px; }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.logo { display: flex; align-items: baseline; gap: 10px; text-decoration: none; }
+.logo b { font: 600 20px/1 var(--f-display); letter-spacing: .04em; }
+.logo span { font-size: 13px; color: var(--muted); }
+.nav { display: flex; gap: 28px; font-weight: 600; font-size: 15px; }
+.nav a { position: relative; text-decoration: none; color: var(--muted); transition: color .2s; }
+.nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 1.5px; background: var(--accent); transform: scaleX(0); transform-origin: 100% 50%; transition: transform .4s var(--ease); }
+.nav a:hover { color: var(--ink); }
+.nav a:hover::after { transform: scaleX(1); transform-origin: 0 50%; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 13px 22px; border-radius: 999px; border: 1px solid transparent;
+  font: 700 15px/1 var(--f-body); text-decoration: none; cursor: pointer;
+  position: relative; overflow: hidden; isolation: isolate;
+  transition: transform .25s var(--ease), translate .35s var(--ease), background .2s, border-color .2s, box-shadow .25s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(110deg, transparent 30%, color-mix(in srgb, var(--accent-ink) 35%, transparent) 50%, transparent 70%); transform: translateX(-120%); transition: transform .8s var(--ease); }
+.btn-primary:hover::before { transform: translateX(120%); }
+.btn-primary:hover { box-shadow: 0 12px 26px -10px var(--accent); }
+.btn-ghost { border-color: var(--line); background: var(--surface); color: var(--ink); }
+.btn-ghost:hover { border-color: var(--ink); }
+.btn svg { width: 17px; height: 17px; flex: none; }
+.btn .arr { transition: transform .3s var(--ease); }
+.btn:hover .arr { transform: translateX(4px); }
+
+/* hero */
+.hero { position: relative; isolation: isolate; display: grid; grid-template-columns: 1fr 1.05fr; gap: 56px; align-items: center; padding-block: 64px 72px; }
+.hero > * { min-width: 0; }
+.hero-bg { position: absolute; top: -70px; bottom: 0; left: calc(50% - 50vw); width: 100vw; z-index: -1; pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 16%, #000 72%, transparent);
+          mask-image: linear-gradient(to bottom, transparent, #000 16%, #000 72%, transparent); }
+.hero-bg canvas { display: block; width: 100%; height: 100%; }
+.hero h1 { font: 500 clamp(32px, 4.6vw, 54px)/1.1 var(--f-display); letter-spacing: -.02em; margin-block: 18px 22px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .08em; margin-bottom: -.08em; }
+.w.wu { padding-bottom: .34em; margin-bottom: -.34em; }
+.w > span { display: inline-block; animation: word .95s var(--ease) both; animation-delay: calc(var(--i) * 70ms + 100ms); }
+@keyframes word { from { transform: translateY(110%) rotate(4deg); } to { transform: none; } }
+.u { position: relative; white-space: nowrap; }
+.u svg { position: absolute; left: -2%; bottom: -.2em; width: 104%; height: .34em; overflow: visible; }
+.u path { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.1s var(--ease) 1.05s forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.fade-up { animation: fadeUp .9s var(--ease) both; animation-delay: var(--d, .5s); }
+@keyframes fadeUp { from { transform: translateY(16px); opacity: 0; } to { transform: none; opacity: 1; } }
+.hero .lead { font-size: 18px; color: var(--muted); max-width: 33em; }
+.hero .lead strong { color: var(--ink); font-weight: 700; }
+.hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.facts { display: flex; flex-wrap: wrap; gap: 36px; margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line); }
+.facts div { display: grid; gap: 6px; }
+.facts b { font: 500 26px/1 var(--f-display); font-variant-numeric: tabular-nums; }
+.facts span { font-size: 13px; color: var(--muted); }
+
+.stack { position: relative; aspect-ratio: 1 / .86; max-width: 100%; }
+.layer { position: absolute; width: 82%; translate: var(--px, 0px) calc(var(--py, 0px) + var(--sy, 0px)); transition: translate .7s var(--ease); }
+.layer:nth-child(1) { top: 0; right: 0; }
+.layer:nth-child(2) { bottom: 0; left: 0; }
+.layer .float { animation: float 7s ease-in-out infinite; }
+.layer:nth-child(2) .float { animation-delay: -3.5s; }
+.layer .frame { animation: rise 1.2s var(--ease) both; animation-delay: .35s; }
+.layer:nth-child(2) .frame { animation-delay: .55s; }
+@keyframes rise { from { transform: translateY(60px) rotate(-3deg) scale(.94); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes float { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-10px) rotate(.4deg); } }
+
+.frame {
+  position: relative;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+  box-shadow: 0 1px 2px rgba(10,12,30,.05), 0 18px 40px -18px rgba(10,12,30,.28);
+}
+.frame .bar { display: flex; align-items: center; gap: 6px; padding: 9px 12px; border-bottom: 1px solid var(--line); }
+.frame .bar i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+.frame .bar span { margin-left: 10px; font: 400 11px/1 var(--f-mono); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pic { overflow: hidden; clip-path: inset(0 0 0 0); transition: clip-path 1.2s var(--ease); }
+.pic > .site { transition: transform 1.2s var(--ease); transform-origin: 50% 0; }
+
+/* ===== client site mockups: drawn on a 64em-wide canvas, scaled to the frame ===== */
+.screen { container-type: inline-size; }
+.site { position: relative; width: 100%; aspect-ratio: 64 / 40; overflow: hidden; font-size: 8px; font-size: calc(100cqw / 64); line-height: 1.4; text-align: left; }
+.site * { margin: 0; }
+.site img { display: block; }
+.site .s-nav { display: flex; align-items: center; justify-content: space-between; gap: 2em; height: 5em; padding-inline: 4em; }
+.site .s-brand { display: flex; align-items: center; gap: .9em; }
+.site .s-brand b { display: block; font-size: .95em; }
+.site .s-brand small { display: block; font-size: .6em; letter-spacing: .14em; text-transform: uppercase; }
+.site .s-links { display: flex; gap: 1.8em; font-size: .78em; }
+.site .s-btn { display: inline-block; padding: .85em 1.6em; border-radius: 2em; font-size: .78em; font-weight: 700; white-space: nowrap; }
+
+/* nail studio: dark burgundy, grotesk + italic serif */
+.s-nails { background: radial-gradient(50em 26em at 75% -10%, #4A1426, transparent 65%), radial-gradient(30em 20em at 0% 100%, #2A0F18, transparent 70%), #150B0F; color: #F4EAED; font-family: "Manrope", sans-serif; }
+.s-nails .s-nav { border-bottom: 1px solid rgba(244,234,237,.08); }
+.s-nails .mono { width: 2.4em; height: 2.4em; border-radius: 50%; border: 1px solid #C9A86A; display: grid; place-items: center; color: #C9A86A; font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-size: 1em; }
+.s-nails .mono span { font-size: 1.3em; line-height: 1; }
+.s-nails .s-brand b { letter-spacing: .12em; }
+.s-nails .s-brand small { color: rgba(244,234,237,.45); }
+.s-nails .s-links { color: rgba(244,234,237,.72); }
+.s-nails .s-btn { background: #8E2340; color: #FBEFF2; box-shadow: 0 .8em 1.8em -.6em rgba(142,35,64,.8); }
+.s-nails .s-btn.ghost { background: transparent; border: 1px solid rgba(244,234,237,.22); box-shadow: none; }
+.s-nails .eyebrow { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 500; font-size: 1.05em; color: #D9A3B5; }
+.s-nails .n-hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: 3.5em; align-items: center; padding: 2.2em 4em 0; }
+.s-nails .n-h { font-weight: 700; font-size: 3.1em; line-height: 1.04; letter-spacing: -.03em; margin: .25em 0 .45em; }
+.s-nails .n-h i { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: 1.1em; color: #E7B6C6; letter-spacing: 0; }
+.s-nails .n-lead { font-size: .88em; color: rgba(244,234,237,.68); max-width: 27em; }
+.s-nails .n-actions { display: flex; gap: .8em; margin-top: 1.8em; }
+.s-nails .n-stats { display: flex; gap: 2.8em; margin-top: 2.2em; padding-top: 1.3em; border-top: 1px solid rgba(244,234,237,.1); }
+.s-nails .n-stats b { display: block; font-size: 1.35em; }
+.s-nails .n-stats span { font-size: .55em; letter-spacing: .14em; text-transform: uppercase; color: rgba(244,234,237,.45); }
+.s-nails .n-photo { position: relative; aspect-ratio: 1 / 1.02; border-radius: 1.3em; overflow: hidden; background: #2A1A1F; box-shadow: 0 2em 4em -1.5em rgba(0,0,0,.7); }
+.s-nails .n-photo img { width: 100%; height: 100%; object-fit: cover; }
+.s-nails .n-chip { position: absolute; left: 1.1em; bottom: 1.1em; padding: .45em 1.1em; border-radius: 2em; background: rgba(21,11,15,.72); border: 1px solid rgba(244,234,237,.16); font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-size: .95em; }
+.s-nails .n-works { padding: 2.2em 4em 0; }
+.s-nails .n-h2 { font-weight: 700; font-size: 2.6em; line-height: 1.1; letter-spacing: -.02em; margin: .2em 0 .35em; }
+.s-nails .n-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1em; margin-top: 1.8em; }
+.s-nails .n-card { border-radius: 1em; overflow: hidden; background: rgba(244,234,237,.04); border: 1px solid rgba(244,234,237,.08); }
+.s-nails .n-card img { width: 100%; aspect-ratio: 1.45; object-fit: cover; }
+.s-nails .n-card div { display: flex; justify-content: space-between; gap: 1em; padding: .8em 1em; font-size: .78em; }
+.s-nails .n-card div span { color: rgba(244,234,237,.6); }
+.s-nails .n-card div b { color: #E7B6C6; white-space: nowrap; }
+.s-nails .n-more { margin-top: 1.6em; }
+
+/* math tutor: soft green and pink, friendly humanist sans */
+.s-tutor { background: radial-gradient(28em 22em at 8% 20%, rgba(214,233,180,.55), transparent 70%), radial-gradient(30em 24em at 95% 85%, rgba(232,103,154,.10), transparent 70%), #F2F5EA; color: #33372F; font-family: "Fira Sans", "Trebuchet MS", sans-serif; }
+.s-tutor .s-nav { border-bottom: 1px solid rgba(51,55,47,.08); background: rgba(250,251,246,.6); }
+.s-tutor .logo-k { width: 2.4em; height: 2.4em; border-radius: .8em; background: #E8679A; color: #FFFFFF; display: grid; place-items: center; font-weight: 600; }
+.s-tutor .s-brand small { text-transform: none; letter-spacing: 0; font-size: .68em; color: #7B8172; }
+.s-tutor .s-links { color: #5B6157; font-weight: 500; }
+.s-tutor .s-btn { background: #E8679A; color: #FFFFFF; box-shadow: 0 .8em 1.6em -.6em rgba(232,103,154,.75); }
+.s-tutor .s-btn.ghost { background: #FFFFFF; color: #33372F; box-shadow: 0 .4em 1.2em -.6em rgba(51,55,47,.25); }
+.s-tutor .t-hero { display: grid; grid-template-columns: 1.05fr 1fr; gap: 3.5em; align-items: center; padding: 2.6em 4em 0; }
+.s-tutor .t-h { font-weight: 500; font-size: 3.5em; line-height: 1.08; letter-spacing: -.02em; margin-bottom: .45em; }
+.s-tutor .t-h em { font-style: normal; color: #D4588A; }
+.s-tutor .t-lead { font-size: .9em; color: #6B7066; max-width: 26em; }
+.s-tutor .t-actions { display: grid; justify-items: start; gap: .8em; margin-top: 1.8em; }
+.s-tutor .t-chips { display: flex; gap: .6em; margin-top: 1.6em; }
+.s-tutor .t-chips span { display: inline-flex; align-items: center; gap: .5em; padding: .55em 1em; border-radius: 2em; background: #FFFFFF; border: 1px solid rgba(51,55,47,.08); font-size: .68em; font-weight: 600; }
+.s-tutor .t-chips span::before { content: ""; width: .5em; height: .5em; border-radius: 50%; background: #E8679A; }
+.s-tutor .t-art { position: relative; aspect-ratio: 1 / .92; border-radius: 1.8em; background: #FBF4F1; overflow: hidden; box-shadow: 0 1.6em 3em -1.6em rgba(51,55,47,.3); }
+.s-tutor .blob { position: absolute; background: #BBD883; border-radius: 42% 58% 61% 39% / 47% 41% 59% 53%; }
+.s-tutor .blob.b1 { width: 58%; height: 62%; right: -14%; top: -12%; }
+.s-tutor .blob.b2 { width: 46%; height: 42%; left: -12%; bottom: -14%; background: #CFE3A6; border-radius: 60% 40% 45% 55% / 50% 60% 40% 50%; }
+.s-tutor .flower { position: absolute; width: 2.8em; height: 2.8em; }
+.s-tutor .flower.f1 { left: 8%; top: 9%; }
+.s-tutor .flower.f2 { right: 10%; top: 44%; width: 2.2em; height: 2.2em; }
+.s-tutor .flower.f3 { left: 44%; bottom: 6%; width: 2em; height: 2em; }
+.s-tutor .sheet { position: absolute; left: 13%; top: 17%; width: 64%; padding: 1.2em 1.4em 1.3em; border-radius: 1em; transform: rotate(-3deg);
+  background-color: #FFFFFF;
+  background-image: linear-gradient(rgba(110,150,200,.16) 1px, transparent 1px), linear-gradient(90deg, rgba(110,150,200,.16) 1px, transparent 1px);
+  background-size: 1.2em 1.2em; box-shadow: 0 1.2em 2.4em -1.2em rgba(51,55,47,.35); }
+.s-tutor .sheet svg { display: block; width: 100%; height: auto; margin-block: .4em .2em; }
+.s-tutor .hand { font-family: "Caveat", "Segoe Print", cursive; font-weight: 600; font-size: 1.55em; line-height: 1.15; color: #33372F; }
+.s-tutor .hand.pink { color: #D4588A; font-size: 1.35em; }
+.s-tutor .t-badge { position: absolute; right: 6%; bottom: 8%; display: flex; align-items: center; gap: .6em; padding: .75em 1.1em; border-radius: 1em; background: #FFFFFF; box-shadow: 0 .8em 1.8em -.8em rgba(51,55,47,.35); font-size: .72em; font-weight: 600; }
+.s-tutor .t-badge i { width: 1.6em; height: 1.6em; border-radius: 50%; background: #DDEFC6; color: #4E7A2A; display: grid; place-items: center; font-style: normal; }
+.s-tutor .t-prices { padding: 2.3em 4em 0; }
+.s-tutor .t-eyebrow { font-size: .62em; font-weight: 600; letter-spacing: .16em; color: #D4588A; }
+.s-tutor .t-h2 { font-weight: 500; font-size: 2.6em; line-height: 1.1; margin: .25em 0 .3em; }
+.s-tutor .t-sub { font-size: .9em; color: #6B7066; }
+.s-tutor .t-rows { display: grid; gap: .65em; margin-top: 1.7em; }
+.s-tutor .t-row { display: flex; justify-content: space-between; align-items: center; gap: 2em; padding: .9em 1.5em; background: #FFFFFF; border-radius: 1em; border: 1px solid rgba(51,55,47,.08); border-left: .3em solid #E8679A; }
+.s-tutor .t-row b { display: block; font-size: .9em; font-weight: 600; }
+.s-tutor .t-row small { display: block; font-size: .66em; color: #8A9081; margin-top: .2em; }
+.s-tutor .t-row strong { font-size: 1em; font-weight: 600; white-space: nowrap; }
+.s-tutor .t-free { padding: .35em .9em; border-radius: 2em; background: #DDEFC6; color: #4E7A2A; font-size: .66em; font-weight: 600; }
+
+/* 3D tilt with glare */
+.tilt { transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--lift, 0px)); transition: transform .35s var(--ease), box-shadow .45s var(--ease), border-color .3s; }
+.tilt::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), color-mix(in srgb, var(--accent) 18%, transparent), transparent 55%); opacity: 0; transition: opacity .35s; }
+.tilt:hover { --lift: -6px; }
+.tilt:hover::after { opacity: 1; }
+
+/* twin tickers */
+.ticker { margin-inline: calc(50% - 50vw); border-block: 1px solid var(--line); overflow: hidden; padding-block: 16px; display: grid; gap: 10px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.ticker-track { display: flex; width: max-content; will-change: transform; }
+.grp { display: flex; }
+.grp span { display: inline-flex; align-items: center; gap: 28px; padding-right: 28px; white-space: nowrap; }
+.row-a .grp span { font: 500 15px/1.4 var(--f-display); color: var(--muted); }
+.row-a .grp span::after { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.row-b .grp span { font: 600 clamp(30px, 4.5vw, 52px)/1.15 var(--f-display); letter-spacing: -.02em; color: transparent; -webkit-text-stroke: 1px var(--ink); transition: color .3s; }
+.row-b .grp span:hover { color: var(--accent); -webkit-text-stroke-color: var(--accent); }
+.row-b .grp span::after { content: "✦"; -webkit-text-stroke: 0; color: var(--accent); font-size: .45em; }
+
+/* scroll reveal (starts dimmed, never invisible) */
+.reveal { transition: translate .9s var(--ease), opacity .9s var(--ease); transition-delay: var(--d, 0s); }
+.reveal.below { opacity: .2; translate: 0 36px; }
+.split-w { display: inline-block; transition: translate .9s var(--ease), opacity .9s var(--ease); transition-delay: calc(var(--i) * 55ms + .1s); }
+.below .split-w { opacity: .15; translate: 0 .6em; }
+
+/* sections */
+section { padding-block: 72px; border-top: 1px solid var(--line); scroll-margin-top: 64px; }
+.ticker + section { border-top: 0; }
+.sec-head { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: end; margin-bottom: 44px; }
+.sec-head > * { min-width: 0; }
+.sec-head h2 { font: 500 clamp(28px, 3.6vw, 40px)/1.12 var(--f-display); letter-spacing: -.015em; margin-top: 14px; }
+.sec-head p { color: var(--muted); max-width: 30em; justify-self: end; }
+
+/* cases */
+.case { display: grid; grid-template-columns: 1.35fr 1fr; gap: 48px; align-items: start; }
+.case + .case { margin-top: 72px; }
+.case > * { min-width: 0; }
+.case.flip { grid-template-columns: 1fr 1.35fr; }
+.case.flip .shots { order: 2; }
+.shots { display: grid; gap: 14px; }
+.shots .frame:hover { box-shadow: 0 1px 2px rgba(10,12,30,.05), 0 30px 54px -22px rgba(10,12,30,.4); }
+.shots .frame:hover .pic > .site { transform: scale(1.03); }
+.shots.below .pic { clip-path: inset(0 0 42% 0); }
+.shots.below .pic > .site { transform: scale(1.12); }
+.shots .frame:nth-child(2) .pic, .shots .frame:nth-child(2) .pic > .site { transition-delay: .15s; }
+.case-info { display: grid; gap: 16px; padding-top: 8px; }
+.case-info h3 { font: 500 24px/1.2 var(--f-display); }
+.case-info .who { color: var(--muted); font-size: 15px; margin-top: -8px; }
+.case-info p { max-width: 34em; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tags span { padding: 6px 12px; border-radius: 999px; background: var(--soft); font-size: 13px; font-weight: 600; transition: background .2s, color .2s, transform .3s var(--ease); }
+.tags span:hover { background: var(--accent); color: var(--accent-ink); transform: translateY(-2px); }
+.case-note { display: grid; gap: 4px; padding: 16px 18px; border-left: 2px solid var(--accent); background: var(--surface); border-radius: 0 12px 12px 0; }
+.case-note b { font-size: 14px; }
+.case-note span { color: var(--muted); font-size: 14px; }
+
+/* concepts */
+.concepts-head { margin-top: 96px; margin-bottom: 28px; display: grid; gap: 10px; }
+.concepts-head h3 { font: 500 24px/1.2 var(--f-display); }
+.concepts-head p { color: var(--muted); max-width: 40em; }
+.concepts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.concept { display: grid; gap: 14px; align-content: start; min-width: 0; }
+.concept .frame:hover { box-shadow: 0 1px 2px rgba(10,12,30,.05), 0 30px 50px -22px rgba(10,12,30,.4); }
+.concept .meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.concept .meta b { font-size: 16px; }
+.concept .meta .label { font-size: 11px; }
+.concept p { font-size: 14px; color: var(--muted); }
+
+/* mini mock sites for concepts (client palettes are fixed, like screenshots) */
+.mock { aspect-ratio: 4 / 3.3; padding: 12px 14px; display: grid; grid-template-rows: auto 1fr auto; gap: 10px; font-size: 9px; line-height: 1.35; overflow: hidden; }
+.m-nav { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.m-nav b { font-size: 12px; }
+.m-nav span { opacity: .65; white-space: nowrap; }
+.m-hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: 10px; align-items: center; min-height: 0; }
+.m-hero h4 { margin: 0 0 6px; font-size: 15px; line-height: 1.1; }
+.m-hero p { opacity: .7; margin-bottom: 8px; }
+.m-btn { display: inline-block; padding: 5px 10px; border-radius: 999px; font-weight: 700; font-size: 8.5px; transition: transform .4s var(--ease); }
+.concept:hover .m-btn { transform: scale(1.1); }
+.m-art { height: 100%; min-height: 90px; border-radius: 10px; position: relative; overflow: hidden; }
+.m-list { display: grid; gap: 4px; }
+.m-list div { display: flex; justify-content: space-between; padding-top: 4px; border-top: 1px solid; transition: transform .4s var(--ease); }
+.concept:hover .m-list div:nth-child(1) { transform: translateX(3px); }
+.concept:hover .m-list div:nth-child(2) { transform: translateX(3px); transition-delay: .06s; }
+
+.m-coffee { background: #F1E8DC; color: #2B1E16; }
+.m-coffee .m-nav b, .m-coffee h4 { font-family: "Lora", Georgia, serif; }
+.m-coffee h4 { font-style: italic; font-weight: 500; }
+.m-coffee .m-btn { background: #2B1E16; color: #F1E8DC; }
+.m-coffee .m-art { background: #C9A27E; }
+.m-coffee .m-art::before { content: ""; position: absolute; inset: 22% 22%; border-radius: 50%; background: conic-gradient(from 0deg, #6B4129, #8A5636, #6B4129, #4F2E1C, #6B4129); -webkit-mask: radial-gradient(circle, #000 0 38%, transparent 39%); mask: radial-gradient(circle, #000 0 38%, transparent 39%); animation: swirl 6s linear infinite; z-index: 1; }
+.m-coffee .m-art::after { content: ""; position: absolute; inset: 22% 22%; border-radius: 50%; background: radial-gradient(circle, transparent 0 38%, #F7EEE3 39% 52%, #E9DCCB 53% 100%); box-shadow: 0 8px 18px rgba(43,30,22,.35); }
+@keyframes swirl { to { transform: rotate(360deg); } }
+.m-coffee .m-list div { border-color: rgba(43,30,22,.15); }
+
+.m-barber { background: #17201C; color: #E8E2D4; }
+.m-barber .m-nav b, .m-barber h4 { font-family: "Oswald", "Arial Narrow", sans-serif; text-transform: uppercase; letter-spacing: .06em; }
+.m-barber h4 { font-size: 17px; font-weight: 600; }
+.m-barber .m-btn { background: #C8A35A; color: #17201C; }
+.m-barber .m-art { background: repeating-linear-gradient(135deg, #C8A35A 0 6px, #17201C 6px 12px, #E8E2D4 12px 18px, #17201C 18px 24px); background-size: 34px 34px; opacity: .9; animation: pole 2.4s linear infinite; }
+@keyframes pole { to { background-position: 34px 0; } }
+.m-barber .m-list div { border-color: rgba(232,226,212,.15); }
+
+.m-fit { background: #FFF3EC; color: #2A1A14; }
+.m-fit .m-nav b, .m-fit h4 { font-family: "Manrope", sans-serif; font-weight: 800; letter-spacing: -.02em; }
+.m-fit .m-btn { background: #FF5E3A; color: #FFF3EC; }
+.m-fit .m-art { background: #FFD9C7; }
+.m-fit .m-art::before, .m-fit .m-art::after { content: ""; position: absolute; border-radius: 50%; }
+.m-fit .m-art::before { width: 70%; aspect-ratio: 1; left: -10%; bottom: -20%; background: #FF5E3A; animation: breathe 4s ease-in-out infinite; }
+.m-fit .m-art::after { width: 45%; aspect-ratio: 1; right: 8%; top: 10%; background: #FFB199; animation: breathe 4s ease-in-out infinite -2s; }
+@keyframes breathe { 0%, 100% { transform: scale(1) translate(0, 0); } 50% { transform: scale(1.14) translate(4%, -4%); } }
+.m-fit .m-list div { border-color: rgba(42,26,20,.12); }
+
+/* services */
+.svc + .svc { margin-top: 64px; }
+.svc-title { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
+.svc-title h3 { font: 500 22px/1.2 var(--f-display); }
+.svc-title span { color: var(--muted); font-size: 14px; }
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.plan { position: relative; display: grid; gap: 14px; align-content: start; padding: 26px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); min-width: 0;
+  transition: translate .9s var(--ease) var(--d, 0s), opacity .9s var(--ease) var(--d, 0s), transform .35s var(--ease), border-color .3s, box-shadow .45s var(--ease); }
+.plan:hover { border-color: var(--accent); box-shadow: 0 26px 44px -26px rgba(10,12,30,.4); }
+.plan.featured { border: 1.5px solid transparent;
+  background: linear-gradient(var(--surface), var(--surface)) padding-box,
+              conic-gradient(from var(--ang), var(--accent), color-mix(in srgb, var(--accent) 12%, var(--line)) 25%, var(--accent) 50%, color-mix(in srgb, var(--accent) 12%, var(--line)) 75%, var(--accent)) border-box;
+  animation: spin 5s linear infinite; }
+@keyframes spin { to { --ang: 360deg; } }
+.plan .badge { position: absolute; top: -11px; left: 22px; padding: 4px 10px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font: 500 11px/1.2 var(--f-mono); letter-spacing: .04em; text-transform: uppercase; }
+.plan h4 { margin: 0; font: 600 15px/1 var(--f-mono); letter-spacing: .06em; }
+.price { font: 500 30px/1 var(--f-display); font-variant-numeric: tabular-nums; }
+.price small { font: 600 15px var(--f-body); color: var(--muted); margin-right: 4px; }
+.plan p { color: var(--muted); font-size: 15px; }
+.plan .term { display: flex; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--line); font-size: 14px; }
+.plan .term span { color: var(--muted); }
+.fine { margin-top: 16px; font-size: 14px; color: var(--muted); }
+
+.bot { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding: 32px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.bot > * { min-width: 0; }
+.bot ul { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 10px; }
+.bot li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; }
+.bot li::before { content: ""; width: 7px; height: 7px; margin-top: 9px; border-radius: 50%; background: var(--accent); }
+.bot .price { margin-top: 22px; }
+
+.chat-col { display: grid; gap: 10px; }
+.chat { display: grid; align-content: start; gap: 8px; padding: 18px; border-radius: 14px; background: var(--bg); font-size: 14px; line-height: 1.45; }
+.chat .head { display: flex; align-items: center; gap: 10px; padding-bottom: 12px; margin-bottom: 4px; border-bottom: 1px solid var(--line); }
+.chat .ava { width: 32px; height: 32px; border-radius: 50%; background: #17201C; color: #C8A35A; display: grid; place-items: center; font: 600 13px "Oswald", sans-serif; }
+.chat .head b { display: block; font-size: 14px; }
+.chat .head span { font-size: 12px; color: var(--muted); }
+.msg { max-width: 82%; padding: 9px 13px; border-radius: 14px; }
+.msg.in { justify-self: start; background: var(--surface); border: 1px solid var(--line); border-bottom-left-radius: 4px; transform-origin: 0 100%; }
+.msg.out { justify-self: end; background: var(--accent); color: var(--accent-ink); border-bottom-right-radius: 4px; transform-origin: 100% 100%; }
+.msg .dots { display: none; gap: 4px; padding-block: 6px; }
+.msg .dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); animation: blink 1s infinite; }
+.msg .dots i:nth-child(2) { animation-delay: .15s; }
+.msg .dots i:nth-child(3) { animation-delay: .3s; }
+@keyframes blink { 0%, 80%, 100% { opacity: .25; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-3px); } }
+.msg.typing .txt { display: none; }
+.msg.typing .dots { display: inline-flex; }
+.keys { display: flex; flex-wrap: wrap; gap: 6px; }
+.keys span { padding: 6px 12px; border-radius: 10px; border: 1px solid var(--accent); color: var(--accent); font-size: 13px; font-weight: 600; transition: background .25s, color .25s, transform .25s var(--ease); }
+.keys span.picked { background: var(--accent); color: var(--accent-ink); transform: scale(.96); }
+.seq { transition: opacity .45s var(--ease), translate .45s var(--ease), scale .45s var(--ease); }
+.seq.hide { opacity: 0; translate: 0 10px; scale: .96; }
+.replay { justify-self: end; background: none; border: 0; padding: 4px 2px; color: var(--muted); font: 500 12px var(--f-mono); cursor: pointer; }
+.replay:hover { color: var(--accent); }
+
+.promo { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.promo-box { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.promo th, .promo td { padding: 18px 24px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+.promo tbody tr { transition: background .25s; }
+.promo tbody tr:hover { background: var(--soft); }
+.promo tr:last-child td { border-bottom: 0; }
+.promo th { font: 500 11px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.promo td:first-child { font-weight: 700; white-space: nowrap; }
+.promo td.p { font: 500 18px/1.3 var(--f-display); white-space: nowrap; }
+.promo td.r { white-space: nowrap; }
+.promo td.d { color: var(--muted); font-size: 15px; min-width: 220px; }
+
+/* process */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; counter-reset: s; }
+.step { position: relative; display: grid; gap: 10px; align-content: start; padding-top: 18px; border-top: 2px solid var(--line); min-width: 0; }
+.step::after { content: ""; position: absolute; top: -2px; left: 0; right: 0; height: 2px; background: var(--ink); transform: scaleX(1); transform-origin: 0 50%; transition: transform 1s var(--ease); transition-delay: calc(var(--d, 0s) + .2s); }
+.step.below::after { transform: scaleX(0); }
+.step::before { counter-increment: s; content: "0" counter(s); font: 500 13px/1 var(--f-mono); color: var(--accent); }
+.step b { font-size: 17px; }
+.step p { font-size: 15px; color: var(--muted); }
+
+/* contact */
+.contact { position: relative; overflow: hidden; isolation: isolate; padding: clamp(32px, 6vw, 64px); background: var(--ink); color: var(--bg); border-radius: 24px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: end; }
+.contact::before { content: ""; position: absolute; z-index: -1; width: 460px; height: 460px; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--accent) 60%, transparent), transparent 70%); left: var(--gx, 72%); top: var(--gy, 30%); transform: translate(-50%, -50%); pointer-events: none; transition: left .6s var(--ease), top .6s var(--ease); opacity: .6; animation: glow 8s ease-in-out infinite; }
+@keyframes glow { 0%, 100% { scale: 1; } 50% { scale: 1.2; } }
+.contact > * { min-width: 0; }
+.contact h2 { font: 500 clamp(28px, 4vw, 46px)/1.1 var(--f-display); letter-spacing: -.02em; }
+.contact p { margin-top: 16px; opacity: .75; max-width: 30em; }
+.contact .links { display: grid; gap: 12px; }
+.handle { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 20px; border-radius: 14px; border: 1px solid color-mix(in srgb, var(--bg) 22%, transparent); text-decoration: none; transition: border-color .2s, background .3s, translate .35s var(--ease); }
+.handle:hover { border-color: var(--bg); background: color-mix(in srgb, var(--bg) 7%, transparent); }
+.handle .label { color: inherit; opacity: .6; display: block; margin-bottom: 8px; }
+.handle b { font: 500 20px/1.1 var(--f-display); }
+.handle svg { width: 22px; height: 22px; flex: none; transition: transform .35s var(--ease); }
+.handle:hover svg { transform: translate(4px, -4px) rotate(8deg); }
+.copy { justify-self: start; background: none; border: 0; padding: 4px 0; color: inherit; opacity: .7; font: 500 13px var(--f-mono); cursor: pointer; }
+.copy:hover { opacity: 1; }
+
+/* floating Telegram button */
+.fab { position: fixed; right: 20px; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 15; width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--accent-ink); box-shadow: 0 14px 30px -12px var(--accent); transform: translateY(140%) scale(.6); opacity: 0; transition: transform .55s var(--ease), opacity .3s; }
+.fab.show { transform: none; opacity: 1; }
+.fab svg { width: 24px; height: 24px; }
+.fab::before { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--accent); animation: ring 2.4s var(--ease) infinite; }
+@keyframes ring { from { transform: scale(1); opacity: .7; } to { transform: scale(1.7); opacity: 0; } }
+
+/* footer wordmark */
+footer { padding-block: 56px 40px; display: grid; gap: 28px; }
+.mark { font: 600 clamp(84px, 23vw, 300px)/.85 var(--f-display); letter-spacing: -.04em; text-align: center;
+  background: linear-gradient(100deg, var(--ink) 38%, var(--accent) 50%, var(--ink) 62%); background-size: 300% 100%; background-position: 100% 0;
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+  animation: sweep 7s ease-in-out infinite; user-select: none; }
+@keyframes sweep { 0% { background-position: 100% 0; } 55%, 100% { background-position: 0% 0; } }
+.foot-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 14px; padding-top: 20px; border-top: 1px solid var(--line); }
+
+@media (max-width: 920px) {
+  .hero, .case, .case.flip, .bot, .contact, .sec-head { grid-template-columns: 1fr; }
+  .case.flip .shots { order: 0; }
+  .sec-head p { justify-self: start; }
+  .plans, .concepts { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .hero { padding-block: 48px 56px; gap: 44px; }
+  .concepts { max-width: 480px; }
+}
+@media (max-width: 720px) {
+  .nav { display: none; }
+  .logo span { display: none; }
+}
+@media (max-width: 480px) {
+  body { padding-inline: 16px; }
+  .top { margin-inline: -16px; padding-inline: 16px; }
+  .steps { grid-template-columns: 1fr; }
+  .top .btn { padding: 10px 16px; font-size: 14px; }
+  .facts { gap: 24px; }
+  .bot { padding: 22px; }
+  .fab { right: 16px; width: 52px; height: 52px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .u path { stroke-dashoffset: 0; }
+  .reveal.below, .below .split-w { opacity: 1; translate: none; }
+  .shots.below .pic { clip-path: none; }
+  .shots.below .pic > .site { transform: none; }
+  .step.below::after { transform: none; }
+  .seq.hide { opacity: 1; translate: none; scale: none; }
+  .ticker-track { width: auto; }
+  .grp { flex-wrap: wrap; row-gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+
+<!-- client site mockups (names changed, no faces) -->
+<template id="t-nails-hero">
+  <div class="site s-nails" aria-hidden="true">
+    <div class="s-nav">
+      <div class="s-brand"><div class="mono"><span>V</span></div><div><b>VELOUR</b><small>наращивание · дизайн</small></div></div>
+      <div class="s-links"><span>Работы</span><span>Услуги</span><span>Как проходит</span><span>Отзывы</span><span>Контакты</span></div>
+      <span class="s-btn">Записаться</span>
+    </div>
+    <div class="n-hero">
+      <div>
+        <p class="eyebrow">наращивание · дизайн · студия</p>
+        <p class="n-h">Форма, длина и <i>арт</i>, которые сложно повторить</p>
+        <p class="n-lead">Моделирую любую форму и длину, делаю сложную роспись, хром и объём. Носится месяц, на коррекцию записываю заранее.</p>
+        <div class="n-actions"><span class="s-btn">Записаться онлайн</span><span class="s-btn ghost">Смотреть работы</span></div>
+        <div class="n-stats"><div><b>8 лет</b><span>опыт</span></div><div><b>1–7</b><span>длина</span></div><div><b>от 4 000 ₽</b><span>наращивание</span></div></div>
+      </div>
+      <div class="n-photo"><img src="img/nails-c.jpg" alt=""><span class="n-chip">длина 4 · от 4 300 ₽</span></div>
+    </div>
+  </div>
+</template>
+
+<template id="t-nails-works">
+  <div class="site s-nails" aria-hidden="true">
+    <div class="s-nav">
+      <div class="s-brand"><div class="mono"><span>V</span></div><div><b>VELOUR</b><small>наращивание · дизайн</small></div></div>
+      <div class="s-links"><span>Работы</span><span>Услуги</span><span>Как проходит</span><span>Отзывы</span><span>Контакты</span></div>
+      <span class="s-btn">Записаться</span>
+    </div>
+    <div class="n-works">
+      <p class="eyebrow">портфолио</p>
+      <p class="n-h2">Работы</p>
+      <p class="n-lead">Каждая работа: форма под руку, аккуратные боковые линии и дизайн по референсу. Цена зависит от длины и сложности.</p>
+      <div class="n-grid">
+        <div class="n-card"><img src="img/nails-a.jpg" alt="" loading="lazy"><div><span>Длина 7, стразы</span><b>5 000 ₽</b></div></div>
+        <div class="n-card"><img src="img/nails-b.jpg" alt="" loading="lazy"><div><span>Длина 1, роспись</span><b>4 000 ₽</b></div></div>
+        <div class="n-card"><img src="img/nails-c.jpg" alt="" loading="lazy"><div><span>Длина 4, хром, объём</span><b>4 300 ₽</b></div></div>
+      </div>
+      <div class="n-more"><span class="s-btn ghost">Смотреть все работы</span></div>
+    </div>
+  </div>
+</template>
+
+<template id="t-tutor-hero">
+  <div class="site s-tutor" aria-hidden="true">
+    <div class="s-nav">
+      <div class="s-brand"><div class="logo-k">К</div><div><b>Ксения</b><small>репетитор по математике</small></div></div>
+      <div class="s-links"><span>Обо мне</span><span>Занятия</span><span>Цены</span><span>Контакты</span></div>
+      <span class="s-btn">Записаться</span>
+    </div>
+    <div class="t-hero">
+      <div>
+        <p class="t-h">Математика <em>без стресса</em> и зубрёжки</p>
+        <p class="t-lead">Я Ксения. Помогаю ребёнку закрыть пробелы по математике и спокойно подготовиться к ОГЭ и ЕГЭ. Онлайн, в комфортном темпе.</p>
+        <div class="t-actions"><span class="s-btn">Записаться на бесплатную диагностику</span><span class="s-btn ghost">Услуги и цены</span></div>
+        <div class="t-chips"><span>Онлайн в Zoom</span><span>5–11 класс</span><span>ОГЭ · ЕГЭ</span></div>
+      </div>
+      <div class="t-art">
+        <div class="blob b1"></div><div class="blob b2"></div>
+        <svg class="flower f1" viewBox="0 0 40 40"><g fill="#F3A6C4"><circle cx="20" cy="9" r="8"/><circle cx="30.5" cy="16.6" r="8"/><circle cx="26.5" cy="29" r="8"/><circle cx="13.5" cy="29" r="8"/><circle cx="9.5" cy="16.6" r="8"/></g><circle cx="20" cy="19.5" r="5" fill="#FBF4F1"/></svg>
+        <svg class="flower f2" viewBox="0 0 40 40"><g fill="#8FBF4D"><circle cx="20" cy="9" r="8"/><circle cx="30.5" cy="16.6" r="8"/><circle cx="26.5" cy="29" r="8"/><circle cx="13.5" cy="29" r="8"/><circle cx="9.5" cy="16.6" r="8"/></g><circle cx="20" cy="19.5" r="5" fill="#FBF4F1"/></svg>
+        <svg class="flower f3" viewBox="0 0 40 40"><g fill="#F3A6C4"><circle cx="20" cy="9" r="8"/><circle cx="30.5" cy="16.6" r="8"/><circle cx="26.5" cy="29" r="8"/><circle cx="13.5" cy="29" r="8"/><circle cx="9.5" cy="16.6" r="8"/></g><circle cx="20" cy="19.5" r="5" fill="#FBF4F1"/></svg>
+        <div class="sheet">
+          <p class="hand">x² − 5x + 6 = 0</p>
+          <svg viewBox="0 0 200 104" aria-hidden="true">
+            <line x1="8" y1="70" x2="192" y2="70" stroke="#9AA090" stroke-width="1.5"/>
+            <line x1="30" y1="6" x2="30" y2="100" stroke="#9AA090" stroke-width="1.5"/>
+            <path d="M20 8 Q 100 132 180 8" fill="none" stroke="#D4588A" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="54" cy="70" r="4.5" fill="#D4588A"/><circle cx="146" cy="70" r="4.5" fill="#D4588A"/>
+          </svg>
+          <p class="hand pink">x = 2 и x = 3 ✓</p>
+        </div>
+        <div class="t-badge"><i>✓</i>Первое занятие бесплатно</div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template id="t-tutor-prices">
+  <div class="site s-tutor" aria-hidden="true">
+    <div class="s-nav">
+      <div class="s-brand"><div class="logo-k">К</div><div><b>Ксения</b><small>репетитор по математике</small></div></div>
+      <div class="s-links"><span>Обо мне</span><span>Занятия</span><span>Цены</span><span>Контакты</span></div>
+      <span class="s-btn">Записаться</span>
+    </div>
+    <div class="t-prices">
+      <p class="t-eyebrow">ПРОЗРАЧНО</p>
+      <p class="t-h2">Услуги и цены</p>
+      <p class="t-sub">Занятие длится 60 минут и проходит онлайн в Zoom.</p>
+      <div class="t-rows">
+        <div class="t-row"><div><b>Диагностика знаний</b><small>Знакомство, определение уровня, индивидуальный план подготовки</small></div><span class="t-free">бесплатно</span></div>
+        <div class="t-row"><div><b>Разовое занятие</b><small>Школьная программа, 5–11 класс</small></div><strong>2 000 ₽</strong></div>
+        <div class="t-row"><div><b>Подготовка к ОГЭ</b><small>Курс занятий, 9 класс</small></div><strong>1 800 ₽</strong></div>
+        <div class="t-row"><div><b>Подготовка к ЕГЭ, база</b><small>Курс занятий, 11 класс</small></div><strong>1 800 ₽</strong></div>
+        <div class="t-row"><div><b>Подготовка к ЕГЭ, профиль</b><small>Курс занятий, для поступления на технические направления</small></div><strong>2 200 ₽</strong></div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<div class="progress" id="progress"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<header class="top" id="top-bar">
+  <div class="wrap">
+    <a class="logo" href="#top"><b>LUMA</b><span>цифровые решения</span></a>
+    <nav class="nav">
+      <a href="#works">Работы</a>
+      <a href="#services">Услуги и цены</a>
+      <a href="#process">Как работаю</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <a class="btn btn-primary" href="https://t.me/luma_web" target="_blank" rel="noopener">Написать</a>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <div class="hero" id="hero">
+    <div class="hero-bg" aria-hidden="true"><canvas id="field"></canvas></div>
+    <div>
+      <span class="label fade-up" style="--d:.05s">Сайты · Telegram-боты · Продвижение</span>
+      <h1 aria-label="Сайт, на котором клиенту всё понятно с первого экрана"><span class="w" aria-hidden="true"><span style="--i:0">Сайт,</span></span> <span class="w" aria-hidden="true"><span style="--i:1">на</span></span> <span class="w" aria-hidden="true"><span style="--i:2">котором</span></span> <span class="w" aria-hidden="true"><span style="--i:3">клиенту</span></span> <span class="w wu" aria-hidden="true"><span style="--i:4"><em class="u">всё понятно<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 13 C 55 4, 105 18, 155 10 S 250 3, 297 11"/></svg></em></span></span> <span class="w" aria-hidden="true"><span style="--i:5">с</span></span> <span class="w" aria-hidden="true"><span style="--i:6">первого</span></span> <span class="w" aria-hidden="true"><span style="--i:7">экрана</span></span></h1>
+      <p class="lead fade-up" style="--d:.6s">Привет, я Богдан. <strong>3,5 года</strong> делаю сайты, Telegram-ботов и рекламу для малого бизнеса. Чаще всего ко мне приходят мастера, репетиторы и небольшие студии, которые устали по сто раз в день отвечать в личке «сколько стоит» и «есть ли окошко».</p>
+      <div class="actions fade-up" style="--d:.75s">
+        <a class="btn btn-primary" href="https://t.me/luma_web" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.4 4.2 2.9 11.3c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.5c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.8-1.4-1.4ZM8.6 14l9.2-5.8c.4-.3.8-.1.5.2l-7.6 6.9-.3 3.3L8.6 14Z"/></svg>
+          Написать в Telegram
+        </a>
+        <a class="btn btn-ghost" href="#works">Посмотреть работы <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="facts fade-up" style="--d:.9s">
+        <div><b><span class="num hero-num" data-to="3.5" data-dec="1">3,5</span> года</b><span>занимаюсь этим</span></div>
+        <div><b>2–3 дня</b><span>на сайт-визитку</span></div>
+        <div><b>от <span class="num hero-num" data-to="7000">7 000</span> ₽</b><span>сайт или бот</span></div>
+      </div>
+    </div>
+    <div class="stack" id="stack" aria-label="Примеры сайтов">
+      <div class="layer" data-depth="1">
+        <div class="float">
+          <div class="frame">
+            <div class="bar"><i></i><i></i><i></i><span>Студия наращивания ногтей</span></div>
+            <div class="pic screen" data-screen="t-nails-hero" role="img" aria-label="Сайт студии наращивания ногтей: главный экран"></div>
+          </div>
+        </div>
+      </div>
+      <div class="layer" data-depth="-1.6">
+        <div class="float">
+          <div class="frame">
+            <div class="bar"><i></i><i></i><i></i><span>Репетитор по математике</span></div>
+            <div class="pic screen" data-screen="t-tutor-hero" role="img" aria-label="Сайт репетитора по математике: главный экран"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker" aria-label="Для кого и что делаю">
+    <div class="ticker-row row-a" data-dir="-1"><div class="ticker-track"><div class="grp"><span>Мастера маникюра</span><span>Репетиторы</span><span>Кофейни</span><span>Барбершопы</span><span>Фитнес-студии</span><span>Онлайн-школы</span><span>Салоны красоты</span><span>Магазины</span><span>Самозанятые</span></div></div></div>
+    <div class="ticker-row row-b" data-dir="1"><div class="ticker-track"><div class="grp"><span>Сайты-визитки</span><span>Лендинги</span><span>Онлайн-запись</span><span>Telegram-боты</span><span>Напоминания</span><span>Реклама</span></div></div></div>
+  </div>
+
+  <section id="works">
+    <div class="sec-head reveal">
+      <div>
+        <span class="label">Работы</span>
+        <h2>Последние проекты</h2>
+      </div>
+      <p>Два сайта, которые я сделал недавно. Мастеру маникюра был нужен дорогой тёмный стиль, репетитору что-то светлое и спокойное для родителей. Имена клиентов я поменял, а фотографии людей убрал.</p>
+    </div>
+
+    <article class="case">
+      <div class="shots reveal">
+        <div class="frame tilt" data-tilt="4">
+          <div class="bar"><i></i><i></i><i></i><span>Главный экран</span></div>
+          <div class="pic screen" data-screen="t-nails-hero" role="img" aria-label="Сайт студии ногтей: главный экран"></div>
+        </div>
+        <div class="frame tilt" data-tilt="4">
+          <div class="bar"><i></i><i></i><i></i><span>Работы с ценами</span></div>
+          <div class="pic screen" data-screen="t-nails-works" role="img" aria-label="Сайт студии ногтей: работы с длиной и ценой"></div>
+        </div>
+      </div>
+      <div class="case-info reveal" style="--d:.12s">
+        <span class="label">Бьюти · наращивание ногтей</span>
+        <h3>Студия VELOUR</h3>
+        <p class="who">Мастер по наращиванию и дизайну ногтей</p>
+        <p>Мастер делает сложный дизайн на длинных ногтях, и сайт должен был выглядеть так же дорого, как её работы. Под каждой работой подписал длину и цену, чтобы клиентки не спрашивали это в личке. Ещё добавили прайс, отзывы и подробно описали, как найти вход: студия во дворе, без подсказки не найдёшь.</p>
+        <div class="tags"><span>Работы с ценами</span><span>Прайс</span><span>Отзывы</span><span>Как добраться</span><span>Онлайн-запись</span></div>
+        <div class="case-note"><b>Что было важно</b><span>Чтобы клиентка ещё до переписки понимала, сколько будет стоить её дизайн.</span></div>
+      </div>
+    </article>
+
+    <article class="case flip">
+      <div class="shots reveal" style="--d:.12s">
+        <div class="frame tilt" data-tilt="4">
+          <div class="bar"><i></i><i></i><i></i><span>Главный экран</span></div>
+          <div class="pic screen" data-screen="t-tutor-hero" role="img" aria-label="Сайт репетитора: главный экран"></div>
+        </div>
+        <div class="frame tilt" data-tilt="4">
+          <div class="bar"><i></i><i></i><i></i><span>Услуги и цены</span></div>
+          <div class="pic screen" data-screen="t-tutor-prices" role="img" aria-label="Сайт репетитора: услуги и цены"></div>
+        </div>
+      </div>
+      <div class="case-info reveal">
+        <span class="label">Образование · онлайн</span>
+        <h3>Репетитор по математике</h3>
+        <p class="who">5–11 класс, подготовка к ОГЭ и ЕГЭ</p>
+        <p>Такой сайт читают не дети, а родители. Поэтому сделал его светлым и спокойным, без перегруза. Первая кнопка ведёт на бесплатную диагностику: родителю проще начать с неё, чем сразу платить. Ниже по порядку: как проходят занятия, что остаётся у ребёнка после урока и сколько стоит каждый формат.</p>
+        <div class="tags"><span>Бесплатная диагностика</span><span>Как проходят занятия</span><span>Цены</span><span>Запись в Telegram</span></div>
+        <div class="case-note"><b>Что было важно</b><span>Чтобы родитель поверил, что ребёнку здесь будет хорошо, и записался на первое занятие.</span></div>
+      </div>
+    </article>
+
+    <div class="concepts-head reveal">
+      <span class="label">Концепты</span>
+      <h3>А если у вас другая сфера</h3>
+      <p>Этих заведений нет, я придумал их сам, чтобы показать, как может выглядеть сайт кофейни, барбершопа или студии. Ваш будет под ваш стиль.</p>
+    </div>
+    <div class="concepts">
+      <div class="concept reveal">
+        <div class="frame tilt">
+          <div class="mock m-coffee" aria-hidden="true">
+            <div class="m-nav"><b>Зерно</b><span>Меню · Адрес</span></div>
+            <div class="m-hero">
+              <div><h4>Кофе, ради которого сворачиваешь по пути</h4><p>Свежая обжарка каждую неделю, завтраки до 12:00.</p><span class="m-btn">Заказать навынос</span></div>
+              <div class="m-art"></div>
+            </div>
+            <div class="m-list"><div><span>Капучино 300 мл</span><span>220 ₽</span></div><div><span>Флэт уайт</span><span>240 ₽</span></div></div>
+          </div>
+        </div>
+        <div class="meta"><b>Кофейня «Зерно»</b><span class="label">концепт</span></div>
+        <p>Меню с ценами, адрес, часы работы и заказ навынос через Telegram.</p>
+      </div>
+      <div class="concept reveal" style="--d:.1s">
+        <div class="frame tilt">
+          <div class="mock m-barber" aria-hidden="true">
+            <div class="m-nav"><b>Сталь</b><span>Мастера · Цены</span></div>
+            <div class="m-hero">
+              <div><h4>Мужские стрижки без ожидания</h4><p>Выберите мастера и время, остальное мы запомним.</p><span class="m-btn">Записаться</span></div>
+              <div class="m-art"></div>
+            </div>
+            <div class="m-list"><div><span>Стрижка</span><span>1 500 ₽</span></div><div><span>Стрижка + борода</span><span>2 200 ₽</span></div></div>
+          </div>
+        </div>
+        <div class="meta"><b>Барбершоп «Сталь»</b><span class="label">концепт</span></div>
+        <p>Выбор мастера, онлайн-запись и бот, который напоминает о визите.</p>
+      </div>
+      <div class="concept reveal" style="--d:.2s">
+        <div class="frame tilt">
+          <div class="mock m-fit" aria-hidden="true">
+            <div class="m-nav"><b>Пульс</b><span>Расписание · Абонементы</span></div>
+            <div class="m-hero">
+              <div><h4>Растяжка и пилатес рядом с домом</h4><p>Группы до 8 человек. Первое занятие бесплатно.</p><span class="m-btn">Пробное занятие</span></div>
+              <div class="m-art"></div>
+            </div>
+            <div class="m-list"><div><span>Разовое занятие</span><span>700 ₽</span></div><div><span>Абонемент · 8 занятий</span><span>4 800 ₽</span></div></div>
+          </div>
+        </div>
+        <div class="meta"><b>Фитнес-студия «Пульс»</b><span class="label">концепт</span></div>
+        <p>Расписание групп, абонементы и запись на бесплатное пробное.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="sec-head reveal">
+      <div>
+        <span class="label">Услуги и цены</span>
+        <h2>Создаём, автоматизируем, продвигаем</h2>
+      </div>
+      <p>Цены пишу сразу, чтобы не приходилось угадывать. Не знаете, что выбрать? Напишите, что у вас за бизнес, и я подскажу.</p>
+    </div>
+
+    <div class="svc">
+      <div class="svc-title reveal"><h3>Сайты</h3><span>Визитки, лендинги, многостраничные, с онлайн-записью</span></div>
+      <div class="plans">
+        <div class="plan tilt reveal">
+          <h4>MINI</h4>
+          <div class="price"><span class="num" data-to="7900">7 900</span> ₽</div>
+          <p>Сайт-визитка до 4 блоков: услуги, цены и контакты. Хорошо смотрится с телефона.</p>
+          <div class="term"><span>Срок</span><b>2–3 дня</b></div>
+        </div>
+        <div class="plan featured tilt reveal" style="--d:.1s">
+          <span class="badge">Берут чаще всего</span>
+          <h4>BUSINESS</h4>
+          <div class="price"><span class="num" data-to="13900">13 900</span> ₽</div>
+          <p>Полноценный одностраничный сайт со своим дизайном. Услуги, цены, работы, отзывы, форма записи, карта и мобильная версия. Подключаю и запускаю сам.</p>
+          <div class="term"><span>Срок</span><b>4–5 дней</b></div>
+        </div>
+        <div class="plan tilt reveal" style="--d:.2s">
+          <h4>PRO</h4>
+          <div class="price"><small>от</small><span class="num" data-to="17900">17 900</span> ₽</div>
+          <p>Когда одной страницы мало: несколько страниц, дополнительные формы, интеграции, анимации и всё нестандартное.</p>
+          <div class="term"><span>Срок</span><b>от 6–7 дней</b></div>
+        </div>
+      </div>
+      <p class="fine">Домен и хостинг оплачиваются отдельно. Подскажу, что выбрать, и всё подключу.</p>
+    </div>
+
+    <div class="svc">
+      <div class="svc-title reveal"><h3>Telegram-боты</h3><span>Для салонов, магазинов, онлайн-школ и не только</span></div>
+      <div class="bot reveal">
+        <div>
+          <p>Если вы каждый день отвечаете на «а есть время в субботу?», это может делать бот. Он сам показывает свободные окошки, записывает клиента и напоминает ему о визите, чтобы тот не забыл прийти.</p>
+          <ul>
+            <li>Онлайн-запись и свободные окошки</li>
+            <li>Подтверждение записи и напоминания</li>
+            <li>Приём заказов, заявок и оплат</li>
+            <li>Ответы на частые вопросы в любое время</li>
+            <li>Рассылки, акции, программы лояльности</li>
+            <li>Найм, продажи и внутренние процессы</li>
+          </ul>
+          <div class="price"><small>от</small><span class="num" data-to="7000">7 000</span> ₽</div>
+        </div>
+        <div class="chat-col">
+          <div class="chat" id="chat" aria-label="Пример диалога с ботом для записи">
+            <div class="head"><div class="ava">С</div><div><b>Сталь · запись</b><span id="chat-status">бот</span></div></div>
+            <div class="msg in seq"><span class="txt">Здравствуйте! Помогу записаться в барбершоп. Выберите услугу:</span><span class="dots"><i></i><i></i><i></i></span></div>
+            <div class="keys seq"><span class="picked" data-pick>Стрижка · 1 500 ₽</span><span>Борода · 900 ₽</span></div>
+            <div class="msg out seq">Стрижка</div>
+            <div class="msg in seq"><span class="txt">Свободное время на завтра:</span><span class="dots"><i></i><i></i><i></i></span></div>
+            <div class="keys seq"><span>11:00</span><span class="picked" data-pick>14:30</span><span>18:00</span></div>
+            <div class="msg out seq">14:30</div>
+            <div class="msg in seq"><span class="txt">Готово, вы записаны на завтра в 14:30. Напомню за 2 часа до визита.</span><span class="dots"><i></i><i></i><i></i></span></div>
+          </div>
+          <button class="replay" id="chat-replay" type="button">↻ Показать ещё раз</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc">
+      <div class="svc-title reveal"><h3>Реклама и продвижение</h3><span>Привожу людей в ваш Telegram-канал, к товарам и услугам</span></div>
+      <div class="promo-box reveal">
+        <table class="promo">
+          <thead><tr><th>Тариф</th><th>Цена</th><th>Охват</th><th>Что входит</th></tr></thead>
+          <tbody>
+            <tr><td>Разовый</td><td class="p"><span class="num" data-to="6000">6 000</span> ₽</td><td class="r">500–1 500 просмотров</td><td class="d">Одна рекламная кампания</td></tr>
+            <tr><td>3 дня</td><td class="p"><span class="num" data-to="9000">9 000</span> ₽</td><td class="r">2 000–5 000 просмотров</td><td class="d">Продвижение три дня подряд</td></tr>
+            <tr><td>Месяц</td><td class="p"><span class="num" data-to="22000">22 000</span> ₽</td><td class="r">15 000–30 000 просмотров</td><td class="d">Продвижение весь месяц: подбираю площадки, привожу новых клиентов, смотрю, что сработало</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fine">Охваты примерные: многое зависит от ниши, аудитории и площадок. Рекламный бюджет и условия размещения обсуждаем отдельно.</p>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="sec-head reveal">
+      <div>
+        <span class="label">Как работаю</span>
+        <h2>Как всё проходит</h2>
+      </div>
+      <p>Разбираться в технической части вам не нужно. От вас нужно рассказать о себе и посмотреть, что получилось.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><b>Вы пишете мне</b><p>Рассказываете, чем занимаетесь. Я задаю пару вопросов и говорю, какой тариф подойдёт и сколько это будет стоить.</p></div>
+      <div class="step reveal" style="--d:.12s"><b>Собираем материалы</b><p>Фото, цены, отзывы. Если чего-то нет, ничего страшного, разберёмся вместе.</p></div>
+      <div class="step reveal" style="--d:.24s"><b>Делаю и показываю</b><p>Присылаю готовый вариант. Что не понравится, переделаю.</p></div>
+      <div class="step reveal" style="--d:.36s"><b>Запускаем</b><p>Подключаю домен, проверяю с телефона и компьютера. Можно принимать заявки.</p></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact reveal" id="contact-card">
+      <div>
+        <h2>Напишите, обсудим ваш проект</h2>
+        <p>Можно просто скинуть ссылку на свой Instagram или канал и написать, что хотите. Отвечу, сколько это будет стоить и за сколько сделаю. Новые работы и отзывы клиентов выкладываю в канале.</p>
+      </div>
+      <div class="links">
+        <a class="handle magnet" href="https://t.me/luma_web" target="_blank" rel="noopener">
+          <div><span class="label">Telegram для заказов</span><b>@luma_web</b></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+        <a class="handle magnet" href="https://t.me/+vtPX0m8UzBVlNmRi" target="_blank" rel="noopener">
+          <div><span class="label">Канал с работами и отзывами</span><b>LUMA · цифровые решения</b></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+        <button class="copy" id="copy-handle" type="button">Скопировать @luma_web</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="mark reveal" aria-hidden="true">LUMA</div>
+  <div class="foot-row"><span>© 2026 LUMA · Богдан</span><span>Создаём, автоматизируем, продвигаем</span></div>
+</footer>
+
+<a class="fab" id="fab" href="https://t.me/luma_web" target="_blank" rel="noopener" aria-label="Написать в Telegram">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.4 4.2 2.9 11.3c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.5c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.8-1.4-1.4ZM8.6 14l9.2-5.8c.4-.3.8-.1.5.2l-7.6 6.9-.3 3.3L8.6 14Z"/></svg>
+</a>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+  /* render client site mockups into their frames */
+  $$('[data-screen]').forEach(function (el) {
+    var t = document.getElementById(el.dataset.screen);
+    if (t) el.appendChild(t.content.cloneNode(true));
+  });
+
+  /* copy handle */
+  var copyBtn = $('#copy-handle');
+  copyBtn.addEventListener('click', function () {
+    var done = function () { copyBtn.textContent = 'Скопировано'; setTimeout(function () { copyBtn.textContent = 'Скопировать @luma_web'; }, 1800); };
+    try { navigator.clipboard.writeText('@luma_web').then(done, function () { copyBtn.textContent = '@luma_web'; }); }
+    catch (e) { copyBtn.textContent = '@luma_web'; }
+  });
+
+  /* header, progress, floating button, hero scroll parallax, ticker boost */
+  var bar = $('#top-bar'), prog = $('#progress'), fab = $('#fab'), contact = $('#contact'), layers = $$('#stack .layer');
+  var lastY = window.scrollY, scrollBoost = 0;
+  function onScroll() {
+    var y = window.scrollY, max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.classList.toggle('scrolled', y > 8);
+    prog.style.setProperty('--p', max > 0 ? Math.min(1, y / max) : 0);
+    var nearContact = contact.getBoundingClientRect().top < window.innerHeight * 0.8;
+    fab.classList.toggle('show', y > window.innerHeight * 0.7 && !nearContact);
+    scrollBoost = Math.min(600, scrollBoost + Math.abs(y - lastY) * 2.2);
+    lastY = y;
+    if (!reduce && y < window.innerHeight * 1.2) {
+      layers.forEach(function (l) { l.style.setProperty('--sy', (y * parseFloat(l.dataset.depth) * -0.07).toFixed(1) + 'px'); });
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* count-up */
+  function fmt(v, dec) {
+    if (dec) return v.toLocaleString('ru-RU', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+    return (v >= 1000 ? Math.round(v / 100) * 100 : Math.round(v)).toLocaleString('ru-RU');
+  }
+  function countUp(el, dur) {
+    var to = parseFloat(el.dataset.to), dec = +(el.dataset.dec || 0), t0 = null;
+    function step(ts) {
+      if (t0 === null) t0 = ts;
+      var p = Math.min(1, (ts - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = p < 1 ? fmt(to * e, dec) : fmt(to, dec);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* text scramble for labels */
+  var GLYPHS = 'АБВГДЕЖЗИКЛМНОПРСТУФХЭЮЯ0123456789#%+';
+  function scramble(el) {
+    var final = el.textContent, n = final.length, start = performance.now(), dur = 750;
+    function f(now) {
+      var p = (now - start) / dur, out = '';
+      for (var i = 0; i < n; i++) {
+        var ch = final[i];
+        out += (ch === ' ' || ch === '·' || i / n < p) ? ch : GLYPHS[(Math.random() * GLYPHS.length) | 0];
+      }
+      el.textContent = p >= 1 ? final : out;
+      if (p < 1) requestAnimationFrame(f);
+    }
+    requestAnimationFrame(f);
+  }
+
+  if (reduce) { $('#chat-replay').hidden = true; return; }
+
+  /* hero numbers */
+  setTimeout(function () { $$('.hero-num').forEach(function (el) { countUp(el, 1400); }); }, 950);
+
+  /* split section headings into words */
+  $$('.sec-head h2').forEach(function (h) {
+    var words = h.textContent.trim().split(/\s+/);
+    h.setAttribute('aria-label', h.textContent.trim());
+    h.innerHTML = words.map(function (w, i) { return '<span class="split-w" aria-hidden="true" style="--i:' + i + '">' + w + '</span>'; }).join(' ');
+  });
+
+  /* scroll reveal: only elements below the first screen start dimmed */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        el.classList.remove('below'); io.unobserve(el);
+        var lab = el.matches('.sec-head, .concepts-head') ? $('.label', el) : null;
+        if (lab) scramble(lab);
+        $$('.num', el).forEach(function (n) { countUp(n, 1200); });
+      });
+    }, { rootMargin: '0px 0px -10% 0px' });
+    $$('.reveal').forEach(function (el) {
+      if (el.getBoundingClientRect().top > window.innerHeight * 0.9) { el.classList.add('below'); io.observe(el); }
+    });
+  }
+
+  /* bot chat: types messages one by one */
+  var chat = $('#chat'), seqs = $$('.seq', chat), picks = $$('[data-pick]', chat), status = $('#chat-status'), runId = 0;
+  function playChat() {
+    var id = ++runId, t = 350;
+    chat.style.minHeight = chat.offsetHeight + 'px';
+    seqs.forEach(function (s) { s.classList.add('hide'); s.classList.remove('typing'); });
+    picks.forEach(function (p) { p.classList.remove('picked'); });
+    function at(ms, fn) { setTimeout(function () { if (id === runId) fn(); }, ms); }
+    seqs.forEach(function (s) {
+      if (s.classList.contains('in')) {
+        at(t, function () { s.classList.add('typing'); s.classList.remove('hide'); status.textContent = 'печатает…'; }); t += 950;
+        at(t, function () { s.classList.remove('typing'); status.textContent = 'бот'; }); t += 550;
+      } else if (s.classList.contains('keys')) {
+        at(t, function () { s.classList.remove('hide'); }); t += 800;
+      } else {
+        var pk = s.previousElementSibling && $('[data-pick]', s.previousElementSibling);
+        if (pk) { at(t, function () { pk.classList.add('picked'); }); t += 450; }
+        at(t, function () { s.classList.remove('hide'); }); t += 650;
+      }
+    });
+  }
+  $('#chat-replay').addEventListener('click', playChat);
+  if ('IntersectionObserver' in window && chat.getBoundingClientRect().top > window.innerHeight) {
+    chat.style.minHeight = chat.offsetHeight + 'px';
+    seqs.forEach(function (s) { s.classList.add('hide'); });
+    picks.forEach(function (p) { p.classList.remove('picked'); });
+    var cio = new IntersectionObserver(function (en) {
+      if (en[0].isIntersecting) { cio.disconnect(); playChat(); }
+    }, { threshold: 0.45 });
+    cio.observe(chat);
+  }
+
+  /* twin tickers, faster while scrolling, pause on hover */
+  $$('.ticker-row').forEach(function (row) {
+    var track = $('.ticker-track', row), grp = $('.grp', track);
+    var html = grp.innerHTML, guard = 0;
+    while (grp.scrollWidth < window.innerWidth * 1.1 && guard++ < 8) grp.innerHTML += html;
+    var clone = grp.cloneNode(true); clone.setAttribute('aria-hidden', 'true'); track.appendChild(clone);
+    row._dir = parseFloat(row.dataset.dir); row._track = track; row._x = row._dir > 0 ? -grp.scrollWidth : 0;
+    row._half = grp.scrollWidth; row._speed = 40; row._hover = false;
+    row.addEventListener('pointerenter', function () { row._hover = true; });
+    row.addEventListener('pointerleave', function () { row._hover = false; });
+  });
+  var rows = $$('.ticker-row'), lastT = performance.now();
+  window.addEventListener('resize', function () { rows.forEach(function (r) { r._half = $('.grp', r._track).scrollWidth; }); });
+  function tick(now) {
+    var dt = Math.min(0.05, (now - lastT) / 1000); lastT = now;
+    scrollBoost *= 0.93;
+    rows.forEach(function (r) {
+      var target = r._hover ? 0 : 40 + scrollBoost;
+      r._speed += (target - r._speed) * 0.08;
+      r._x += r._dir * r._speed * dt;
+      if (r._dir < 0 && r._x <= -r._half) r._x += r._half;
+      if (r._dir > 0 && r._x >= 0) r._x -= r._half;
+      r._track.style.transform = 'translate3d(' + r._x.toFixed(2) + 'px,0,0)';
+    });
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  /* hero dot field that reacts to light (cursor, or a wandering light on touch) */
+  var cv = $('#field'), ctx = cv.getContext('2d'), hero = $('#hero');
+  var W = 0, H = 0, GAP = 26, pts = [], col = {}, L = { x: 0, y: 0 }, T = { x: 0, y: 0 }, mouseOn = false, live = true, t0 = performance.now();
+  function readColors() {
+    var s = getComputedStyle(document.documentElement);
+    col.dot = s.getPropertyValue('--muted').trim() || '#646A78';
+    col.acc = s.getPropertyValue('--accent').trim() || '#3A49F0';
+  }
+  function rgba(hex, a) {
+    var h = hex.replace('#', ''); if (h.length === 3) h = h.replace(/./g, '$&$&');
+    var n = parseInt(h, 16); return 'rgba(' + (n >> 16 & 255) + ',' + (n >> 8 & 255) + ',' + (n & 255) + ',' + a + ')';
+  }
+  function size() {
+    var r = cv.getBoundingClientRect(), dpr = Math.min(2, window.devicePixelRatio || 1);
+    W = r.width; H = r.height; cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    pts = [];
+    for (var y = GAP / 2; y < H; y += GAP) for (var x = GAP / 2; x < W; x += GAP) pts.push(x, y);
+    if (!L.x) { L.x = T.x = W * .68; L.y = T.y = H * .45; }
+  }
+  readColors(); size();
+  if (window.ResizeObserver) new ResizeObserver(size).observe(cv); else window.addEventListener('resize', size);
+  if (window.matchMedia) { var mq = window.matchMedia('(prefers-color-scheme: dark)'); if (mq.addEventListener) mq.addEventListener('change', readColors); }
+  new MutationObserver(readColors).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'class', 'style'] });
+  window.addEventListener('pointermove', function (e) {
+    if (e.pointerType !== 'mouse') return;
+    var r = cv.getBoundingClientRect();
+    mouseOn = e.clientY >= r.top && e.clientY <= r.bottom;
+    if (mouseOn) { T.x = e.clientX - r.left; T.y = e.clientY - r.top; }
+  }, { passive: true });
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { live = en[0].isIntersecting; if (live) requestAnimationFrame(draw); }).observe(hero);
+  function draw(now) {
+    if (!live) return;
+    if (!mouseOn) {
+      var t = (now - t0) / 1000;
+      T.x = W * (0.6 + 0.26 * Math.sin(t * 0.33)); T.y = H * (0.48 + 0.3 * Math.sin(t * 0.51 + 1));
+    }
+    L.x += (T.x - L.x) * 0.08; L.y += (T.y - L.y) * 0.08;
+    ctx.clearRect(0, 0, W, H);
+    var g = ctx.createRadialGradient(L.x, L.y, 0, L.x, L.y, 340);
+    g.addColorStop(0, rgba(col.acc, .16)); g.addColorStop(1, rgba(col.acc, 0));
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    var R = 200, R2 = R * R, i, x, y, dx, dy, d2;
+    ctx.fillStyle = col.dot; ctx.globalAlpha = .22;
+    for (i = 0; i < pts.length; i += 2) {
+      x = pts[i]; y = pts[i + 1]; dx = x - L.x; dy = y - L.y; d2 = dx * dx + dy * dy;
+      if (d2 > R2) ctx.fillRect(x - .8, y - .8, 1.6, 1.6);
+    }
+    ctx.fillStyle = col.acc;
+    for (i = 0; i < pts.length; i += 2) {
+      x = pts[i]; y = pts[i + 1]; dx = x - L.x; dy = y - L.y; d2 = dx * dx + dy * dy;
+      if (d2 <= R2) {
+        var d = Math.sqrt(d2) || 1, f = 1 - d / R; f *= f;
+        var push = f * 16;
+        ctx.globalAlpha = .25 + .75 * f;
+        ctx.beginPath(); ctx.arc(x + dx / d * push, y + dy / d * push, .9 + 2.6 * f, 0, 6.2832); ctx.fill();
+      }
+    }
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+
+  if (!fine) return;
+
+  /* hero mouse parallax */
+  hero.addEventListener('pointermove', function (e) {
+    var r = hero.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+    layers.forEach(function (l) {
+      var d = parseFloat(l.dataset.depth);
+      l.style.setProperty('--px', (x * 16 * d).toFixed(1) + 'px');
+      l.style.setProperty('--py', (y * 16 * d).toFixed(1) + 'px');
+    });
+  });
+  hero.addEventListener('pointerleave', function () { layers.forEach(function (l) { l.style.setProperty('--px', '0px'); l.style.setProperty('--py', '0px'); }); });
+
+  /* 3D tilt */
+  $$('.tilt').forEach(function (el) {
+    var amp = parseFloat(el.dataset.tilt || 8);
+    el.addEventListener('pointermove', function (e) {
+      var r = el.getBoundingClientRect(), px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+      el.style.setProperty('--rx', ((.5 - py) * amp).toFixed(2) + 'deg');
+      el.style.setProperty('--ry', ((px - .5) * amp * 1.2).toFixed(2) + 'deg');
+      el.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+      el.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+    });
+    el.addEventListener('pointerleave', function () { el.style.setProperty('--rx', '0deg'); el.style.setProperty('--ry', '0deg'); });
+  });
+
+  /* magnetic buttons */
+  $$('.btn, .magnet').forEach(function (b) {
+    var k = b.classList.contains('magnet') ? .08 : .25;
+    b.addEventListener('pointermove', function (e) {
+      var r = b.getBoundingClientRect();
+      b.style.translate = ((e.clientX - r.left - r.width / 2) * k).toFixed(1) + 'px ' + ((e.clientY - r.top - r.height / 2) * k * 1.5).toFixed(1) + 'px';
+    });
+    b.addEventListener('pointerleave', function () { b.style.translate = ''; });
+  });
+
+  /* contact glow follows cursor */
+  var card = $('#contact-card');
+  card.addEventListener('pointermove', function (e) {
+    var r = card.getBoundingClientRect();
+    card.style.setProperty('--gx', (e.clientX - r.left) + 'px');
+    card.style.setProperty('--gy', (e.clientY - r.top) + 'px');
+  });
+
+  /* cursor ring */
+  var cur = $('#cursor'), cx = -100, cy = -100, tx = -100, ty = -100;
+  window.addEventListener('pointermove', function (e) {
+    if (e.pointerType !== 'mouse') return;
+    tx = e.clientX; ty = e.clientY; cur.classList.add('on');
+    cur.classList.toggle('hover', !!(e.target.closest && e.target.closest('a, button, .tilt, .grp span, .tags span')));
+  }, { passive: true });
+  document.addEventListener('pointerleave', function () { cur.classList.remove('on'); });
+  window.addEventListener('pointerdown', function () { cur.classList.add('down'); });
+  window.addEventListener('pointerup', function () { cur.classList.remove('down'); });
+  (function follow() {
+    cx += (tx - cx) * 0.2; cy += (ty - cy) * 0.2;
+    cur.style.transform = 'translate3d(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px,0)';
+    requestAnimationFrame(follow);
+  })();
+})();
+</script>
+
+</body>
+</html>
