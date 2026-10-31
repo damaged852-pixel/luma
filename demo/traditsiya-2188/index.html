@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Традиция — Барбершопы, Кемерово</title>
+<meta name="description" content="В Кемерово: стрижка, оформление бороды и классическое бритьё. Рейтинг 4.9 по 25 отзывам — аккуратно, чётко, по делу.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Традиция — ваш новый сайт">
+<meta property="og:description" content="★ 4.9 · 25 отзывов · В Кемерово: стрижка, оформление бороды и классическое бритьё. Рейтинг 4.9 по 25 отзывам — аккуратно, чётко, по делу.">
+<meta property="og:url" content="https://luma-web.site/demo/traditsiya-2188/">
+<meta property="og:image" content="https://luma-web.site/demo/traditsiya-2188/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --accent: #d4a24c; --soft: #f5efe4; --dark: #141414; --text: #1c1c1e; --muted: #6b6b70; --line: #ececf0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: Manrope, system-ui, sans-serif; color: var(--text); background: #fff; line-height: 1.55; }
+  a { color: inherit; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+  .demo-bar { background: var(--dark); color: #fff; font-size: 14px; text-align: center; padding: 10px 16px; }
+  .demo-bar a { color: #fff; font-weight: 700; }
+
+  header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+  .logo { font-weight: 800; font-size: 18px; text-decoration: none; display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .logo span:last-child { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  nav { display: flex; gap: 28px; font-weight: 600; font-size: 15px; }
+  nav a { text-decoration: none; color: var(--muted); }
+  nav a:hover { color: var(--text); }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; padding: 15px 28px; border-radius: 14px;
+         background: var(--accent); color: #fff; font-weight: 700; text-decoration: none; transition: transform .15s, box-shadow .15s; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -10px var(--accent); }
+  .btn.ghost { background: #fff; color: var(--text); border: 1.5px solid var(--line); }
+  .btn.small { padding: 10px 18px; font-size: 14px; border-radius: 11px; }
+
+  .hero { background: radial-gradient(1200px 500px at 85% -10%, var(--soft), transparent 70%), linear-gradient(180deg, var(--soft), #fff); padding: 80px 0 90px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.3fr .7fr; gap: 48px; align-items: center; }
+  .eyebrow { display: inline-block; font-weight: 700; font-size: 14px; color: var(--accent); background: #fff; padding: 7px 14px; border-radius: 99px; margin-bottom: 22px; }
+  h1 { font-size: clamp(34px, 5vw, 58px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 800; }
+  .hero p.lead { font-size: 19px; color: var(--muted); margin: 22px 0 28px; max-width: 560px; }
+  .rating { font-size: 15px; color: var(--muted); margin-bottom: 30px; }
+  .rating b { color: var(--text); }
+  .stars { color: #f5a623; letter-spacing: 1px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+  .hero-art { aspect-ratio: 1; border-radius: 36px; background: linear-gradient(145deg, var(--accent), var(--dark));
+              display: grid; place-items: center; font-size: clamp(90px, 14vw, 150px); box-shadow: 0 40px 80px -40px var(--dark); }
+
+  section { padding: 90px 0; }
+  .section-title { font-size: clamp(28px, 3.6vw, 40px); letter-spacing: -0.02em; font-weight: 800; margin-bottom: 14px; }
+  .section-sub { color: var(--muted); font-size: 17px; margin-bottom: 44px; max-width: 620px; }
+  .grid { display: grid; gap: 18px; }
+  .grid.three { grid-template-columns: repeat(3, 1fr); }
+  .grid.four { grid-template-columns: repeat(4, 1fr); }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 28px; transition: border-color .2s, transform .2s; }
+  .card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .card h3 { font-size: 19px; margin-bottom: 8px; letter-spacing: -0.01em; }
+  .card p { color: var(--muted); font-size: 15px; }
+  .soft { background: var(--soft); }
+  .soft .card { border-color: transparent; }
+
+  .about { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: center; }
+  .about p { font-size: 20px; line-height: 1.6; }
+
+  .steps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .steps li { background: #fff; border-radius: 20px; padding: 28px; font-weight: 600; font-size: 17px; border: 1px solid var(--line); }
+  .steps span { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--accent); color: #fff; font-weight: 800; margin-bottom: 16px; }
+
+  details { border-bottom: 1px solid var(--line); padding: 22px 0; }
+  summary { font-weight: 700; font-size: 18px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 20px; }
+  summary::after { content: "+"; color: var(--accent); font-size: 24px; line-height: 1; }
+  details[open] summary::after { content: "−"; }
+  details p { color: var(--muted); margin-top: 12px; }
+
+  .contacts { display: grid; grid-template-columns: 1fr 1.3fr; gap: 32px; align-items: stretch; }
+  .contacts .info { background: var(--dark); color: #fff; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 14px; }
+  .contacts .info h2 { font-size: 30px; margin-bottom: 8px; }
+  .contacts .info a { color: #fff; }
+  .contacts .info .buttons { margin-top: auto; padding-top: 16px; }
+  .contacts .info .btn.ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.3); }
+  .map { border-radius: 24px; overflow: hidden; min-height: 360px; border: 1px solid var(--line); }
+  .map iframe { width: 100%; height: 100%; min-height: 360px; border: 0; display: block; }
+
+  footer { padding: 36px 0 110px; color: var(--muted); font-size: 14px; text-align: center; }
+  footer a { color: var(--accent); font-weight: 700; }
+  .sticky-cta { display: none; }
+
+  @media (max-width: 900px) {
+    nav { display: none; }
+    .hero { padding: 48px 0 60px; }
+    .hero .wrap, .about, .contacts { grid-template-columns: 1fr; }
+    .hero-art { display: none; }
+    .grid.three, .grid.four, .steps { grid-template-columns: 1fr; }
+    section { padding: 60px 0; }
+    .buttons .btn { flex: 1 1 auto; }
+    .sticky-cta { display: block; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 20; }
+    .sticky-cta .btn { width: 100%; box-shadow: 0 12px 30px -10px rgba(0,0,0,.4); }
+  }
+</style>
+</head>
+<body>
+  <div class="demo-bar">Это демо-версия сайта для «Традиция» от студии LUMA. Понравилось? Запустим ваш сайт за 4–5 дней — <a href="https://t.me/luma_web" target="_blank" rel="noopener">@luma_web</a></div>
+
+  <header>
+    <div class="wrap">
+      <a class="logo" href="#"><span>💈</span><span>Традиция</span></a>
+      <nav><a href="#services">Услуги</a><a href="#about">О нас</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a></nav>
+      <a class="btn small" href="#contacts">Связаться</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Барбершопы · Кемерово</div>
+        <h1>Мужские стрижки и борода — барбершоп «Традиция»</h1>
+        <p class="lead">В Кемерово: стрижка, оформление бороды и классическое бритьё. Рейтинг 4.9 по 25 отзывам — аккуратно, чётко, по делу.</p>
+        <div class="rating"><span class="stars">★★★★★</span> <b>4.9</b> · 25 отзывов на 2ГИС</div>
+        <div class="buttons"><a class="btn" href="tel:+79089576873">Записаться</a><a class="btn ghost" href="https://t.me/+79089576873" target="_blank" rel="noopener">Telegram</a></div>
+      </div>
+      <div class="hero-art">💈</div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <h2 class="section-title">Услуги</h2>
+      <p class="section-sub">Всё, с чем к нам приходят чаще всего. Точную стоимость подскажем по телефону или в мессенджере.</p>
+      <div class="grid three"><div class="card"><h3>Мужская стрижка</h3><p>Классическая или современная форма, укладка и советы по уходу.</p></div><div class="card"><h3>Стрижка машинкой</h3><p>Короткая аккуратная форма без лишних деталей — быстро и чисто.</p></div><div class="card"><h3>Оформление бороды</h3><p>Контуры, форма и уход, чтобы борода выглядела опрятно.</p></div><div class="card"><h3>Королевское бритьё</h3><p>Классическое бритьё с распариванием и уходом после.</p></div><div class="card"><h3>Камуфляж седины</h3><p>Тонирование седых волос с естественным результатом.</p></div><div class="card"><h3>Укладка и стайлинг</h3><p>Подберём средство и покажем, как уложить волосы дома.</p></div></div>
+    </div>
+  </section>
+
+  <section id="about" class="soft">
+    <div class="wrap about">
+      <h2 class="section-title">О нас</h2>
+      <p>«Традиция» — барбершоп в Кемерово для тех, кому нужна точная мужская стрижка и уход за бородой. Здесь не суетятся: сначала обсуждают форму, потом делают чисто и аккуратно. Рейтинг 4.9 по 25 отзывам — хороший знак, что сюда возвращаются.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Почему выбирают нас</h2>
+      <p class="section-sub">Коротко о том, за что нас ценят клиенты.</p>
+      <div class="grid four"><div class="card"><h3>Рейтинг 4.9</h3><p>25 отзывов клиентов — стабильно высокие оценки стрижек и сервиса.</p></div><div class="card"><h3>Точность в деталях</h3><p>Внимание к форме, контурам и переходам, которые видно сразу.</p></div><div class="card"><h3>Классика и современность</h3><p>От строгой классики до актуальных форм — под ваш стиль.</p></div><div class="card"><h3>Спокойный ритм</h3><p>Без спешки и суеты: обсудим задачу и сделаем так, как договорились.</p></div></div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <h2 class="section-title">Как записаться</h2>
+      <p class="section-sub">Три простых шага — без долгих переписок.</p>
+      <ol class="steps"><li><span>1</span>Оставьте заявку на сайте: выберите услугу, дату и удобное время.</li><li><span>2</span>Подтвердим запись и ответим на вопросы по услуге.</li><li><span>3</span>Приходите — мастер сделает стрижку и подскажет, как ухаживать.</li></ol>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2 class="section-title">Частые вопросы</h2>
+      <details><summary>Нужно ли записываться заранее?</summary><p>Да, лучше записаться заранее: выберете удобное время и не будете ждать. Если планы изменятся, предупредите — поможем перенести.</p></details><details><summary>Не знаю, какая стрижка мне подойдёт. Что делать?</summary><p>Обсудите с мастером: он учтёт тип волос, форму лица и ваш стиль, предложит варианты и покажет, как укладывать.</p></details><details><summary>Делаете ли вы классическое бритьё?</summary><p>Да, это одна из услуг барбершопа. Уточните при записи детали — мастер подскажет, что подойдёт вашей коже.</p></details>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <div class="wrap contacts">
+      <div class="info">
+        <h2>Контакты</h2>
+        <p><b>Адрес:</b> Ленинградский проспект, 53 к1</p><p><b>Телефон:</b> <a href="tel:+79089576873">+7 (908) 957-68-73</a></p>
+        <div class="buttons"><a class="btn" href="tel:+79089576873">Записаться</a><a class="btn ghost" href="https://t.me/+79089576873" target="_blank" rel="noopener">Telegram</a></div>
+      </div>
+      <div class="map"><iframe src="https://yandex.ru/map-widget/v1/?text=%D0%9A%D0%B5%D0%BC%D0%B5%D1%80%D0%BE%D0%B2%D0%BE%2C%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%2053%20%D0%BA1&z=16" loading="lazy" title="Карта"></iframe></div>
+    </div>
+  </section>
+
+  <footer>
+    Демо-сайт подготовлен студией <a href="https://luma-web.site" target="_blank" rel="noopener">LUMA</a>. Тексты — примерные, фото и цены добавим ваши.
+  </footer>
+
+  <div class="sticky-cta"><a class="btn" href="#contacts">Традиция — связаться</a></div>
+<script>
+(function () {
+  var T = {"url": "https://luma-demo-tracker.damaged852.workers.dev", "slug": "traditsiya-2188", "sig": "0c665ff1e35bf5da0fd9", "name": "Традиция", "phone": "+79089576873", "telegram": "https://t.me/+79089576873"};
+  try { if (localStorage.getItem("luma_owner")) return; } catch (e) {}
+  function send(ev) {
+    var body = JSON.stringify({slug: T.slug, sig: T.sig, name: T.name, phone: T.phone, telegram: T.telegram, event: ev});
+    try { navigator.sendBeacon ? navigator.sendBeacon(T.url, body) : fetch(T.url, {method: "POST", body: body, keepalive: true}); } catch (e) {}
+  }
+  function once(ev) {  // каждое событие — раз за сессию, обновление страницы не спамит бота
+    var k = "luma_" + T.slug + "_" + ev;
+    try { if (sessionStorage.getItem(k)) return; sessionStorage.setItem(k, 1); } catch (e) {}
+    send(ev);
+  }
+  once("open");
+  addEventListener("scroll", function () {
+    if (scrollY + innerHeight > document.body.scrollHeight * 0.8) once("scrolled");
+  }, {passive: true});
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[href^='tel:'], a[href*='wa.me'], a[href*='t.me']");
+    if (a && a.href.indexOf("luma_web") < 0) once("contact");
+  });
+})();
+</script>
+</body>
+</html>
