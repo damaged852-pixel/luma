@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Поток — Актёрские курсы, Обучение танцам, Уссурийск</title>
+<meta name="description" content="Пластика, речь и импровизация: занятия, после которых легче говорить со сцены, держаться на публике и двигаться свободно.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Поток — ваш новый сайт">
+<meta property="og:description" content="Пластика, речь и импровизация: занятия, после которых легче говорить со сцены, держаться на публике и двигаться свободно.">
+<meta property="og:url" content="https://luma-web.site/demo/potok-2367/">
+<meta property="og:image" content="https://luma-web.site/demo/potok-2367/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --accent: #4f46c8; --soft: #eeedfb; --dark: #17153a; --text: #1c1c1e; --muted: #6b6b70; --line: #ececf0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: Manrope, system-ui, sans-serif; color: var(--text); background: #fff; line-height: 1.55; }
+  a { color: inherit; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+  .demo-bar { background: var(--dark); color: #fff; font-size: 14px; text-align: center; padding: 10px 16px; }
+  .demo-bar a { color: #fff; font-weight: 700; }
+
+  header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+  .logo { font-weight: 800; font-size: 18px; text-decoration: none; display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .logo span:last-child { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  nav { display: flex; gap: 28px; font-weight: 600; font-size: 15px; }
+  nav a { text-decoration: none; color: var(--muted); }
+  nav a:hover { color: var(--text); }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; padding: 15px 28px; border-radius: 14px;
+         background: var(--accent); color: #fff; font-weight: 700; text-decoration: none; transition: transform .15s, box-shadow .15s; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -10px var(--accent); }
+  .btn.ghost { background: #fff; color: var(--text); border: 1.5px solid var(--line); }
+  .btn.small { padding: 10px 18px; font-size: 14px; border-radius: 11px; }
+
+  .hero { background: radial-gradient(1200px 500px at 85% -10%, var(--soft), transparent 70%), linear-gradient(180deg, var(--soft), #fff); padding: 80px 0 90px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.3fr .7fr; gap: 48px; align-items: center; }
+  .eyebrow { display: inline-block; font-weight: 700; font-size: 14px; color: var(--accent); background: #fff; padding: 7px 14px; border-radius: 99px; margin-bottom: 22px; }
+  h1 { font-size: clamp(34px, 5vw, 58px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 800; }
+  .hero p.lead { font-size: 19px; color: var(--muted); margin: 22px 0 28px; max-width: 560px; }
+  .rating { font-size: 15px; color: var(--muted); margin-bottom: 30px; }
+  .rating b { color: var(--text); }
+  .stars { color: #f5a623; letter-spacing: 1px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+  .hero-art { aspect-ratio: 1; border-radius: 36px; background: linear-gradient(145deg, var(--accent), var(--dark));
+              display: grid; place-items: center; font-size: clamp(90px, 14vw, 150px); box-shadow: 0 40px 80px -40px var(--dark); }
+
+  section { padding: 90px 0; }
+  .section-title { font-size: clamp(28px, 3.6vw, 40px); letter-spacing: -0.02em; font-weight: 800; margin-bottom: 14px; }
+  .section-sub { color: var(--muted); font-size: 17px; margin-bottom: 44px; max-width: 620px; }
+  .grid { display: grid; gap: 18px; }
+  .grid.three { grid-template-columns: repeat(3, 1fr); }
+  .grid.four { grid-template-columns: repeat(4, 1fr); }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 28px; transition: border-color .2s, transform .2s; }
+  .card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .card h3 { font-size: 19px; margin-bottom: 8px; letter-spacing: -0.01em; }
+  .card p { color: var(--muted); font-size: 15px; }
+  .soft { background: var(--soft); }
+  .soft .card { border-color: transparent; }
+
+  .about { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: center; }
+  .about p { font-size: 20px; line-height: 1.6; }
+
+  .steps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .steps li { background: #fff; border-radius: 20px; padding: 28px; font-weight: 600; font-size: 17px; border: 1px solid var(--line); }
+  .steps span { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--accent); color: #fff; font-weight: 800; margin-bottom: 16px; }
+
+  details { border-bottom: 1px solid var(--line); padding: 22px 0; }
+  summary { font-weight: 700; font-size: 18px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 20px; }
+  summary::after { content: "+"; color: var(--accent); font-size: 24px; line-height: 1; }
+  details[open] summary::after { content: "−"; }
+  details p { color: var(--muted); margin-top: 12px; }
+
+  .contacts { display: grid; grid-template-columns: 1fr 1.3fr; gap: 32px; align-items: stretch; }
+  .contacts .info { background: var(--dark); color: #fff; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 14px; }
+  .contacts .info h2 { font-size: 30px; margin-bottom: 8px; }
+  .contacts .info a { color: #fff; }
+  .contacts .info .buttons { margin-top: auto; padding-top: 16px; }
+  .contacts .info .btn.ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.3); }
+  .map { border-radius: 24px; overflow: hidden; min-height: 360px; border: 1px solid var(--line); }
+  .map iframe { width: 100%; height: 100%; min-height: 360px; border: 0; display: block; }
+
+  footer { padding: 36px 0 110px; color: var(--muted); font-size: 14px; text-align: center; }
+  footer a { color: var(--accent); font-weight: 700; }
+  .sticky-cta { display: none; }
+
+  @media (max-width: 900px) {
+    nav { display: none; }
+    .hero { padding: 48px 0 60px; }
+    .hero .wrap, .about, .contacts { grid-template-columns: 1fr; }
+    .hero-art { display: none; }
+    .grid.three, .grid.four, .steps { grid-template-columns: 1fr; }
+    section { padding: 60px 0; }
+    .buttons .btn { flex: 1 1 auto; }
+    .sticky-cta { display: block; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 20; }
+    .sticky-cta .btn { width: 100%; box-shadow: 0 12px 30px -10px rgba(0,0,0,.4); }
+  }
+</style>
+</head>
+<body>
+  <div class="demo-bar">Это демо-версия сайта для «Поток» от студии LUMA. Понравилось? Запустим ваш сайт за 4–5 дней — <a href="https://t.me/luma_web" target="_blank" rel="noopener">@luma_web</a></div>
+
+  <header>
+    <div class="wrap">
+      <a class="logo" href="#"><span>🎓</span><span>Поток</span></a>
+      <nav><a href="#services">Услуги</a><a href="#about">О нас</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a></nav>
+      <a class="btn small" href="#contacts">Связаться</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Актёрские курсы, Обучение танцам · Уссурийск</div>
+        <h1>Актёрские курсы и танцы в Уссурийске</h1>
+        <p class="lead">Пластика, речь и импровизация: занятия, после которых легче говорить со сцены, держаться на публике и двигаться свободно.</p>
+        
+        <div class="buttons"><a class="btn" href="tel:+79504253391">Записаться на курс</a></div>
+      </div>
+      <div class="hero-art">🎓</div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <h2 class="section-title">Услуги</h2>
+      <p class="section-sub">Всё, с чем к нам приходят чаще всего. Точную стоимость подскажем по телефону или в мессенджере.</p>
+      <div class="grid three"><div class="card"><h3>Актёрское мастерство</h3><p>Снятие зажимов, внимание, партнёрство: этюды и упражнения, после которых легче говорить и держаться на людях.</p></div><div class="card"><h3>Сценическая речь</h3><p>Дыхание, дикция и голос: говорим так, чтобы слышали в последнем ряду и не срывались на крик.</p></div><div class="card"><h3>Современный танец</h3><p>Координация и связки: от простых комбинаций до уверенного движения под музыку.</p></div><div class="card"><h3>Хореография для начинающих</h3><p>База без страха «шагнуть не туда»: постановка корпуса, ритм, равновесие и работа со счётом.</p></div><div class="card"><h3>Сценическое движение и пластика</h3><p>Расслабляем тело и учимся двигаться на сцене так, чтобы движение выглядело естественно.</p></div><div class="card"><h3>Импровизация</h3><p>Реагировать здесь и сейчас: спонтанность, внимание к партнёру и смелость ошибаться вслух.</p></div></div>
+    </div>
+  </section>
+
+  <section id="about" class="soft">
+    <div class="wrap about">
+      <h2 class="section-title">О нас</h2>
+      <p>«Поток» — студия в Уссурийске, где актёрское мастерство и танец идут рядом: голос, тело и внимание тренируются вместе. Здесь не ставят «играть роль», а учат свободно чувствовать себя на сцене и за её пределами. Программа строится от простого к сложному, поэтому первый шаг можно сделать без опыта и подготовки.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Почему выбирают нас</h2>
+      <p class="section-sub">Коротко о том, за что нас ценят клиенты.</p>
+      <div class="grid four"><div class="card"><h3>Можно с нуля</h3><p>Опыт, растяжка и «талант от природы» не нужны — начинаем с того, что вы уже умеете.</p></div><div class="card"><h3>Танец и актёрское вместе</h3><p>Тело, голос и смелость работают в паре: направления усиливают друг друга.</p></div><div class="card"><h3>Практика, а не лекции</h3><p>Больше двигаемся и говорим, чем слушаем теорию: упражнения, этюды, связки.</p></div><div class="card"><h3>Навык для обычной жизни</h3><p>Умение держаться на публике пригодится на защите, собеседовании и в разговоре.</p></div></div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <h2 class="section-title">Как записаться</h2>
+      <p class="section-sub">Три простых шага — без долгих переписок.</p>
+      <ol class="steps"><li><span>1</span>Оставьте заявку на сайте или напишите в мессенджер — расскажем, какие занятия идут сейчас.</li><li><span>2</span>Приходите на пробное занятие: посмотрите зал, познакомьтесь с преподавателем и форматом.</li><li><span>3</span>Выбирайте группу и расписание и начинайте — остальное соберётся по ходу занятий.</li></ol>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2 class="section-title">Частые вопросы</h2>
+      <details><summary>Я никогда не занимался(ась). Получится?</summary><p>Да. Программа рассчитана на новичков: первые занятия — знакомство с телом и голосом, без требований к подготовке.</p></details><details><summary>Нужна ли растяжка или физическая подготовка?</summary><p>Нет. Гибкость и координация развиваются по ходу занятий, а упражнения подбираются под уровень группы.</p></details><details><summary>Можно ли брать и танцы, и актёрское мастерство?</summary><p>Да, направления хорошо дополняют друг друга. Можно взять оба сразу или начать с одного и добавить второе позже.</p></details>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <div class="wrap contacts">
+      <div class="info">
+        <h2>Контакты</h2>
+        <p><b>Адрес:</b> улица Калинина, 48</p><p><b>Телефон:</b> <a href="tel:+79504253391">+7 (950) 425-33-91</a></p>
+        <div class="buttons"><a class="btn" href="tel:+79504253391">Записаться на курс</a></div>
+      </div>
+      <div class="map"><iframe src="https://yandex.ru/map-widget/v1/?text=%D0%A3%D1%81%D1%81%D1%83%D1%80%D0%B8%D0%B9%D1%81%D0%BA%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9A%D0%B0%D0%BB%D0%B8%D0%BD%D0%B8%D0%BD%D0%B0%2C%2048&z=16" loading="lazy" title="Карта"></iframe></div>
+    </div>
+  </section>
+
+  <footer>
+    Демо-сайт подготовлен студией <a href="https://luma-web.site" target="_blank" rel="noopener">LUMA</a>. Тексты — примерные, фото и цены добавим ваши.
+  </footer>
+
+  <div class="sticky-cta"><a class="btn" href="#contacts">Поток — связаться</a></div>
+<script>
+(function () {
+  var T = {"url": "https://luma-demo-tracker.damaged852.workers.dev", "slug": "potok-2367", "sig": "7d2d54d54c47b5e4bf7d", "name": "Поток", "phone": "+79504253391", "telegram": ""};
+  try { if (localStorage.getItem("luma_owner")) return; } catch (e) {}
+  function send(ev) {
+    var body = JSON.stringify({slug: T.slug, sig: T.sig, name: T.name, phone: T.phone, telegram: T.telegram, event: ev});
+    try { navigator.sendBeacon ? navigator.sendBeacon(T.url, body) : fetch(T.url, {method: "POST", body: body, keepalive: true}); } catch (e) {}
+  }
+  function once(ev) {  // каждое событие — раз за сессию, обновление страницы не спамит бота
+    var k = "luma_" + T.slug + "_" + ev;
+    try { if (sessionStorage.getItem(k)) return; sessionStorage.setItem(k, 1); } catch (e) {}
+    send(ev);
+  }
+  once("open");
+  addEventListener("scroll", function () {
+    if (scrollY + innerHeight > document.body.scrollHeight * 0.8) once("scrolled");
+  }, {passive: true});
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[href^='tel:'], a[href*='wa.me'], a[href*='t.me']");
+    if (a && a.href.indexOf("luma_web") < 0) once("contact");
+  });
+})();
+</script>
+</body>
+</html>
