@@ -212,6 +212,121 @@
   .mbar a { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; border-radius: 999px; color: #f3e9dc; font-size: 15px; }
   .mbar a.wa { background: #f3e9dc; color: var(--text); }
 
+  /* booking */
+  .book-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 64px; align-items: start; }
+  .book-grid > * { min-width: 0; }
+  .book-points { list-style: none; padding: 0; margin: 34px 0 0; display: grid; gap: 22px; }
+  .book-points li { display: flex; gap: 16px; }
+  .book-points li > span { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--accent); color: var(--accent);
+    display: grid; place-items: center; font: italic 400 17px var(--serif); flex: none; }
+  .book-points b { display: block; font-weight: 500; }
+  .book-points div { color: var(--muted); font-size: 16px; }
+  .book-points div b { color: var(--text); }
+  .hint { margin-top: 30px; padding: 16px 20px; border-radius: 16px; background: var(--accent-soft); font-size: 15px; color: var(--accent-2); }
+  .bw { background: var(--card); border-radius: 28px; box-shadow: var(--shadow); padding: 28px; border: 1px solid var(--line); }
+  .bw-tabs { display: flex; background: var(--bg); border-radius: 999px; padding: 5px; margin-bottom: 24px; }
+  .bw-tabs button { flex: 1; border: 0; background: none; font: 400 15px var(--sans); color: var(--muted); padding: 11px; border-radius: 999px; cursor: pointer; transition: .25s; }
+  .bw-tabs button.on { background: var(--text); color: var(--card); }
+  .bw-l { display: block; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin: 22px 0 10px; }
+  .bw-l:first-child { margin-top: 0; }
+  .sel { position: relative; }
+  .sel::after { content: ""; position: absolute; right: 20px; top: 50%; width: 8px; height: 8px; border-right: 1.5px solid var(--text); border-bottom: 1.5px solid var(--text); transform: translateY(-70%) rotate(45deg); pointer-events: none; }
+  select, .bw input { width: 100%; height: 52px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg); color: var(--text);
+    font: 400 16px var(--sans); padding: 0 18px; appearance: none; outline: none; transition: border-color .2s; }
+  select { padding-right: 46px; text-overflow: ellipsis; }
+  select:focus, .bw input:focus { border-color: var(--accent); }
+  .bw-meta { font-size: 14px; color: var(--accent); margin-top: 8px; }
+  .days { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; }
+  .days::-webkit-scrollbar { display: none; }
+  .day { flex: none; width: 58px; padding: 10px 0; border-radius: 14px; border: 1px solid var(--line); background: var(--bg); text-align: center; cursor: pointer; font: inherit; color: inherit; transition: .2s; }
+  .day small { display: block; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+  .day b { font: 400 21px var(--serif); }
+  .day:disabled { opacity: .35; cursor: default; }
+  .day.on { background: var(--text); color: var(--card); border-color: var(--text); }
+  .day.on small { color: #d8c7b2; }
+  .slots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .slot { height: 46px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg); font: 400 15px var(--sans); color: var(--text); cursor: pointer; transition: .2s; }
+  .slot:hover { border-color: var(--accent); }
+  .slot.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .slots .empty { grid-column: 1 / -1; color: var(--muted); font-size: 15px; padding: 12px 0; }
+  .bw-form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 22px; }
+  .bw-go { width: 100%; margin-top: 14px; }
+  .bw-go:disabled { opacity: .45; cursor: default; transform: none; }
+  .bw-note { font-size: 13px; color: var(--muted); text-align: center; margin: 12px 0 0; }
+  .done { text-align: center; padding: 20px 6px 6px; }
+  .done .ok { width: 70px; height: 70px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; margin: 0 auto 18px; }
+  .done .ok svg { width: 32px; height: 32px; }
+  .done h3 { font-size: 30px; margin-bottom: 10px; }
+  .done p { color: var(--muted); margin: 0 auto 8px; max-width: 400px; }
+  .done .sum { background: var(--bg); border-radius: 16px; padding: 16px; margin: 20px 0; font-size: 16px; color: var(--text); }
+  .done .btns { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+  .tg { background: #e9e2d8; border-radius: 20px; overflow: hidden; }
+  .tg-head { display: flex; gap: 12px; align-items: center; padding: 12px 16px; background: var(--text); color: #f3e9dc; }
+  .tg-ava { width: 38px; height: 38px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; font: italic 400 16px var(--serif); color: #fff; }
+  .tg-head b { display: block; font-weight: 500; font-size: 15px; }
+  .tg-head span { font-size: 12px; color: #c9b8a3; }
+  .tg-body { padding: 14px; display: grid; gap: 8px; }
+  .tg-msg { background: #fff; border-radius: 4px 16px 16px 16px; padding: 12px 14px; font-size: 14px; line-height: 1.5; max-width: 92%; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+  .tg-msg b { font-weight: 500; }
+  .tg-msg time { display: block; text-align: right; font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .tg-btns { display: flex; gap: 6px; max-width: 92%; }
+  .tg-btns span { flex: 1; text-align: center; background: rgba(255,255,255,.6); border-radius: 10px; padding: 7px; font-size: 13px; color: var(--accent-2); }
+  .mslot.on { background: var(--card); border-color: var(--accent); color: var(--accent-2); box-shadow: 0 0 0 1px var(--accent) inset; }
+  .mslot.off { color: #b9ab9b; text-decoration: line-through; }
+  .mslot.busy { background: var(--text); color: var(--card); border-color: var(--text); cursor: default; font-size: 13px; }
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--muted); margin-top: 12px; }
+  .legend i { display: inline-block; width: 12px; height: 12px; border-radius: 4px; margin-right: 6px; vertical-align: -1px; border: 1px solid var(--accent); }
+  .legend i.b { background: var(--text); border-color: var(--text); }
+  .legend i.c { border-color: var(--line); background: var(--bg); }
+
+  /* certificates */
+  .certs { background: var(--bg-2); }
+  .cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 46px; }
+  .cert { background: var(--card); border-radius: 26px; padding: 14px 14px 26px; border: 1px solid var(--line); display: flex; flex-direction: column; transition: transform .3s, box-shadow .3s; }
+  .cert:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .cert-card { position: relative; aspect-ratio: 1.6; border-radius: 18px; padding: 22px 24px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;
+    background: linear-gradient(135deg, #f6ecdf 0%, #e6d3bb 100%); color: var(--text); }
+  .cert-card::before { content: ""; position: absolute; inset: 8px; border: 1px solid rgba(162, 123, 86, .45); border-radius: 12px; pointer-events: none; }
+  .cert-card::after { content: ""; position: absolute; right: -50px; bottom: -70px; width: 200px; height: 200px; border-radius: 50%; border: 1px solid rgba(162, 123, 86, .35); box-shadow: 0 0 0 18px rgba(162, 123, 86, .06); }
+  .cert-card small { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--accent-2); }
+  .cert-card i { font: italic 400 20px var(--serif); }
+  .cert-card b { font: 400 40px/1 var(--serif); }
+  .cert-card b span { font-size: 22px; }
+  .cert.dark .cert-card { background: linear-gradient(135deg, #4a3b2f 0%, #2f251e 100%); color: #f3e9dc; }
+  .cert.dark .cert-card::before { border-color: rgba(233, 207, 172, .4); }
+  .cert.dark .cert-card::after { border-color: rgba(233, 207, 172, .3); }
+  .cert.dark .cert-card small { color: #e9cfac; }
+  .cert-body { padding: 22px 12px 0; flex: 1; display: flex; flex-direction: column; }
+  .cert-body h3 { font-size: 25px; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .tag { font: 400 12px var(--sans); letter-spacing: .08em; text-transform: uppercase; background: var(--accent-soft); color: var(--accent-2); padding: 4px 10px; border-radius: 999px; }
+  .cert-body p { color: var(--muted); font-size: 15px; margin: 0 0 22px; flex: 1; }
+  .cert-body .btn { width: 100%; min-height: 50px; }
+  .cert-own { margin-top: 22px; background: var(--card); border: 1px solid var(--line); border-radius: 26px; padding: 26px 30px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .cert-own b { font: 400 25px var(--serif); display: block; }
+  .cert-own span { color: var(--muted); font-size: 15px; }
+  .cert-own form { display: flex; gap: 10px; flex-wrap: wrap; }
+  .cert-own .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+  .chip { height: 46px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); font: 400 15px var(--sans); color: var(--text); cursor: pointer; transition: .2s; }
+  .chip.on { background: var(--text); color: var(--card); border-color: var(--text); }
+  .cert-terms { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; margin-top: 26px; font-size: 14px; color: var(--muted); }
+  .cert-terms span { display: inline-flex; gap: 8px; align-items: center; }
+  .cert-terms svg { width: 16px; height: 16px; color: var(--accent); }
+
+  @media (max-width: 980px) {
+    .book-grid { grid-template-columns: 1fr; gap: 40px; }
+    .cert-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .bw { padding: 18px; border-radius: 22px; }
+    .slots { grid-template-columns: repeat(3, 1fr); }
+    .bw-form { grid-template-columns: 1fr; }
+    .cert-grid { grid-template-columns: 1fr; }
+    .cert-own { padding: 22px; }
+    .cert-own .chips, .cert-own .btn { width: 100%; }
+    .cert-own .chip { flex: 1; padding: 0 8px; }
+    .cert-terms { flex-direction: column; align-items: center; gap: 10px; }
+  }
+
   .reveal { opacity: 0; transform: translateY(26px); transition: opacity .9s ease, transform .9s ease; }
   .reveal.in { opacity: 1; transform: none; }
   .d1 { transition-delay: .12s; } .d2 { transition-delay: .24s; } .d3 { transition-delay: .36s; }
@@ -293,12 +408,13 @@
   <div class="wrap nav">
     <a class="logo" href="#top"><b>Волшебные ручки</b><span>студия заботы о себе</span></a>
     <nav class="menu">
-      <a href="#need">Подобрать</a>
       <a href="#prices">Услуги и цены</a>
+      <a href="#booking">Запись</a>
+      <a href="#gift">Сертификаты</a>
       <a href="#about">О студии</a>
       <a href="#contacts">Контакты</a>
     </nav>
-    <a class="btn btn-main js-wa" href="#" data-msg="Здравствуйте! Хочу записаться на массаж."><svg><use href="#i-wa"/></svg>Записаться</a>
+    <a class="btn btn-main" href="#booking"><svg><use href="#i-cal"/></svg>Записаться</a>
   </div>
 </header>
 
@@ -310,8 +426,8 @@
         <h1 class="reveal d1">Волшебные <em>ручки</em><small>Ольги Николаевны</small></h1>
         <p class="reveal d2">Тихая студия на Чичерина, 44, где можно выдохнуть. Массаж тела, спины и лица, лимфодренаж и моделирующие программы для женщин и мужчин.</p>
         <div class="hero-cta reveal d3">
-          <a class="btn btn-main js-wa" href="#" data-msg="Здравствуйте! Хочу записаться на массаж."><svg><use href="#i-wa"/></svg>Записаться в WhatsApp</a>
-          <a class="btn btn-ghost" href="#prices">Услуги и цены <svg><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-main" href="#booking"><svg><use href="#i-cal"/></svg>Записаться онлайн</a>
+          <a class="btn btn-ghost" href="#gift">Подарить сертификат <svg><use href="#i-arrow"/></svg></a>
         </div>
         <div class="hero-meta reveal d3">
           <div><b>4.8</b>рейтинг в 2ГИС</div>
@@ -377,7 +493,105 @@
         </div>
       </div>
       <div class="price-list reveal" id="list"></div>
-      <p class="note">Нажмите на стрелку, и в WhatsApp откроется сообщение с выбранной услугой.</p>
+      <p class="note">Нажмите на стрелку, чтобы выбрать свободное время онлайн.</p>
+    </div>
+  </section>
+
+  <section id="booking">
+    <div class="wrap book-grid">
+      <div>
+        <div class="eyebrow reveal">Онлайн-запись</div>
+        <h2 class="reveal d1">Запись <em>без переписки</em></h2>
+        <p class="lead reveal d2">Не нужно писать и ждать ответа. Вы видите свободные окошки и сразу выбираете удобное.</p>
+        <ul class="book-points">
+          <li class="reveal"><span>1</span><div><b>Окошки открывает Ольга Николаевна</b>Только те дни и часы, когда ей удобно. Всё остальное время закрыто.</div></li>
+          <li class="reveal d1"><span>2</span><div><b>Вы выбираете сами</b>Услугу, день и время. Занятое окошко сразу пропадает, накладок не будет.</div></li>
+          <li class="reveal d2"><span>3</span><div><b>Напоминание за день</b>Вам придёт напоминание о визите, а мастеру уведомление о новой записи.</div></li>
+        </ul>
+        <p class="hint reveal">Попробуйте сами: откройте вкладку «Вид мастера», закройте пару окошек и вернитесь к записи.</p>
+      </div>
+      <div class="bw reveal d1">
+        <div class="bw-tabs"><button class="on" data-v="client">Записаться</button><button data-v="master">Вид мастера</button></div>
+        <div id="v-client">
+          <label class="bw-l" for="b-svc">Услуга</label>
+          <div class="sel"><select id="b-svc"></select></div>
+          <div class="bw-meta" id="b-meta"></div>
+          <span class="bw-l">День</span>
+          <div class="days" id="b-days"></div>
+          <span class="bw-l">Время</span>
+          <div class="slots" id="b-slots"></div>
+          <div class="bw-form">
+            <input id="b-name" placeholder="Ваше имя" autocomplete="name">
+            <input id="b-phone" type="tel" placeholder="Телефон" autocomplete="tel">
+          </div>
+          <button class="btn btn-main bw-go" id="b-go" disabled>Выберите время</button>
+          <p class="bw-note">Демо-версия: запись никуда не отправляется.</p>
+        </div>
+        <div id="v-done" hidden>
+          <div class="done">
+            <div class="ok"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg></div>
+            <h3>Вы записаны</h3>
+            <div class="sum" id="d-sum"></div>
+            <p>Ольга Николаевна уже получила уведомление. За день до визита мы напомним о записи.</p>
+            <div class="btns">
+              <button class="btn btn-ghost" id="d-master">Как это видит мастер</button>
+              <button class="btn btn-main" id="d-again">Записаться ещё</button>
+            </div>
+          </div>
+        </div>
+        <div id="v-master" hidden>
+          <div class="tg">
+            <div class="tg-head"><div class="tg-ava">ВР</div><div><b>Бот записи · Волшебные ручки</b><span>так уведомления приходят в Telegram</span></div></div>
+            <div class="tg-body" id="m-feed"></div>
+          </div>
+          <span class="bw-l">Ваши окошки</span>
+          <div class="days" id="m-days"></div>
+          <div class="slots" id="m-slots" style="margin-top:10px"></div>
+          <div class="legend"><span><i></i>открыто для записи</span><span><i class="c"></i>закрыто</span><span><i class="b"></i>занято</span></div>
+          <p class="bw-note">Нажмите на время, чтобы открыть или закрыть окошко. Клиенты видят только открытые.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="certs" id="gift">
+    <div class="wrap">
+      <div class="need-head">
+        <div>
+          <div class="eyebrow reveal">Подарочные сертификаты</div>
+          <h2 class="reveal d1">Подарите <em>заботу</em></h2>
+        </div>
+        <p class="lead reveal d2">Час тишины и тёплых рук пригодится каждому. Отличный подарок маме, подруге, коллеге или любимому человеку к Новому году.</p>
+      </div>
+      <div class="cert-grid">
+        <div class="cert reveal">
+          <div class="cert-card"><small>Подарочный сертификат</small><i>Минутка для себя</i><b>2 000 <span>₽</span></b></div>
+          <div class="cert-body"><h3>Минутка для себя</h3><p>Шейно-воротниковая зона или массаж ног (стопа и голень), 30 минут. Маленький подарок, после которого становится легко.</p>
+            <a class="btn btn-ghost js-wa" href="#" data-msg="Здравствуйте! Хочу заказать подарочный сертификат «Минутка для себя» на 2 000 ₽.">Заказать сертификат</a></div>
+        </div>
+        <div class="cert dark reveal d1">
+          <div class="cert-card"><small>Подарочный сертификат</small><i>Время для себя</i><b>3 000 <span>₽</span></b></div>
+          <div class="cert-body"><h3>Время для себя <span class="tag">Чаще дарят</span></h3><p>Оздоровительный массаж тела, медовый или скульптурный массаж лица, 60 минут. Получатель сам выберет, что ему ближе.</p>
+            <a class="btn btn-main js-wa" href="#" data-msg="Здравствуйте! Хочу заказать подарочный сертификат «Время для себя» на 3 000 ₽.">Заказать сертификат</a></div>
+        </div>
+        <div class="cert reveal d2">
+          <div class="cert-card"><small>Подарочный сертификат</small><i>Полная перезагрузка</i><b>4 000 <span>₽</span></b></div>
+          <div class="cert-body"><h3>Полная перезагрузка</h3><p>Тело и лицо за 90 минут, миофасциальный массаж или лимфодренаж на 2 часа. Для тех, кому давно пора отдохнуть по-настоящему.</p>
+            <a class="btn btn-ghost js-wa" href="#" data-msg="Здравствуйте! Хочу заказать подарочный сертификат «Полная перезагрузка» на 4 000 ₽.">Заказать сертификат</a></div>
+        </div>
+      </div>
+      <div class="cert-own reveal">
+        <div><b>Сертификат на свою сумму</b><span>Получатель сам выберет процедуру из прайса</span></div>
+        <div class="chips" id="own-chips">
+          <button class="chip" data-v="1500">1 500 ₽</button><button class="chip on" data-v="5000">5 000 ₽</button><button class="chip" data-v="8000">8 000 ₽</button>
+        </div>
+        <a class="btn btn-main js-wa" id="own-btn" href="#" data-msg="Здравствуйте! Хочу заказать подарочный сертификат на 5 000 ₽.">Заказать на 5 000 ₽</a>
+      </div>
+      <div class="cert-terms">
+        <span><svg><use href="#i-cal"/></svg>Действует 3 месяца</span>
+        <span><svg><use href="#i-wa"/></svg>Электронный пришлём в WhatsApp</span>
+        <span><svg><use href="#i-leaf"/></svg>Или в красивом конверте в студии</span>
+      </div>
     </div>
   </section>
 
@@ -430,8 +644,8 @@
       <div class="eyebrow reveal">Запись</div>
       <h2 class="reveal d1">Как <em>записаться</em></h2>
       <div class="steps">
-        <div class="step reveal"><b>Напишите</b><span>В WhatsApp или позвоните. Можно сразу указать услугу из прайса.</span></div>
-        <div class="step reveal d1"><b>Выберите время</b><span>Ольга Николаевна предложит свободные окошки и подскажет, как подготовиться.</span></div>
+        <div class="step reveal"><b>Выберите время</b><span>Онлайн на сайте за минуту. Или напишите в WhatsApp, если удобнее.</span></div>
+        <div class="step reveal d1"><b>Получите напоминание</b><span>За день до визита придёт сообщение, чтобы вы ничего не забыли.</span></div>
         <div class="step reveal d2"><b>Приходите отдыхать</b><span>Чичерина, 44. Остальное мы берём на себя.</span></div>
       </div>
     </div>
@@ -469,7 +683,7 @@
 
 <div class="mbar" id="mbar">
   <a href="tel:+79140765258"><svg><use href="#i-phone"/></svg>Позвонить</a>
-  <a class="wa js-wa" href="#" data-msg="Здравствуйте! Хочу записаться на массаж."><svg><use href="#i-wa"/></svg>Записаться</a>
+  <a class="wa" href="#booking"><svg><use href="#i-cal"/></svg>Записаться</a>
 </div>
 
 <script>
@@ -500,10 +714,9 @@
       <div class="row-side">
         <span class="dur"><svg><use href="#i-clock"/></svg>${s[2]} мин</span>
         <span class="pr" data-w="${s[3]}" data-m="${s[4]}">${fmt(s[3])} <small>₽</small></span>
-        <a class="book js-wa" href="#" aria-label="Записаться: ${s[0]}" data-msg="Здравствуйте! Хочу записаться: ${s[0]} (${s[2]} мин)."><svg><use href="#i-arrow"/></svg></a>
+        <a class="book" href="#booking" data-book="${i}" aria-label="Записаться: ${s[0]}"><svg><use href="#i-arrow"/></svg></a>
       </div>
     </div>`).join("");
-  list.querySelectorAll(".js-wa").forEach(bindWa);
 
   let group = "w";
   const setGroup = g => {
@@ -539,6 +752,102 @@
       row.scrollIntoView({ behavior: "smooth", block: "center" });
       row.classList.remove("flash"); void row.offsetWidth; row.classList.add("flash");
     };
+  });
+
+  /* ---------- онлайн-запись (демо, всё в памяти страницы) ---------- */
+  const $ = id => document.getElementById(id);
+  const TIMES = ["09:00", "10:30", "12:00", "13:30", "15:00", "16:30", "18:00", "19:30"];
+  const DN = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
+  const days = [], open = [], busy = [];
+  const t0 = new Date(); t0.setHours(0, 0, 0, 0);
+  for (let k = 1; days.length < 12; k++) {
+    const d = new Date(t0); d.setDate(d.getDate() + k);
+    if (d.getDay() !== 0) days.push(d);           // воскресенье выходной
+  }
+  let seed = 11; const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  days.forEach((d, i) => {
+    open[i] = new Set(); busy[i] = {};
+    TIMES.forEach(t => { const r = rnd(); if (r > .5) open[i].add(t); else if (r > .3) busy[i][t] = 1; });
+    if (i === 0 && !open[i].size) open[i].add("15:00");
+  });
+  const fdate = d => d.toLocaleDateString("ru-RU", { weekday: "short", day: "numeric", month: "long" });
+  const ord = set => TIMES.filter(t => set.has(t));
+
+  const svcSel = $("b-svc");
+  svcSel.innerHTML = S.map((s, i) => `<option value="${i}">${s[0]} · ${s[2]} мин</option>`).join("");
+  let bDay = 0, bTime = null, mDay = 0, view = "client", done = false;
+
+  const meta = () => {
+    const s = S[+svcSel.value];
+    $("b-meta").textContent = s[4] ? `${fmt(s[3])} ₽ для женщин · ${fmt(s[4])} ₽ для мужчин` : `${fmt(s[3])} ₽`;
+  };
+  const dayBtns = (box, cur, isClient, pick) => {
+    box.innerHTML = days.map((d, i) => `<button class="day${i === cur ? " on" : ""}" data-i="${i}"
+      ${isClient && !open[i].size ? "disabled" : ""}><small>${DN[d.getDay()]}</small><b>${d.getDate()}</b></button>`).join("");
+    box.querySelectorAll(".day").forEach(b => b.onclick = () => pick(+b.dataset.i));
+  };
+  const renderClient = () => {
+    if (!open[bDay].size) bDay = Math.max(0, open.findIndex(s => s.size));
+    dayBtns($("b-days"), bDay, true, i => { bDay = i; bTime = null; renderClient(); });
+    const ts = ord(open[bDay]);
+    $("b-slots").innerHTML = ts.length ? ts.map(t => `<button class="slot${t === bTime ? " on" : ""}">${t}</button>`).join("")
+      : `<div class="empty">На этот день свободных окошек нет</div>`;
+    $("b-slots").querySelectorAll(".slot").forEach(b => b.onclick = () => { bTime = b.textContent; renderClient(); });
+    const go = $("b-go");
+    go.disabled = !bTime;
+    go.textContent = bTime ? `Записаться на ${fdate(days[bDay])}, ${bTime}` : "Выберите время";
+  };
+  const feed = [];
+  const renderMaster = () => {
+    dayBtns($("m-days"), mDay, false, i => { mDay = i; renderMaster(); });
+    $("m-slots").innerHTML = TIMES.map(t => {
+      const st = busy[mDay][t] ? "busy" : open[mDay].has(t) ? "on" : "off";
+      return `<button class="slot mslot ${st}" data-t="${t}" ${st === "busy" ? "disabled" : ""}>${t}</button>`;
+    }).join("");
+    $("m-slots").querySelectorAll(".mslot:not(.busy)").forEach(b => b.onclick = () => {
+      const s = open[mDay]; s.has(b.dataset.t) ? s.delete(b.dataset.t) : s.add(b.dataset.t);
+      if (bDay === mDay && !s.has(bTime)) bTime = null;
+      renderMaster();
+    });
+    const hello = `<div class="tg-msg">Здравствуйте, Ольга Николаевна! Сюда приходят новые записи. Свободные окошки отмечайте ниже: клиенты увидят только их.<time>09:00</time></div>
+      <div class="tg-btns"><span>Мои окошки</span><span>Записи на завтра</span></div>`;
+    $("m-feed").innerHTML = feed.length ? feed.join("") : hello;
+  };
+  const show = v => {
+    view = v;
+    document.querySelectorAll(".bw-tabs button").forEach(b => b.classList.toggle("on", b.dataset.v === v));
+    $("v-client").hidden = v !== "client" || done;
+    $("v-done").hidden = v !== "client" || !done;
+    $("v-master").hidden = v !== "master";
+    v === "master" ? renderMaster() : renderClient();
+  };
+  document.querySelectorAll(".bw-tabs button").forEach(b => b.onclick = () => show(b.dataset.v));
+  svcSel.onchange = meta;
+  $("b-go").onclick = () => {
+    const name = $("b-name").value.trim(), phone = $("b-phone").value.trim();
+    if (!name) return $("b-name").focus();
+    if (phone.replace(/\D/g, "").length < 10) return $("b-phone").focus();
+    const s = S[+svcSel.value], when = `${fdate(days[bDay])}, ${bTime}`;
+    open[bDay].delete(bTime); busy[bDay][bTime] = 1;
+    const now = new Date().toTimeString().slice(0, 5);
+    feed.unshift(`<div class="tg-msg"><b>Новая запись</b><br>${s[0]}, ${s[2]} мин<br>${when}<br>${name.replace(/</g, "")}, ${phone.replace(/</g, "")}<time>${now}</time></div>
+      <div class="tg-btns"><span>Подтвердить</span><span>Перенести</span></div>`);
+    $("d-sum").innerHTML = `<b>${s[0]}</b><br>${when}<br>ул. Чичерина, 44`;
+    mDay = bDay; bTime = null; done = true; show("client");
+  };
+  $("d-again").onclick = () => { done = false; show("client"); };
+  $("d-master").onclick = () => show("master");
+  list.querySelectorAll("[data-book]").forEach(a => a.onclick = () => {
+    svcSel.value = a.dataset.book; meta(); done = false; show("client");
+  });
+  meta(); renderClient();
+
+  /* ---------- сертификат на свою сумму ---------- */
+  document.querySelectorAll("#own-chips .chip").forEach(c => c.onclick = () => {
+    document.querySelectorAll("#own-chips .chip").forEach(x => x.classList.toggle("on", x === c));
+    const v = fmt(+c.dataset.v), b = $("own-btn");
+    b.dataset.msg = `Здравствуйте! Хочу заказать подарочный сертификат на ${v} ₽.`;
+    b.textContent = `Заказать на ${v} ₽`; bindWa(b);
   });
 
   const header = document.querySelector("header"), mbar = document.getElementById("mbar");
