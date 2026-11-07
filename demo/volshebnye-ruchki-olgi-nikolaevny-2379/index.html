@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Волшебные ручки Ольги Николаевны · массаж в Уссурийске</title>
 <meta name="description" content="Студия заботы о себе в Уссурийске, ул. Чичерина, 44. Массаж тела, спины, лица, лимфодренаж, медовый и slim-массаж. Запись в WhatsApp.">
-<meta name="theme-color" content="#f6efe6">
+<meta name="theme-color" content="#f1f2e8">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Волшебные ручки Ольги Николаевны">
 <meta property="og:description" content="Массаж в Уссурийске, ул. Чичерина, 44 · ★ 4.8 в 2ГИС · запись в WhatsApp">
@@ -17,21 +17,21 @@
 <link rel="preload" as="image" href="img/hero.jpg">
 <style>
   :root {
-    --bg: #f7f1e9;
-    --bg-2: #efe5d8;
-    --card: #fffaf3;
-    --sand: #e4d4c0;
-    --line: rgba(110, 82, 55, .14);
-    --text: #3b2f26;
-    --muted: #85735f;
-    --accent: #a27b56;
-    --accent-2: #8a6544;
-    --accent-soft: rgba(162, 123, 86, .1);
+    --bg: #f2f3ea;
+    --bg-2: #e6e9d9;
+    --card: #fbfcf6;
+    --sand: #d3d8bf;
+    --line: rgba(55, 68, 38, .14);
+    --text: #2c3324;
+    --muted: #6c735f;
+    --accent: #66773f;
+    --accent-2: #4c5c31;
+    --accent-soft: rgba(102, 119, 63, .1);
     --serif: "Playfair Display", Georgia, serif;
     --sans: "Jost", -apple-system, "Segoe UI", Roboto, sans-serif;
     --r: 22px;
     --wrap: 1160px;
-    --shadow: 0 24px 60px -30px rgba(90, 62, 36, .35);
+    --shadow: 0 24px 60px -30px rgba(45, 58, 28, .35);
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -54,14 +54,14 @@
     border-radius: 999px; font: 400 16px var(--sans); letter-spacing: .02em; cursor: pointer; border: 1px solid transparent;
     transition: transform .25s ease, background .25s ease, box-shadow .25s ease, color .25s ease; }
   .btn:hover { transform: translateY(-2px); }
-  .btn-main { background: var(--text); color: var(--card); box-shadow: 0 14px 30px -14px rgba(59, 47, 38, .6); }
+  .btn-main { background: var(--text); color: var(--card); box-shadow: 0 14px 30px -14px rgba(44, 51, 36, .6); }
   .btn-main:hover { background: var(--accent-2); }
-  .btn-ghost { border-color: rgba(59, 47, 38, .25); color: var(--text); background: rgba(255, 250, 243, .5); backdrop-filter: blur(6px); }
+  .btn-ghost { border-color: rgba(44, 51, 36, .25); color: var(--text); background: rgba(251, 252, 246, .5); backdrop-filter: blur(6px); }
   .btn-ghost:hover { background: var(--card); }
 
   /* header */
   header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; transition: background .3s, box-shadow .3s; }
-  header.scrolled { background: rgba(247, 241, 233, .88); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--line); }
+  header.scrolled { background: rgba(242, 243, 234, .88); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--line); }
   .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 20px; }
   .logo { display: flex; flex-direction: column; line-height: 1.05; }
   .logo b { font: 400 23px var(--serif); font-style: italic; }
@@ -75,7 +75,7 @@
   /* hero */
   .hero { padding: 140px 0 90px; position: relative; }
   .hero::before { content: ""; position: absolute; right: -10vw; top: -10vw; width: 60vw; height: 60vw; border-radius: 50%;
-    background: radial-gradient(circle, #ecdcc6 0%, rgba(236, 220, 198, 0) 65%); z-index: -1; }
+    background: radial-gradient(circle, #dfe4cc 0%, rgba(223, 228, 204, 0) 65%); z-index: -1; }
   .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 64px; align-items: center; }
   .hero h1 { font-size: clamp(44px, 6.6vw, 84px); }
   .hero h1 small { display: block; font-size: .42em; font-style: italic; color: var(--muted); margin-top: 14px; letter-spacing: 0; }
@@ -116,11 +116,11 @@
   .need .ic svg { width: 22px; height: 22px; }
   .need b { display: block; font: 400 21px var(--serif); margin-bottom: 4px; }
   .need span { font-size: 15px; color: var(--muted); }
-  .advice { margin-top: 18px; background: var(--text); color: #f3e9dc; border-radius: var(--r); padding: 28px 32px;
+  .advice { margin-top: 18px; background: var(--text); color: #eef0e2; border-radius: var(--r); padding: 28px 32px;
     display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
   .advice p { margin: 0; max-width: 680px; }
-  .advice p b { font: italic 400 22px var(--serif); color: #e9cfac; }
-  .advice .btn { background: #f3e9dc; color: var(--text); }
+  .advice p b { font: italic 400 22px var(--serif); color: #d9cf9c; }
+  .advice .btn { background: #eef0e2; color: var(--text); }
 
   /* prices */
   .prices { background: var(--bg-2); }
@@ -171,14 +171,14 @@
   .g5 { grid-column: span 4; grid-row: span 2; }
 
   /* rating */
-  .rating { background: var(--text); color: #f3e9dc; border-radius: 32px; padding: 64px; display: grid; grid-template-columns: auto 1fr auto; gap: 56px; align-items: center; }
-  .rating .big { font: 400 110px/1 var(--serif); color: #e9cfac; }
-  .stars { display: flex; gap: 4px; color: #e9cfac; margin-bottom: 12px; }
+  .rating { background: var(--text); color: #eef0e2; border-radius: 32px; padding: 64px; display: grid; grid-template-columns: auto 1fr auto; gap: 56px; align-items: center; }
+  .rating .big { font: 400 110px/1 var(--serif); color: #d9cf9c; }
+  .stars { display: flex; gap: 4px; color: #d9cf9c; margin-bottom: 12px; }
   .stars svg { width: 22px; height: 22px; }
   .rating h3 { font-size: 30px; margin-bottom: 10px; }
-  .rating p { margin: 0; color: #c9b8a3; max-width: 460px; }
-  .rating .btn { border-color: rgba(243, 233, 220, .35); color: #f3e9dc; background: transparent; }
-  .rating .btn:hover { background: rgba(243, 233, 220, .1); }
+  .rating p { margin: 0; color: #c3c8ad; max-width: 460px; }
+  .rating .btn { border-color: rgba(238, 240, 226, .35); color: #eef0e2; background: transparent; }
+  .rating .btn:hover { background: rgba(238, 240, 226, .1); }
 
   /* steps */
   .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 46px; counter-reset: s; }
@@ -198,7 +198,7 @@
   .c-list b { font-weight: 400; font-size: 19px; }
   .c-btns { display: flex; flex-wrap: wrap; gap: 12px; }
   .map { min-height: 460px; background: var(--sand); }
-  .map iframe { width: 100%; height: 100%; min-height: 460px; border: 0; display: block; filter: sepia(.25) saturate(.85); }
+  .map iframe { width: 100%; height: 100%; min-height: 460px; border: 0; display: block; filter: saturate(.75); }
 
   footer { padding: 40px 0 120px; text-align: center; font-size: 14px; color: var(--muted); }
   footer .logo { align-items: center; margin-bottom: 14px; }
@@ -206,11 +206,11 @@
 
   /* mobile bar */
   .mbar { display: none; position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 60;
-    background: rgba(59, 47, 38, .95); backdrop-filter: blur(10px); border-radius: 999px; padding: 6px; gap: 6px; box-shadow: 0 16px 40px -12px rgba(59, 47, 38, .6);
+    background: rgba(44, 51, 36, .95); backdrop-filter: blur(10px); border-radius: 999px; padding: 6px; gap: 6px; box-shadow: 0 16px 40px -12px rgba(44, 51, 36, .6);
     transform: translateY(140%); transition: transform .4s ease; }
   .mbar.show { transform: none; }
-  .mbar a { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; border-radius: 999px; color: #f3e9dc; font-size: 15px; }
-  .mbar a.wa { background: #f3e9dc; color: var(--text); }
+  .mbar a { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; border-radius: 999px; color: #eef0e2; font-size: 15px; }
+  .mbar a.wa { background: #eef0e2; color: var(--text); }
 
   /* booking */
   .book-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 64px; align-items: start; }
@@ -243,7 +243,7 @@
   .day b { font: 400 21px var(--serif); }
   .day:disabled { opacity: .35; cursor: default; }
   .day.on { background: var(--text); color: var(--card); border-color: var(--text); }
-  .day.on small { color: #d8c7b2; }
+  .day.on small { color: #c9cdb5; }
   .slots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
   .slot { height: 46px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg); font: 400 15px var(--sans); color: var(--text); cursor: pointer; transition: .2s; }
   .slot:hover { border-color: var(--accent); }
@@ -260,11 +260,11 @@
   .done p { color: var(--muted); margin: 0 auto 8px; max-width: 400px; }
   .done .sum { background: var(--bg); border-radius: 16px; padding: 16px; margin: 20px 0; font-size: 16px; color: var(--text); }
   .done .btns { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
-  .tg { background: #e9e2d8; border-radius: 20px; overflow: hidden; }
-  .tg-head { display: flex; gap: 12px; align-items: center; padding: 12px 16px; background: var(--text); color: #f3e9dc; }
+  .tg { background: #e3e6d6; border-radius: 20px; overflow: hidden; }
+  .tg-head { display: flex; gap: 12px; align-items: center; padding: 12px 16px; background: var(--text); color: #eef0e2; }
   .tg-ava { width: 38px; height: 38px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; font: italic 400 16px var(--serif); color: #fff; }
   .tg-head b { display: block; font-weight: 500; font-size: 15px; }
-  .tg-head span { font-size: 12px; color: #c9b8a3; }
+  .tg-head span { font-size: 12px; color: #c3c8ad; }
   .tg-body { padding: 14px; display: grid; gap: 8px; }
   .tg-msg { background: #fff; border-radius: 4px 16px 16px 16px; padding: 12px 14px; font-size: 14px; line-height: 1.5; max-width: 92%; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
   .tg-msg b { font-weight: 500; }
@@ -272,7 +272,7 @@
   .tg-btns { display: flex; gap: 6px; max-width: 92%; }
   .tg-btns span { flex: 1; text-align: center; background: rgba(255,255,255,.6); border-radius: 10px; padding: 7px; font-size: 13px; color: var(--accent-2); }
   .mslot.on { background: var(--card); border-color: var(--accent); color: var(--accent-2); box-shadow: 0 0 0 1px var(--accent) inset; }
-  .mslot.off { color: #b9ab9b; text-decoration: line-through; }
+  .mslot.off { color: #a9ae9a; text-decoration: line-through; }
   .mslot.busy { background: var(--text); color: var(--card); border-color: var(--text); cursor: default; font-size: 13px; }
   .legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--muted); margin-top: 12px; }
   .legend i { display: inline-block; width: 12px; height: 12px; border-radius: 4px; margin-right: 6px; vertical-align: -1px; border: 1px solid var(--accent); }
@@ -285,17 +285,17 @@
   .cert { background: var(--card); border-radius: 26px; padding: 14px 14px 26px; border: 1px solid var(--line); display: flex; flex-direction: column; transition: transform .3s, box-shadow .3s; }
   .cert:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
   .cert-card { position: relative; aspect-ratio: 1.6; border-radius: 18px; padding: 22px 24px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;
-    background: linear-gradient(135deg, #f6ecdf 0%, #e6d3bb 100%); color: var(--text); }
-  .cert-card::before { content: ""; position: absolute; inset: 8px; border: 1px solid rgba(162, 123, 86, .45); border-radius: 12px; pointer-events: none; }
-  .cert-card::after { content: ""; position: absolute; right: -50px; bottom: -70px; width: 200px; height: 200px; border-radius: 50%; border: 1px solid rgba(162, 123, 86, .35); box-shadow: 0 0 0 18px rgba(162, 123, 86, .06); }
+    background: linear-gradient(135deg, #eef0e0 0%, #d4dbbd 100%); color: var(--text); }
+  .cert-card::before { content: ""; position: absolute; inset: 8px; border: 1px solid rgba(102, 119, 63, .45); border-radius: 12px; pointer-events: none; }
+  .cert-card::after { content: ""; position: absolute; right: -50px; bottom: -70px; width: 200px; height: 200px; border-radius: 50%; border: 1px solid rgba(102, 119, 63, .35); box-shadow: 0 0 0 18px rgba(102, 119, 63, .06); }
   .cert-card small { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--accent-2); }
   .cert-card i { font: italic 400 20px var(--serif); }
   .cert-card b { font: 400 40px/1 var(--serif); }
   .cert-card b span { font-size: 22px; }
-  .cert.dark .cert-card { background: linear-gradient(135deg, #4a3b2f 0%, #2f251e 100%); color: #f3e9dc; }
-  .cert.dark .cert-card::before { border-color: rgba(233, 207, 172, .4); }
-  .cert.dark .cert-card::after { border-color: rgba(233, 207, 172, .3); }
-  .cert.dark .cert-card small { color: #e9cfac; }
+  .cert.dark .cert-card { background: linear-gradient(135deg, #45532f 0%, #2a3320 100%); color: #eef0e2; }
+  .cert.dark .cert-card::before { border-color: rgba(217, 207, 156, .4); }
+  .cert.dark .cert-card::after { border-color: rgba(217, 207, 156, .3); }
+  .cert.dark .cert-card small { color: #d9cf9c; }
   .cert-body { padding: 22px 12px 0; flex: 1; display: flex; flex-direction: column; }
   .cert-body h3 { font-size: 25px; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
   .tag { font: 400 12px var(--sans); letter-spacing: .08em; text-transform: uppercase; background: var(--accent-soft); color: var(--accent-2); padding: 4px 10px; border-radius: 999px; }
@@ -431,7 +431,7 @@
         </div>
         <div class="hero-meta reveal d3">
           <div><b>4.8</b>рейтинг в 2ГИС</div>
-          <div><b>11</b>видов массажа</div>
+          <div><b id="svc-count">11</b>видов массажа</div>
           <div><b>30–120</b>минут на сеанс</div>
         </div>
       </div>
@@ -439,9 +439,9 @@
         <div class="frame"><img src="img/hero.jpg" alt="Массаж спины в студии"></div>
         <div class="ring" aria-hidden="true">
           <svg viewBox="0 0 100 100"><defs><path id="circ" d="M50 50m-38 0a38 38 0 1 1 76 0a38 38 0 1 1-76 0"/></defs>
-            <circle cx="50" cy="50" r="49" fill="#fffaf3"/>
-            <text font-family="Jost, sans-serif" font-size="9.4" letter-spacing="2.6" fill="#a27b56"><textPath href="#circ">ЗАБОТА О СЕБЕ · ЗАБОТА О СЕБЕ ·</textPath></text>
-            <path d="m50 41 2.6 6.4 6.4 2.6-6.4 2.6L50 59l-2.6-6.4-6.4-2.6 6.4-2.6Z" fill="#a27b56"/></svg>
+            <circle cx="50" cy="50" r="49" fill="#fbfcf6"/>
+            <text font-family="Jost, sans-serif" font-size="9.4" letter-spacing="2.6" fill="#66773f"><textPath href="#circ">ЗАБОТА О СЕБЕ · ЗАБОТА О СЕБЕ ·</textPath></text>
+            <path d="m50 41 2.6 6.4 6.4 2.6-6.4 2.6L50 59l-2.6-6.4-6.4-2.6 6.4-2.6Z" fill="#66773f"/></svg>
         </div>
         <div class="badge">
           <div class="star"><svg><use href="#i-star"/></svg></div>
@@ -506,49 +506,48 @@
         <ul class="book-points">
           <li class="reveal"><span>1</span><div><b>Окошки открывает Ольга Николаевна</b>Только те дни и часы, когда ей удобно. Всё остальное время закрыто.</div></li>
           <li class="reveal d1"><span>2</span><div><b>Вы выбираете сами</b>Услугу, день и время. Занятое окошко сразу пропадает, накладок не будет.</div></li>
-          <li class="reveal d2"><span>3</span><div><b>Напоминание за день</b>Вам придёт напоминание о визите, а мастеру уведомление о новой записи.</div></li>
+          <li class="reveal d2"><span>3</span><div><b>Напоминание за день</b>После записи подключите Telegram, и бот напомнит о визите. А Ольга Николаевна сразу узнаёт о каждой записи.</div></li>
         </ul>
-        <p class="hint reveal">Попробуйте сами: откройте вкладку «Вид мастера», закройте пару окошек и вернитесь к записи.</p>
+        <p class="hint reveal" id="tg-hint" hidden>Удобнее в Telegram? <a href="#" target="_blank" rel="noopener" style="color:inherit;font-weight:500">Запишитесь через бота</a>, там же увидите свои записи.</p>
       </div>
-      <div class="bw reveal d1">
-        <div class="bw-tabs"><button class="on" data-v="client">Записаться</button><button data-v="master">Вид мастера</button></div>
+      <div class="bw reveal d1" id="bw">
         <div id="v-client">
           <label class="bw-l" for="b-svc">Услуга</label>
           <div class="sel"><select id="b-svc"></select></div>
           <div class="bw-meta" id="b-meta"></div>
           <span class="bw-l">День</span>
-          <div class="days" id="b-days"></div>
+          <div class="days" id="b-days"><div class="empty">Загружаю свободные окошки…</div></div>
           <span class="bw-l">Время</span>
           <div class="slots" id="b-slots"></div>
           <div class="bw-form">
-            <input id="b-name" placeholder="Ваше имя" autocomplete="name">
-            <input id="b-phone" type="tel" placeholder="Телефон" autocomplete="tel">
+            <input id="b-name" placeholder="Ваше имя" autocomplete="name" maxlength="60">
+            <input id="b-phone" type="tel" placeholder="Телефон" autocomplete="tel" maxlength="20">
+            <input id="b-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           </div>
           <button class="btn btn-main bw-go" id="b-go" disabled>Выберите время</button>
-          <p class="bw-note">Демо-версия: запись никуда не отправляется.</p>
+          <p class="bw-note" id="b-note">Запись сразу придёт Ольге Николаевне. Если планы изменятся, просто напишите ей.</p>
         </div>
         <div id="v-done" hidden>
           <div class="done">
             <div class="ok"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg></div>
             <h3>Вы записаны</h3>
             <div class="sum" id="d-sum"></div>
-            <p>Ольга Николаевна уже получила уведомление. За день до визита мы напомним о записи.</p>
-            <div class="btns">
-              <button class="btn btn-ghost" id="d-master">Как это видит мастер</button>
-              <button class="btn btn-main" id="d-again">Записаться ещё</button>
+            <p>Ольга Николаевна уже получила уведомление о вашей записи.</p>
+            <div id="d-tgbox" hidden>
+              <p style="margin-top:14px">Хотите, чтобы мы напомнили о визите за день?</p>
+              <a class="btn btn-main" id="d-tg" href="#" target="_blank" rel="noopener" style="margin:6px 0 4px"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M21.4 4.6 2.9 11.8c-1 .4-1 1.7 0 2l4.6 1.5 1.8 5.5c.2.7 1.1.9 1.6.4l2.6-2.4 4.8 3.5c.6.4 1.4.1 1.6-.6L23 5.8c.2-.9-.7-1.6-1.6-1.2ZM18 8.2l-8.4 7.6-.3 3.3-1.4-4.4 9.6-6.8c.4-.3.8.1.5.3Z"/></svg>Напомнить в Telegram</a>
+            </div>
+            <div class="btns" style="margin-top:10px">
+              <button class="btn btn-ghost" id="d-again">Записаться ещё</button>
             </div>
           </div>
         </div>
-        <div id="v-master" hidden>
-          <div class="tg">
-            <div class="tg-head"><div class="tg-ava">ВР</div><div><b>Бот записи · Волшебные ручки</b><span>так уведомления приходят в Telegram</span></div></div>
-            <div class="tg-body" id="m-feed"></div>
+        <div id="v-off" hidden>
+          <div class="done">
+            <h3>Запишем в WhatsApp</h3>
+            <p>Онлайн-запись сейчас недоступна. Напишите Ольге Николаевне, и она подберёт удобное время.</p>
+            <div class="btns" style="margin-top:16px"><a class="btn btn-main js-wa" href="#" data-msg="Здравствуйте! Хочу записаться на массаж.">Написать в WhatsApp</a></div>
           </div>
-          <span class="bw-l">Ваши окошки</span>
-          <div class="days" id="m-days"></div>
-          <div class="slots" id="m-slots" style="margin-top:10px"></div>
-          <div class="legend"><span><i></i>открыто для записи</span><span><i class="c"></i>закрыто</span><span><i class="b"></i>занято</span></div>
-          <p class="bw-note">Нажмите на время, чтобы открыть или закрыть окошко. Клиенты видят только открытые.</p>
         </div>
       </div>
     </div>
@@ -692,34 +691,51 @@
   const bindWa = el => { el.href = wa(el.dataset.msg); el.target = "_blank"; el.rel = "noopener"; };
   document.querySelectorAll(".js-wa").forEach(bindWa);
 
-  // [название, описание, минуты, цена жен., цена муж.]
-  const S = [
-    ["Оздоровительный массаж тела", "Всё тело, мягко и глубоко. Снимает усталость и возвращает лёгкость.", 60, 3000, 3500],
-    ["Тело + лицо", "Оздоровительный массаж тела и массаж лица за один визит.", 90, 4000, 0],
-    ["Массаж спины", "Прорабатываем спину и поясницу, уходит скованность.", 40, 2500, 3000],
-    ["Шейно-воротниковая зона", "Для тех, кто много сидит за компьютером или за рулём.", 30, 2000, 2500],
-    ["Фасциальный массаж ШВЗ", "Глубокая работа с фасциями шеи и плеч, когда обычного массажа мало.", 60, 3000, 3500],
-    ["Миофасциальный массаж", "Мышцы и фасции всего тела: снимаем зажимы и возвращаем подвижность.", 90, 4000, 0],
-    ["Массаж ног", "Стопа и голень. Лёгкость в ногах после долгого дня.", 30, 2000, 0],
-    ["Slim massage", "Моделирующий массаж для подтянутого силуэта.", 90, 3500, 0],
-    ["Медовый массаж", "Классика для упругой и гладкой кожи.", 60, 3000, 0],
-    ["Лимфодренажный массаж", "Мягкие ритмичные движения против отёков и тяжести.", 120, 4000, 0],
-    ["Скульптурный массаж лица", "Тонус, свежий цвет и чёткий овал без инъекций.", 60, 3000, 0],
-  ];
+  // Услуги, цены и свободные окошки берутся из бота записи: их меняет Ольга Николаевна у себя в Telegram.
+  // Если бот не ответил — показываем прайс отсюда, а запись предлагаем через WhatsApp.
+  const API = "https://luma-ruchki-bot.damaged852.workers.dev";
+  const DESC = {
+    body60: "Всё тело, мягко и глубоко. Снимает усталость и возвращает лёгкость.",
+    bodyface90: "Оздоровительный массаж тела и массаж лица за один визит.",
+    back40: "Прорабатываем спину и поясницу, уходит скованность.",
+    neck30: "Для тех, кто много сидит за компьютером или за рулём.",
+    fascia60: "Глубокая работа с фасциями шеи и плеч, когда обычного массажа мало.",
+    myo90: "Мышцы и фасции всего тела: снимаем зажимы и возвращаем подвижность.",
+    legs30: "Стопа и голень. Лёгкость в ногах после долгого дня.",
+    slim90: "Моделирующий массаж для подтянутого силуэта.",
+    honey60: "Классика для упругой и гладкой кожи.",
+    lymph120: "Мягкие ритмичные движения против отёков и тяжести.",
+    face60: "Тонус, свежий цвет и чёткий овал без инъекций.",
+  };
+  let services = [
+    ["body60", "Оздоровительный массаж тела", 60, 3000, 3500], ["bodyface90", "Тело + лицо", 90, 4000, 0],
+    ["back40", "Массаж спины", 40, 2500, 3000], ["neck30", "Шейно-воротниковая зона", 30, 2000, 2500],
+    ["fascia60", "Фасциальный массаж ШВЗ", 60, 3000, 3500], ["myo90", "Миофасциальный массаж", 90, 4000, 0],
+    ["legs30", "Массаж ног (стопа + голень)", 30, 2000, 0], ["slim90", "Slim massage", 90, 3500, 0],
+    ["honey60", "Медовый массаж", 60, 3000, 0], ["lymph120", "Лимфодренажный массаж", 120, 4000, 0],
+    ["face60", "Скульптурный массаж лица", 60, 3000, 0],
+  ].map(([id, name, dur, w, m]) => ({ id, name, dur, w, m }));
   const fmt = n => n.toLocaleString("ru-RU");
-  const list = document.getElementById("list");
-  list.innerHTML = S.map((s, i) => `
-    <div class="row" data-i="${i}">
-      <div class="row-main"><h3>${s[0]}</h3><p>${s[1]}</p></div>
+  const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+  const $ = id => document.getElementById(id);
+  const list = $("list");
+  let group = "w";
+
+  function renderPrices() {
+    list.innerHTML = services.map(s => `
+    <div class="row" data-id="${s.id}">
+      <div class="row-main"><h3>${esc(s.name)}</h3>${DESC[s.id] ? `<p>${DESC[s.id]}</p>` : ""}</div>
       <div class="row-side">
-        <span class="dur"><svg><use href="#i-clock"/></svg>${s[2]} мин</span>
-        <span class="pr" data-w="${s[3]}" data-m="${s[4]}">${fmt(s[3])} <small>₽</small></span>
-        <a class="book" href="#booking" data-book="${i}" aria-label="Записаться: ${s[0]}"><svg><use href="#i-arrow"/></svg></a>
+        <span class="dur"><svg><use href="#i-clock"/></svg>${s.dur} мин</span>
+        <span class="pr" data-w="${s.w}" data-m="${s.m}">${fmt(s.w || s.m)} <small>₽</small></span>
+        <a class="book" href="#booking" data-book="${s.id}" aria-label="Записаться: ${esc(s.name)}"><svg><use href="#i-arrow"/></svg></a>
       </div>
     </div>`).join("");
-
-  let group = "w";
-  const setGroup = g => {
+    list.querySelectorAll("[data-book]").forEach(a => a.onclick = () => { svcSel.value = a.dataset.book; bTime = null; done(false); renderBooking(); });
+    const cnt = $("svc-count"); if (cnt) cnt.textContent = services.length;
+    setGroup(group);
+  }
+  function setGroup(g) {
     group = g;
     document.querySelectorAll(".switch button").forEach(b => b.classList.toggle("on", b.dataset.g === g));
     list.querySelectorAll(".row").forEach(r => {
@@ -727,120 +743,98 @@
       r.classList.toggle("hide", !v);
       if (v) p.innerHTML = fmt(v) + " <small>₽</small>";
     });
-  };
+  }
   document.querySelectorAll(".switch button").forEach(b => b.onclick = () => setGroup(b.dataset.g));
 
   const N = [
-    [3, "Спина и шея", "Начните с шейно-воротниковой зоны (30 мин). Если зажимы давние, лучше фасциальный массаж ШВЗ или массаж спины."],
-    [9, "Отёки и тяжесть", "Лимфодренажный массаж (120 мин) мягко выводит лишнюю жидкость. Для быстрой лёгкости подойдёт массаж ног."],
-    [7, "Силуэт", "Slim massage (90 мин) и медовый массаж хорошо работают курсом. Ольга Николаевна подскажет, сколько сеансов нужно."],
-    [10, "Лицо", "Скульптурный массаж лица (60 мин): тонус, свежий цвет и чёткий овал. Или совместите с телом за 90 минут."],
+    ["neck30", "Спина и шея", "Начните с шейно-воротниковой зоны (30 мин). Если зажимы давние, лучше фасциальный массаж ШВЗ или массаж спины."],
+    ["lymph120", "Отёки и тяжесть", "Лимфодренажный массаж (120 мин) мягко выводит лишнюю жидкость. Для быстрой лёгкости подойдёт массаж ног."],
+    ["slim90", "Силуэт", "Slim massage (90 мин) и медовый массаж хорошо работают курсом. Ольга Николаевна подскажет, сколько сеансов нужно."],
+    ["face60", "Лицо", "Скульптурный массаж лица (60 мин): тонус, свежий цвет и чёткий овал. Или совместите с телом за 90 минут."],
   ];
   document.querySelectorAll(".need").forEach(btn => btn.onclick = () => {
     document.querySelectorAll(".need").forEach(b => b.classList.toggle("on", b === btn));
-    const [i, t, d] = N[+btn.dataset.need];
-    document.getElementById("advice-text").innerHTML = `<b>${t}</b><br>${d}`;
-    const a = document.getElementById("advice-btn");
-    a.dataset.msg = `Здравствуйте! Хочу записаться: ${S[i][0]}.`;
-    a.innerHTML = `Смотреть в прайсе <svg><use href="#i-arrow"/></svg>`;
+    const [id, t, d] = N[+btn.dataset.need];
+    $("advice-text").innerHTML = `<b>${t}</b><br>${d}`;
+    const a = $("advice-btn");
+    a.innerHTML = `Выбрать время <svg><use href="#i-arrow"/></svg>`;
     a.removeAttribute("target");
-    a.href = "#prices";
-    a.onclick = e => {
-      e.preventDefault();
-      if (!S[i][4] && group === "m") setGroup("w");
-      const row = list.querySelector(`.row[data-i="${i}"]`);
-      row.scrollIntoView({ behavior: "smooth", block: "center" });
-      row.classList.remove("flash"); void row.offsetWidth; row.classList.add("flash");
-    };
+    a.href = "#booking";
+    a.onclick = () => { if (services.some(s => s.id === id)) { svcSel.value = id; bTime = null; done(false); renderBooking(); } };
   });
 
-  /* ---------- онлайн-запись (демо, всё в памяти страницы) ---------- */
-  const $ = id => document.getElementById(id);
-  const TIMES = ["09:00", "10:30", "12:00", "13:30", "15:00", "16:30", "18:00", "19:30"];
-  const DN = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
-  const days = [], open = [], busy = [];
-  const t0 = new Date(); t0.setHours(0, 0, 0, 0);
-  for (let k = 1; days.length < 12; k++) {
-    const d = new Date(t0); d.setDate(d.getDate() + k);
-    if (d.getDay() !== 0) days.push(d);           // воскресенье выходной
-  }
-  let seed = 11; const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
-  days.forEach((d, i) => {
-    open[i] = new Set(); busy[i] = {};
-    TIMES.forEach(t => { const r = rnd(); if (r > .5) open[i].add(t); else if (r > .3) busy[i][t] = 1; });
-    if (i === 0 && !open[i].size) open[i].add("15:00");
-  });
-  const fdate = d => d.toLocaleDateString("ru-RU", { weekday: "short", day: "numeric", month: "long" });
-  const ord = set => TIMES.filter(t => set.has(t));
-
+  /* ---------- онлайн-запись ---------- */
   const svcSel = $("b-svc");
-  svcSel.innerHTML = S.map((s, i) => `<option value="${i}">${s[0]} · ${s[2]} мин</option>`).join("");
-  let bDay = 0, bTime = null, mDay = 0, view = "client", done = false;
-
-  const meta = () => {
-    const s = S[+svcSel.value];
-    $("b-meta").textContent = s[4] ? `${fmt(s[3])} ₽ для женщин · ${fmt(s[4])} ₽ для мужчин` : `${fmt(s[3])} ₽`;
-  };
-  const dayBtns = (box, cur, isClient, pick) => {
-    box.innerHTML = days.map((d, i) => `<button class="day${i === cur ? " on" : ""}" data-i="${i}"
-      ${isClient && !open[i].size ? "disabled" : ""}><small>${DN[d.getDay()]}</small><b>${d.getDate()}</b></button>`).join("");
-    box.querySelectorAll(".day").forEach(b => b.onclick = () => pick(+b.dataset.i));
-  };
-  const renderClient = () => {
-    if (!open[bDay].size) bDay = Math.max(0, open.findIndex(s => s.size));
-    dayBtns($("b-days"), bDay, true, i => { bDay = i; bTime = null; renderClient(); });
-    const ts = ord(open[bDay]);
-    $("b-slots").innerHTML = ts.length ? ts.map(t => `<button class="slot${t === bTime ? " on" : ""}">${t}</button>`).join("")
-      : `<div class="empty">На этот день свободных окошек нет</div>`;
-    $("b-slots").querySelectorAll(".slot").forEach(b => b.onclick = () => { bTime = b.textContent; renderClient(); });
+  let avail = null, bDay = null, bTime = null, sending = false;
+  const D = s => new Date(s + "T00:00:00Z");
+  const fdate = s => D(s).toLocaleDateString("ru-RU", { weekday: "short", day: "numeric", month: "long", timeZone: "UTC" });
+  const DN = ["вс", "пн", "вт", "ср", "чт", "пт", "сб"];
+  const cur = () => services.find(s => s.id === svcSel.value) || services[0];
+  function fillServices() {
+    const keep = svcSel.value;
+    svcSel.innerHTML = services.map(s => `<option value="${s.id}">${esc(s.name)} · ${s.dur} мин</option>`).join("");
+    if (services.some(s => s.id === keep)) svcSel.value = keep;
+  }
+  function done(on) { $("v-client").hidden = on; $("v-done").hidden = !on; }
+  function renderBooking() {
+    const s = cur();
+    $("b-meta").textContent = s.w && s.m ? `${fmt(s.w)} ₽ для женщин · ${fmt(s.m)} ₽ для мужчин` : `${fmt(s.w || s.m)} ₽`;
+    if (!avail) return;
+    const days = avail.filter(d => d.slots.some(x => x.max >= s.dur));
+    if (!days.some(d => d.date === bDay)) { bDay = days.length ? days[0].date : null; bTime = null; }
+    $("b-days").innerHTML = days.length ? days.map(d => `<button class="day${d.date === bDay ? " on" : ""}" data-d="${d.date}"><small>${DN[D(d.date).getUTCDay()]}</small><b>${D(d.date).getUTCDate()}</b></button>`).join("")
+      : `<div class="empty">Свободных окошек на эту услугу пока нет. <a class="js-wa" href="#" data-msg="Здравствуйте! Хочу записаться: ${esc(s.name)}." style="color:var(--accent)">Напишите в WhatsApp</a>, подберём время.</div>`;
+    $("b-days").querySelectorAll(".day").forEach(b => b.onclick = () => { bDay = b.dataset.d; bTime = null; renderBooking(); });
+    $("b-days").querySelectorAll(".js-wa").forEach(bindWa);
+    const slots = bDay ? avail.find(d => d.date === bDay).slots.filter(x => x.max >= s.dur) : [];
+    $("b-slots").innerHTML = slots.map(x => `<button class="slot${x.t === bTime ? " on" : ""}">${x.t}</button>`).join("");
+    $("b-slots").querySelectorAll(".slot").forEach(b => b.onclick = () => { bTime = b.textContent; renderBooking(); });
     const go = $("b-go");
-    go.disabled = !bTime;
-    go.textContent = bTime ? `Записаться на ${fdate(days[bDay])}, ${bTime}` : "Выберите время";
-  };
-  const feed = [];
-  const renderMaster = () => {
-    dayBtns($("m-days"), mDay, false, i => { mDay = i; renderMaster(); });
-    $("m-slots").innerHTML = TIMES.map(t => {
-      const st = busy[mDay][t] ? "busy" : open[mDay].has(t) ? "on" : "off";
-      return `<button class="slot mslot ${st}" data-t="${t}" ${st === "busy" ? "disabled" : ""}>${t}</button>`;
-    }).join("");
-    $("m-slots").querySelectorAll(".mslot:not(.busy)").forEach(b => b.onclick = () => {
-      const s = open[mDay]; s.has(b.dataset.t) ? s.delete(b.dataset.t) : s.add(b.dataset.t);
-      if (bDay === mDay && !s.has(bTime)) bTime = null;
-      renderMaster();
-    });
-    const hello = `<div class="tg-msg">Здравствуйте, Ольга Николаевна! Сюда приходят новые записи. Свободные окошки отмечайте ниже: клиенты увидят только их.<time>09:00</time></div>
-      <div class="tg-btns"><span>Мои окошки</span><span>Записи на завтра</span></div>`;
-    $("m-feed").innerHTML = feed.length ? feed.join("") : hello;
-  };
-  const show = v => {
-    view = v;
-    document.querySelectorAll(".bw-tabs button").forEach(b => b.classList.toggle("on", b.dataset.v === v));
-    $("v-client").hidden = v !== "client" || done;
-    $("v-done").hidden = v !== "client" || !done;
-    $("v-master").hidden = v !== "master";
-    v === "master" ? renderMaster() : renderClient();
-  };
-  document.querySelectorAll(".bw-tabs button").forEach(b => b.onclick = () => show(b.dataset.v));
-  svcSel.onchange = meta;
-  $("b-go").onclick = () => {
+    go.disabled = !bTime || sending;
+    go.textContent = sending ? "Записываю…" : bTime ? `Записаться на ${fdate(bDay)}, ${bTime}` : "Выберите время";
+  }
+  function note(text, err) { const n = $("b-note"); n.textContent = text; n.style.color = err ? "#a2493b" : ""; }
+  async function load() {
+    const ctl = new AbortController(), timer = setTimeout(() => ctl.abort(), 8000);
+    try {
+      const r = await fetch(API + "/api/public", { signal: ctl.signal, cache: "no-store" });
+      const data = await r.json();
+      if (!data.avail) throw new Error("bad");
+      services = data.services; avail = data.avail;
+      if (data.bot) { const h = $("tg-hint"); if (h) { h.hidden = false; h.querySelector("a").href = `https://t.me/${data.bot}`; } }
+      renderPrices(); fillServices(); renderBooking();
+      return true;
+    } catch (e) {
+      if (!avail) { $("v-client").hidden = true; $("v-off").hidden = false; }
+      return false;
+    } finally { clearTimeout(timer); }
+  }
+  svcSel.onchange = () => { bTime = null; renderBooking(); };
+  $("b-go").onclick = async () => {
     const name = $("b-name").value.trim(), phone = $("b-phone").value.trim();
-    if (!name) return $("b-name").focus();
-    if (phone.replace(/\D/g, "").length < 10) return $("b-phone").focus();
-    const s = S[+svcSel.value], when = `${fdate(days[bDay])}, ${bTime}`;
-    open[bDay].delete(bTime); busy[bDay][bTime] = 1;
-    const now = new Date().toTimeString().slice(0, 5);
-    feed.unshift(`<div class="tg-msg"><b>Новая запись</b><br>${s[0]}, ${s[2]} мин<br>${when}<br>${name.replace(/</g, "")}, ${phone.replace(/</g, "")}<time>${now}</time></div>
-      <div class="tg-btns"><span>Подтвердить</span><span>Перенести</span></div>`);
-    $("d-sum").innerHTML = `<b>${s[0]}</b><br>${when}<br>ул. Чичерина, 44`;
-    mDay = bDay; bTime = null; done = true; show("client");
+    if (name.length < 2) { note("Напишите, пожалуйста, имя", true); return $("b-name").focus(); }
+    if (phone.replace(/\D/g, "").length < 10) { note("Проверьте номер телефона", true); return $("b-phone").focus(); }
+    const s = cur(), day = bDay, time = bTime;
+    sending = true; renderBooking();
+    try {
+      const r = await fetch(API + "/api/book", { method: "POST", headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify({ svc: s.id, date: day, time, name, phone, hp: $("b-hp").value }) });
+      const data = await r.json();
+      if (!data.ok) { note(data.error || "Не получилось записаться. Попробуйте ещё раз", true); sending = false; bTime = null; await load(); return; }
+      $("d-sum").innerHTML = `<b>${esc(s.name)}</b><br>${fdate(day)}, ${time}<br>ул. Чичерина, 44`;
+      $("d-tgbox").hidden = !data.tgLink;
+      if (data.tgLink) $("d-tg").href = data.tgLink;
+      note("Запись сразу придёт Ольге Николаевне. Если планы изменятся, просто напишите ей.");
+      done(true); bTime = null;
+      load();
+    } catch (e) {
+      note("Нет связи. Попробуйте ещё раз или напишите в WhatsApp", true);
+    } finally { sending = false; renderBooking(); }
   };
-  $("d-again").onclick = () => { done = false; show("client"); };
-  $("d-master").onclick = () => show("master");
-  list.querySelectorAll("[data-book]").forEach(a => a.onclick = () => {
-    svcSel.value = a.dataset.book; meta(); done = false; show("client");
-  });
-  meta(); renderClient();
+  $("d-again").onclick = () => { done(false); renderBooking(); };
+  renderPrices(); fillServices(); renderBooking();
+  load();
+  setInterval(() => { if (!document.hidden && !sending) load(); }, 120000);
 
   /* ---------- сертификат на свою сумму ---------- */
   document.querySelectorAll("#own-chips .chip").forEach(c => c.onclick = () => {
