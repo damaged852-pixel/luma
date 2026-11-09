@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Студия перманента и депиляции · Подольск</title>
+<meta name="description" content="Перманентный макияж, депиляция, оформление бровей и ресниц в центре Подольска. Ежедневно с 10:00 до 20:00, по записи.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Студия перманента и депиляции · Подольск">
+<meta property="og:description" content="Брови и губы, которые не надо рисовать каждое утро. Революционный проспект, 25/12.">
+<meta property="og:image" content="https://luma-web.site/demo/studiya-permanenta-i-depilyatsii-2639/preview.png">
+<meta property="og:url" content="https://luma-web.site/demo/studiya-permanenta-i-depilyatsii-2639/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Onest:wght@400;500;600&display=swap&subset=cyrillic" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --cream:#FDF8F4; --blush:#F8E7E2; --powder:#F1D3CD; --peach:#F9E2D0; --lilac:#EAE3F0; --sage:#E4EADF;
+  --ink:#46323A; --soft:#6F5A61; --rose:#A5566A; --rose-d:#8C4459; --line:#EBDAD4; --white:#fff;
+  --serif:'Prata',Georgia,serif; --sans:'Onest',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --r:22px; --wrap:1160px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font:400 17px/1.6 var(--sans);overflow-x:hidden}
+img,svg,iframe{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,select{font:inherit;color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.16}
+h2{font-size:clamp(30px,4.2vw,46px)}
+.wrap{max-width:var(--wrap);margin:auto;padding:0 24px}
+section{padding:clamp(64px,9vw,112px) 0;scroll-margin-top:64px}
+.kicker{font-size:14px;font-weight:500;color:var(--rose);margin-bottom:12px}
+.lead{color:var(--soft);max-width:560px;margin-top:14px}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:0 28px;border-radius:99px;border:0;background:var(--rose);color:#fff;font-weight:500;cursor:pointer;transition:background .25s,transform .25s}
+.btn:hover{background:var(--rose-d);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--powder)}
+.btn.ghost:hover{background:var(--blush)}
+.btn svg{width:19px;height:19px;flex:none}
+
+/* шапка */
+header{position:sticky;top:0;z-index:20;background:rgba(253,248,244,.9);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+header.stuck{border-color:var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;height:68px}
+.logo{font-family:var(--serif);font-size:17px;line-height:1.15}
+.logo small{display:block;font:400 12.5px var(--sans);color:var(--soft);margin-top:3px}
+nav{display:flex;gap:30px;font-size:15.5px}
+nav a{color:var(--soft);transition:color .2s}
+nav a:hover{color:var(--rose)}
+.tel{font-weight:500;font-size:15.5px;white-space:nowrap}
+
+/* первый экран */
+.hero{position:relative;padding:clamp(28px,5vw,64px) 0 clamp(56px,7vw,92px);overflow-x:clip}
+section{position:relative;z-index:1}
+.chip .stars{color:#D9A441}
+.hero::before{content:"";position:absolute;width:620px;height:620px;right:-140px;top:-160px;border-radius:50%;background:radial-gradient(circle,var(--lilac),transparent 68%)}
+.hero::after{content:"";position:absolute;width:520px;height:520px;left:-200px;bottom:-220px;border-radius:50%;background:radial-gradient(circle,var(--peach),transparent 68%)}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(32px,6vw,80px);align-items:center}
+.where{display:inline-flex;align-items:center;gap:8px;font-size:15px;color:var(--soft);margin-bottom:22px}
+.where svg{width:17px;height:17px;color:var(--rose);flex:none}
+h1{font-size:clamp(38px,5.5vw,66px)}
+h1 em{font-style:normal;color:var(--rose)}
+.hero p.sub{font-size:clamp(17px,1.5vw,19px);color:var(--soft);margin:22px 0 32px;max-width:520px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.arch{position:relative;max-width:440px;margin-left:auto;width:100%}
+.arch .frame{border-radius:999px 999px 26px 26px;overflow:hidden;aspect-ratio:4/5;background:var(--powder);box-shadow:0 30px 60px -32px rgba(140,68,89,.45)}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:42% 40%}
+.arch::before{content:"";position:absolute;inset:-14px -14px 26px 26px;border:1.5px solid var(--powder);border-radius:999px 999px 26px 26px;z-index:-1}
+.chip{position:absolute;left:-26px;bottom:34px;display:flex;align-items:center;gap:12px;background:#fff;border-radius:18px;padding:13px 18px;box-shadow:0 16px 36px -18px rgba(70,50,58,.4);transition:transform .25s}
+.chip:hover{transform:translateY(-2px)}
+.chip b{font:400 26px/1 var(--serif)}
+.chip span{font-size:13.5px;line-height:1.3;color:var(--soft)}
+.stars{display:flex;gap:1px;color:#D9A441;margin-bottom:2px}
+.stars svg{width:12px;height:12px}
+
+/* услуги */
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:38px}
+.note{font-size:14.5px;color:var(--soft)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+.group{border-radius:var(--r);padding:30px 26px 18px}
+.group.a{background:var(--blush)} .group.b{background:var(--peach)} .group.c{background:var(--lilac)}
+.group h3{font-size:23px;margin-bottom:6px}
+.group>p{font-size:15px;color:var(--soft);margin-bottom:14px}
+.svc{display:flex;justify-content:space-between;align-items:baseline;gap:14px;width:100%;padding:13px 0;background:none;border:0;border-top:1px solid rgba(70,50,58,.12);text-align:left;cursor:pointer;font-size:16px;line-height:1.35;transition:color .2s}
+.svc span:last-child{white-space:nowrap;font-weight:500;font-size:15.5px}
+.svc:hover{color:var(--rose)}
+
+/* примерка */
+.try{background:linear-gradient(180deg,var(--blush),var(--cream))}
+.try .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,6vw,76px);align-items:center}
+.stage{background:#fff;border-radius:28px;padding:clamp(18px,3vw,34px);box-shadow:0 24px 50px -36px rgba(140,68,89,.5)}
+.stage svg{width:100%;height:auto}
+.opt-label{font-size:14.5px;color:var(--soft);margin:26px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.pick{min-height:44px;padding:0 18px;border-radius:99px;border:0;background:#fff;box-shadow:inset 0 0 0 1.5px var(--powder);cursor:pointer;font-size:15.5px;transition:background .2s,color .2s,box-shadow .2s}
+.pick:hover{box-shadow:inset 0 0 0 1.5px var(--rose)}
+.pick[aria-pressed=true]{background:var(--rose);color:#fff;box-shadow:none}
+.shade{display:inline-flex;align-items:center;gap:9px}
+.shade i{width:16px;height:16px;border-radius:50%;background:var(--c);box-shadow:0 0 0 2px rgba(255,255,255,.75)}
+.try .btn{margin-top:28px}
+.small{font-size:14px;color:var(--soft);margin-top:14px}
+
+/* галерея */
+.gal{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:16px}
+.gal figure{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:var(--powder)}
+.gal figure:first-child{aspect-ratio:auto}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.gal figure:hover img{transform:scale(1.03)}
+
+/* почему */
+.why .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,84px);align-items:center}
+.portrait{border-radius:26px 26px 999px 999px;overflow:hidden;aspect-ratio:4/5;background:var(--peach)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.points{margin-top:26px}
+.point{display:grid;grid-template-columns:200px 1fr;gap:18px;padding:20px 0;border-top:1px solid var(--line)}
+.point:last-child{border-bottom:1px solid var(--line)}
+.point b{font:400 19px/1.3 var(--serif)}
+.point p{color:var(--soft);font-size:16px}
+.rate{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:30px}
+.rate b{font:400 46px/1 var(--serif)}
+.rate .stars svg{width:16px;height:16px}
+.rate a{color:var(--rose);border-bottom:1px solid currentColor;font-size:15.5px}
+
+/* запись */
+.book{background:var(--sage)}
+.book .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,6vw,76px);align-items:start}
+.steps{list-style:none;padding:0;margin-top:26px}
+.steps li{padding:12px 0 12px 22px;position:relative;color:var(--soft)}
+.steps li::before{content:"";position:absolute;left:0;top:22px;width:8px;height:8px;border-radius:50%;background:var(--rose)}
+.form{background:#fff;border-radius:28px;padding:clamp(22px,3.4vw,38px)}
+.form label,.form .lbl{display:block;font-size:14.5px;color:var(--soft);margin:0 0 9px}
+.field{margin-bottom:24px}
+select{width:100%;height:52px;padding:0 42px 0 16px;border:1.5px solid var(--powder);border-radius:14px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' fill='none' stroke='%23A5566A' stroke-width='2'%3E%3Cpath d='m1 1 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 16px center;appearance:none;-webkit-appearance:none;cursor:pointer;font-size:16px}
+.form .pick{padding:0 15px}
+.form .btn{width:100%}
+.summary{background:var(--cream);border-radius:14px;padding:13px 16px;font-size:15.5px;margin-bottom:14px}
+
+/* контакты */
+.contacts .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,5vw,64px);align-items:stretch}
+.info{list-style:none;padding:0;margin:26px 0 28px}
+.info li{display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.info svg{width:21px;height:21px;color:var(--rose);flex:none;margin-top:3px}
+.map{border-radius:var(--r);overflow:hidden;min-height:400px;background:var(--blush)}
+.map iframe{width:100%;height:100%;min-height:400px;border:0}
+
+footer{padding:26px 0 30px;border-top:1px solid var(--line);font-size:13.5px;color:var(--soft)}
+footer .wrap{display:flex;justify-content:space-between;gap:10px 24px;flex-wrap:wrap}
+
+/* нижняя панель на телефоне */
+.dock{display:none;position:fixed;left:0;right:0;bottom:0;z-index:30;gap:8px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(253,248,244,.95);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.dock .btn{min-height:48px;padding:0 16px}
+.dock .main{flex:1}
+.dock .icon{width:48px;padding:0}
+
+.js .r{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.js .r.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .r{opacity:1;transform:none;transition:none}*{transition:none!important}}
+
+@media (max-width:980px){
+  nav{display:none}
+  .svc-grid{grid-template-columns:1fr}
+  .why .wrap,.book .wrap,.contacts .wrap,.try .wrap{grid-template-columns:1fr}
+  .portrait{max-width:380px;aspect-ratio:1/1}
+}
+@media (max-width:760px){
+  body{font-size:16.5px;padding-bottom:70px}
+  .wrap{padding:0 18px}
+  .tel{display:none}
+  .hero .wrap{grid-template-columns:1fr}
+  .arch{max-width:330px;margin:10px auto 0}
+  .arch::before{inset:-10px -10px 22px 18px}
+  .chip{left:-8px;bottom:24px}
+  .cta .btn{flex:1 1 100%}
+  .gal{grid-template-columns:1fr 1fr}
+  .gal figure:first-child{grid-column:1/-1;aspect-ratio:16/11}
+  .point{grid-template-columns:1fr;gap:4px}
+  .dock{display:flex}
+  .map,.map iframe{min-height:320px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-star" viewBox="0 0 20 20"><path fill="currentColor" d="m10 1.6 2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 15l-5.2 2.8 1-5.9L1.500 7.800l5.900-.8z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" d="M12 21s7-6.100 7-11.500A7 7 0 0 0 5 9.500C5 14.900 12 21 12 21Z"/><circle cx="12" cy="9.500" r="2.500" fill="none" stroke="currentColor" stroke-width="1.700"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.500" fill="none" stroke="currentColor" stroke-width="1.700"/><path fill="none" stroke="currentColor" stroke-width="1.700" stroke-linecap="round" d="M12 7.500V12l3 2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.700" stroke-linejoin="round" d="M6.500 3.500h3l1.500 4.300-2 1.500a12 12 0 0 0 5.700 5.700l1.500-2 4.300 1.500v3c0 1.100-.9 2-2 2C10.900 19.500 4.500 13.100 4.500 5.500c0-1.100.9-2 2-2Z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.500a9.400 9.400 0 0 0-8.100 14.200L2.700 21.500l4.900-1.200A9.400 9.400 0 1 0 12 2.500Zm0 1.700a7.700 7.700 0 1 1-3.900 14.300l-.3-.2-2.800.7.700-2.700-.2-.3A7.700 7.700 0 0 1 12 4.200Zm-3 3.600c-.2 0-.5.100-.7.400-.3.300-1 1-1 2.300s1 2.700 1.100 2.900c.1.200 1.900 3 4.700 4.100 2.300.9 2.800.7 3.300.7.500-.1 1.600-.7 1.800-1.300.2-.6.200-1.200.2-1.300-.1-.1-.3-.2-.6-.4l-1.900-.9c-.3-.1-.5-.1-.7.2l-.8 1c-.2.200-.3.200-.6.100-.3-.2-1.200-.5-2.300-1.400-.8-.8-1.400-1.700-1.600-2-.2-.3 0-.4.100-.6l.5-.5.3-.5v-.5l-.9-2c-.2-.5-.4-.5-.6-.5h-.5Z"/></symbol>
+</svg>
+
+<header id="top">
+  <div class="wrap bar">
+    <a class="logo" href="#top">Студия перманента<small>и депиляции · Подольск</small></a>
+    <nav aria-label="Разделы">
+      <a href="#services">Услуги и цены</a>
+      <a href="#try">Форма бровей</a>
+      <a href="#why">О студии</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="tel" href="tel:+79017299401">+7 901 729-94-01</a>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <div class="where"><svg><use href="#i-pin"/></svg>Подольск, Революционный проспект, 25/12</div>
+      <h1>Брови и губы, которые <em>не надо рисовать</em> каждое утро</h1>
+      <p class="sub">Перманентный макияж, депиляция, оформление бровей и ресниц. Ежедневно с 10:00 до 20:00, по предварительной записи.</p>
+      <div class="cta">
+        <a class="btn" href="#book">Выбрать время</a>
+        <a class="btn ghost" data-wa="Здравствуйте! Хочу узнать про запись." href="https://wa.me/79017299401" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Написать в WhatsApp</a>
+      </div>
+    </div>
+    <div class="arch">
+      <div class="frame"><img src="img/hero.jpg" width="1300" height="1024" alt="Аккуратная бровь и нежный персиковый макияж глаз крупным планом" fetchpriority="high"></div>
+      <a class="chip" href="https://2gis.ru/podolsk/firm/70000001116723027" target="_blank" rel="noopener">
+        <b>5,0</b>
+        <span><span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>16 отзывов на 2ГИС</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="head r">
+      <div>
+        <p class="kicker">Услуги и цены</p>
+        <h2>Что можно сделать у нас</h2>
+      </div>
+      <p class="note">Цены примерные, точную стоимость назовём до записи.<br>Нажмите на услугу, чтобы записаться.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="group a r" data-group="Перманентный макияж">
+        <h3>Перманентный макияж</h3>
+        <p>Просыпаетесь уже с макияжем</p>
+        <button class="svc" type="button"><span>Брови</span><span>от 5 000 ₽</span></button>
+        <button class="svc" type="button"><span>Губы</span><span>от 6 000 ₽</span></button>
+        <button class="svc" type="button"><span>Межресничная стрелка</span><span>от 4 500 ₽</span></button>
+        <button class="svc" type="button"><span>Обновление перманента</span><span>от 3 000 ₽</span></button>
+      </div>
+      <div class="group b r" data-group="Депиляция">
+        <h3>Депиляция</h3>
+        <p>Гладкая кожа без ежедневного бритья</p>
+        <button class="svc" type="button"><span>Подмышки</span><span>от 600 ₽</span></button>
+        <button class="svc" type="button"><span>Голени</span><span>от 900 ₽</span></button>
+        <button class="svc" type="button"><span>Ноги полностью</span><span>от 1 600 ₽</span></button>
+        <button class="svc" type="button"><span>Бикини</span><span>от 1 300 ₽</span></button>
+        <button class="svc" type="button"><span>Лицо, зона над губой</span><span>от 300 ₽</span></button>
+      </div>
+      <div class="group c r" data-group="Брови и ресницы">
+        <h3>Брови и ресницы</h3>
+        <p>Если хочется результат без пигмента</p>
+        <button class="svc" type="button"><span>Коррекция бровей</span><span>от 500 ₽</span></button>
+        <button class="svc" type="button"><span>Коррекция и окрашивание</span><span>от 900 ₽</span></button>
+        <button class="svc" type="button"><span>Ламинирование бровей</span><span>от 1 500 ₽</span></button>
+        <button class="svc" type="button"><span>Ламинирование ресниц</span><span>от 1 800 ₽</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="try" id="try">
+  <div class="wrap">
+    <div class="stage r">
+      <svg id="browSvg" viewBox="0 0 540 280" role="img" aria-label="Схема глаза и брови выбранной формы и оттенка" style="color:#8A7468">
+        <defs>
+          <linearGradient id="ombre" x1="60" x2="470" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="currentColor" stop-opacity=".22"/>
+            <stop offset=".3" stop-color="currentColor" stop-opacity=".78"/>
+            <stop offset="1" stop-color="currentColor"/>
+          </linearGradient>
+          <clipPath id="eyeClip"><path d="M130 222C190 170 320 165 400 214 330 250 200 254 130 222Z"/></clipPath>
+        </defs>
+        <path id="brow" fill="url(#ombre)" d="M70 128C130 92 230 72 300 74 360 76 420 100 462 138 410 112 356 100 300 100 230 100 140 122 78 154 68 150 64 138 70 128Z"/>
+        <path fill="#FDF8F4" d="M130 222C190 170 320 165 400 214 330 250 200 254 130 222Z"/>
+        <g clip-path="url(#eyeClip)"><circle cx="266" cy="208" r="36" fill="#9A7A63"/><circle cx="266" cy="208" r="17" fill="#3B2A2E"/><circle cx="277" cy="197" r="6" fill="#fff"/></g>
+        <path fill="none" stroke="#46323A" stroke-width="4.500" stroke-linecap="round" d="M130 222C190 170 320 165 400 214"/>
+        <path fill="none" stroke="#C9A99F" stroke-width="2" stroke-linecap="round" d="M138 226C205 254 330 250 394 217"/>
+      </svg>
+    </div>
+    <div class="r">
+      <p class="kicker">Примерьте заранее</p>
+      <h2>Какая форма вам ближе?</h2>
+      <p class="lead">Выберите форму и оттенок, а мы подскажем, как это будет смотреться именно на вас.</p>
+      <p class="opt-label">Форма</p>
+      <div class="chips" id="shapes"></div>
+      <p class="opt-label">Оттенок</p>
+      <div class="chips" id="shades"></div>
+      <a class="btn" id="browGo" href="https://wa.me/79017299401" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Обсудить в WhatsApp</a>
+      <p class="small">Это схема для ориентира. Итоговую форму подбираем по чертам лица, эскиз согласуем до начала работы.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="head r">
+      <div>
+        <p class="kicker">Работы и кабинет</p>
+        <h2>Спокойно, чисто, по записи</h2>
+      </div>
+      <p class="note">На снимках примеры. Сюда поставим ваши работы и фото кабинета.</p>
+    </div>
+    <div class="gal r">
+      <figure><img src="img/room.jpg" loading="lazy" width="1300" height="867" alt="Светлый кабинет в пудровых тонах с кушеткой"></figure>
+      <figure><img src="img/brow.jpg" loading="lazy" width="1300" height="1950" alt="Мастер расчёсывает бровь щёточкой во время процедуры"></figure>
+      <figure><img src="img/tweezers.jpg" loading="lazy" width="1300" height="1950" alt="Коррекция брови пинцетом"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="portrait r"><img src="img/portrait.jpg" loading="lazy" width="1300" height="1950" alt="Портрет девушки с ухоженными бровями на светлом фоне"></div>
+    <div class="r">
+      <p class="kicker">О студии</p>
+      <h2>Почему сюда удобно приходить</h2>
+      <div class="points">
+        <div class="point"><b>Всё в одном месте</b><p>Перманент, депиляция, брови и ресницы. Не нужно искать отдельного мастера на каждую услугу.</p></div>
+        <div class="point"><b>Форма до начала</b><p>Сначала эскиз. Работать начинаем, только когда вам нравится, как он лёг.</p></div>
+        <div class="point"><b>Центр Подольска</b><p>Революционный проспект, 25/12. Легко зайти по дороге с работы или в выходной.</p></div>
+        <div class="point"><b>Каждый день до 20:00</b><p>Принимаем ежедневно, время подбираем заранее, чтобы вы не ждали в очереди.</p></div>
+      </div>
+      <div class="rate">
+        <b>5,0</b>
+        <div>
+          <div class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+          <a href="https://2gis.ru/podolsk/firm/70000001116723027" target="_blank" rel="noopener">16 отзывов на 2ГИС</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="r">
+      <p class="kicker">Запись</p>
+      <h2>Запишитесь за минуту</h2>
+      <p class="lead">Выберите услугу и удобное время, а заявка уйдёт нам в WhatsApp уже готовым сообщением.</p>
+      <ul class="steps">
+        <li>Выбираете услугу, день и часть дня</li>
+        <li>Отправляете сообщение одной кнопкой</li>
+        <li>Мы отвечаем и подтверждаем точное время</li>
+      </ul>
+    </div>
+    <div class="form r">
+      <div class="field">
+        <label for="svcSel">Услуга</label>
+        <select id="svcSel"></select>
+      </div>
+      <div class="field">
+        <div class="lbl" id="dayLbl">День</div>
+        <div class="chips" id="days" role="group" aria-labelledby="dayLbl"></div>
+      </div>
+      <div class="field">
+        <div class="lbl" id="timeLbl">Время</div>
+        <div class="chips" id="times" role="group" aria-labelledby="timeLbl"></div>
+      </div>
+      <div class="summary" id="summary" aria-live="polite"></div>
+      <a class="btn" id="bookGo" href="https://wa.me/79017299401" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Отправить в WhatsApp</a>
+      <p class="small">В рабочей версии здесь могут быть настоящие свободные окошки и запись через Telegram-бота.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contacts" id="contacts">
+  <div class="wrap">
+    <div class="r">
+      <p class="kicker">Контакты</p>
+      <h2>Как нас найти</h2>
+      <ul class="info">
+        <li><svg><use href="#i-pin"/></svg><span>Подольск, Революционный проспект, 25/12<br>Центральный микрорайон</span></li>
+        <li><svg><use href="#i-clock"/></svg><span>Ежедневно с 10:00 до 20:00<br>По предварительной записи</span></li>
+        <li><svg><use href="#i-phone"/></svg><a href="tel:+79017299401">+7 901 729-94-01</a></li>
+      </ul>
+      <div class="cta">
+        <a class="btn" data-wa="Здравствуйте! Хочу записаться." href="https://wa.me/79017299401" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+        <a class="btn ghost" href="https://2gis.ru/podolsk/firm/70000001116723027" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+      </div>
+    </div>
+    <div class="map r"><iframe src="https://yandex.ru/map-widget/v1/?text=Подольск%2C%20Революционный%20проспект%2C%2025%2F12&amp;z=16" title="Карта: Подольск, Революционный проспект, 25/12" loading="lazy" allowfullscreen></iframe></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Черновик сайта: тексты, фото и цены примерные.</span>
+    <a href="https://luma-web.site" target="_blank" rel="noopener">Демо от студии LUMA · luma-web.site</a>
+  </div>
+</footer>
+
+<div class="dock">
+  <a class="btn main" href="#book">Записаться</a>
+  <a class="btn ghost icon" data-wa="Здравствуйте! Хочу записаться." href="https://wa.me/79017299401" target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg><use href="#i-wa"/></svg></a>
+  <a class="btn ghost icon" href="tel:+79017299401" aria-label="Позвонить"><svg><use href="#i-phone"/></svg></a>
+</div>
+
+<script>
+(function(){
+  var WA='79017299401';
+  function wa(t){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(t)}
+  function $(s,r){return (r||document).querySelector(s)}
+  function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+
+  $$('[data-wa]').forEach(function(a){a.href=wa(a.dataset.wa)});
+
+  function chips(box,items,onPick,render){
+    box.innerHTML='';
+    items.forEach(function(it,i){
+      var b=document.createElement('button');
+      b.type='button';b.className='pick';b.setAttribute('aria-pressed',i===0?'true':'false');
+      if(render)render(b,it);else b.textContent=it;
+      b.addEventListener('click',function(){
+        $$('.pick',box).forEach(function(x){x.setAttribute('aria-pressed','false')});
+        b.setAttribute('aria-pressed','true');onPick(it);
+      });
+      box.appendChild(b);
+    });
+  }
+
+  /* примерка бровей */
+  var shapes=[
+    {n:'Естественная',d:'M70 128C130 92 230 72 300 74 360 76 420 100 462 138 410 112 356 100 300 100 230 100 140 122 78 154 68 150 64 138 70 128Z'},
+    {n:'Мягкая дуга',d:'M70 130C130 88 240 52 318 58 372 62 426 100 466 150 414 112 366 88 316 86 240 84 142 120 78 156 68 152 64 140 70 130Z'},
+    {n:'Прямая',d:'M70 116C130 100 240 92 320 92 372 92 428 104 470 128 420 116 372 116 320 116 240 116 140 130 78 144 68 140 64 128 70 116Z'}
+  ];
+  var shades=[{n:'Тауп',c:'#8A7468'},{n:'Карамель',c:'#A67855'},{n:'Тёплый коричневый',c:'#6E4A3A'},{n:'Мягкий графит',c:'#57504E'}];
+  var brow=$('#brow'),svg=$('#browSvg'),go=$('#browGo'),shape=shapes[0],shade=shades[0],raf,done;
+  var nums=function(d){return d.match(/-?[\d.]+/g).map(Number)};
+  var parts=shapes[0].d.split(/-?[\d.]+/);
+  function morph(to){
+    var from=nums(brow.getAttribute('d')),end=nums(to),t0=performance.now();
+    cancelAnimationFrame(raf);clearTimeout(done);
+    done=setTimeout(function(){cancelAnimationFrame(raf);brow.setAttribute('d',to)},520);
+    (function step(t){
+      var k=Math.max(0,Math.min(1,(t-t0)/450));k=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+      var out='';parts.forEach(function(p,i){out+=p;if(i<end.length)out+=(from[i]+(end[i]-from[i])*k).toFixed(1)});
+      brow.setAttribute('d',out);
+      if(k<1)raf=requestAnimationFrame(step);
+    })(t0);
+  }
+  function browLink(){go.href=wa('Здравствуйте! Интересует перманент бровей. Форма: '+shape.n.toLowerCase()+', оттенок: '+shade.n.toLowerCase()+'. Подскажите, подойдёт ли мне?')}
+  chips($('#shapes'),shapes,function(s){shape=s;morph(s.d);browLink()},function(b,s){b.textContent=s.n});
+  chips($('#shades'),shades,function(s){shade=s;svg.style.color=s.c;browLink()},function(b,s){
+    b.innerHTML='<span class="shade"><i style="--c:'+s.c+'"></i>'+s.n+'</span>';
+  });
+  browLink();
+
+  /* запись */
+  var sel=$('#svcSel');
+  $$('.group').forEach(function(g){
+    var o=document.createElement('optgroup');o.label=g.dataset.group;
+    $$('.svc',g).forEach(function(b){
+      var name=b.firstElementChild.textContent,price=b.lastElementChild.textContent;
+      var opt=document.createElement('option');
+      opt.value=g.dataset.group==='Брови и ресницы'?name:g.dataset.group+': '+name.toLowerCase();
+      opt.textContent=name+', '+price;
+      o.appendChild(opt);
+      b.addEventListener('click',function(){sel.value=opt.value;update();$('#book').scrollIntoView()});
+    });
+    sel.appendChild(o);
+  });
+
+  var now=new Date(),wd=['вс','пн','вт','ср','чт','пт','сб'],mon=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+  var start=now.getHours()>=19?1:0,dayList=[];
+  for(var i=start;i<start+6;i++){
+    var d=new Date(now.getFullYear(),now.getMonth(),now.getDate()+i);
+    dayList.push({label:i===0?'Сегодня':i===1?'Завтра':wd[d.getDay()]+', '+d.getDate(),full:(i===0?'сегодня, ':i===1?'завтра, ':'')+wd[d.getDay()]+', '+d.getDate()+' '+mon[d.getMonth()]});
+  }
+  var times=['10:00–13:00','13:00–17:00','17:00–20:00'],day=dayList[0],time=times[0];
+  chips($('#days'),dayList,function(x){day=x;update()},function(b,x){b.textContent=x.label});
+  chips($('#times'),times,function(x){time=x;update()});
+  function update(){
+    $('#summary').textContent=sel.options[sel.selectedIndex].textContent+'. Когда: '+day.full+', '+time;
+    $('#bookGo').href=wa('Здравствуйте! Хочу записаться. '+sel.value+'. Удобно: '+day.full+', '+time+'.');
+  }
+  sel.addEventListener('change',update);
+  update();
+
+  /* шапка и появление блоков */
+  var h=$('header');
+  addEventListener('scroll',function(){h.classList.toggle('stuck',scrollY>8)},{passive:true});
+  var els=$$('.r');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e)});
+  }else els.forEach(function(e){e.classList.add('in')});
+})();
+</script>
+<script>
+(function () {
+  var T = {"url": "https://luma-demo-tracker.damaged852.workers.dev", "slug": "studiya-permanenta-i-depilyatsii-2639", "sig": "2d0ec028eb72b10e44b7", "name": "Студия перманента и депиляции", "phone": "+79017299401", "telegram": ""};
+  try { if (localStorage.getItem("luma_owner")) return; } catch (e) {}
+  function send(ev) {
+    var body = JSON.stringify({slug: T.slug, sig: T.sig, name: T.name, phone: T.phone, telegram: T.telegram, event: ev});
+    try { navigator.sendBeacon ? navigator.sendBeacon(T.url, body) : fetch(T.url, {method: "POST", body: body, keepalive: true}); } catch (e) {}
+  }
+  function once(ev) {  // каждое событие — раз за сессию, обновление страницы не спамит бота
+    var k = "luma_" + T.slug + "_" + ev;
+    try { if (sessionStorage.getItem(k)) return; sessionStorage.setItem(k, 1); } catch (e) {}
+    send(ev);
+  }
+  once("open");
+  addEventListener("scroll", function () {
+    if (scrollY + innerHeight > document.body.scrollHeight * 0.8) once("scrolled");
+  }, {passive: true});
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[href^='tel:'], a[href*='wa.me'], a[href*='t.me']");
+    if (a && a.href.indexOf("luma_web") < 0) once("contact");
+  });
+})();
+</script>
+</body>
+</html>
