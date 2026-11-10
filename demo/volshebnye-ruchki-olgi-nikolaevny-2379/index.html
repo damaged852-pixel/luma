@@ -22,6 +22,9 @@
   .frame, .gallery figure { background: var(--sand); }
   .promo { display: flex; align-items: center; gap: 12px; width: fit-content; max-width: 100%; margin-bottom: 26px; padding: 11px 20px; border-radius: 22px; background: var(--text); color: var(--card); font-size: 16px; line-height: 1.35; }
   .promo b { font: italic 400 18px var(--serif); color: #d9cf9c; flex: none; }
+  .consent { display: flex; gap: 10px; align-items: flex-start; margin-top: 14px; font-size: 14px; line-height: 1.45; color: var(--muted); cursor: pointer; }
+  .consent input { width: 20px; height: 20px; flex: none; margin: 1px 0 0; accent-color: var(--accent); }
+  .consent a { color: var(--accent); text-decoration: underline; }
   .rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 40px; }
   .rev { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 28px; }
   .rev p { margin: 0 0 16px; }
@@ -536,6 +539,7 @@
             <input id="b-phone" type="tel" placeholder="Телефон" autocomplete="tel" maxlength="20">
             <input id="b-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           </div>
+          <label class="consent"><input type="checkbox" id="b-consent"><span>Даю <a href="soglasie.html" target="_blank">согласие на обработку персональных данных</a> и принимаю <a href="privacy.html" target="_blank">политику</a></span></label>
           <button class="btn btn-main bw-go" id="b-go" disabled>Выберите время</button>
           <p class="bw-note" id="b-note">Запись сразу придёт Ольге Николаевне. Если планы изменятся, просто напишите ей.</p>
         </div>
@@ -697,6 +701,7 @@
 <footer>
   <div class="logo"><b>Волшебные ручки</b><span>Ольги Николаевны</span></div>
   <div><span data-c="address">Уссурийск, ул. Чичерина, 44</span> · <a href="tel:+79140765258" data-c="phone">+7 914 076-52-58</a></div>
+  <div style="margin-top:12px;font-size:13px"><a href="privacy.html">Политика обработки персональных данных</a> · <a href="soglasie.html">Согласие на обработку данных</a></div>
   <div style="margin-top:18px;font-size:12px;opacity:.75">Демо от студии LUMA · <a href="https://luma-web.site" target="_blank" rel="noopener">luma-web.site</a></div>
 </footer>
 
@@ -810,8 +815,8 @@
     $("b-slots").innerHTML = slots.map(x => `<button class="slot${x.t === bTime ? " on" : ""}">${x.t}</button>`).join("");
     $("b-slots").querySelectorAll(".slot").forEach(b => b.onclick = () => { bTime = b.textContent; renderBooking(); });
     const go = $("b-go");
-    go.disabled = !bTime || sending;
-    go.textContent = sending ? "Записываю…" : bTime ? `Записаться на ${fdate(bDay)}, ${bTime}` : "Выберите время";
+    go.disabled = !bTime || sending || !$("b-consent").checked;
+    go.textContent = sending ? "Записываю…" : !bTime ? "Выберите время" : !$("b-consent").checked ? "Отметьте согласие ниже имени" : `Записаться на ${fdate(bDay)}, ${bTime}`;
   }
   function note(text, err) { const n = $("b-note"); n.textContent = text; n.style.color = err ? "#a2493b" : ""; }
   /* ---------- всё, что Ольга Николаевна меняет сама в кабинете бота (вкладка «Сайт») ---------- */
@@ -882,6 +887,7 @@
     } finally { clearTimeout(timer); }
   }
   svcSel.onchange = () => { bTime = null; renderBooking(); };
+  $("b-consent").onchange = () => renderBooking();
   $("b-go").onclick = async () => {
     const name = $("b-name").value.trim(), phone = $("b-phone").value.trim();
     if (name.length < 2) { note("Напишите, пожалуйста, имя", true); return $("b-name").focus(); }
@@ -890,7 +896,7 @@
     sending = true; renderBooking();
     try {
       const r = await fetch(API + "/api/book", { method: "POST", headers: { "Content-Type": "text/plain" },
-        body: JSON.stringify({ svc: s.id, date: day, time, name, phone, hp: $("b-hp").value }) });
+        body: JSON.stringify({ svc: s.id, date: day, time, name, phone, hp: $("b-hp").value, consent: $("b-consent").checked }) });
       const data = await r.json();
       if (!data.ok) { note(data.error || "Не получилось записаться. Попробуйте ещё раз", true); sending = false; bTime = null; await load(); return; }
       $("d-sum").innerHTML = `<b>${esc(s.name)}</b><br>${fdate(day)}, ${time}<br>${esc(address)}`;
